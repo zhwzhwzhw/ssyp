@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>咨询详情</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<style>
+.send{position:fixed;bottom:0;left:5%;width:90%;height:50px;background:#fff;border-top:1px solid #ddd}
+.send a{line-height:50px}
+</style>
+<script src="__JS__/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+var URL="__URL__";
+</script>
+<script type="text/javascript" src="__JS__jsApiWx.js?a=1"></script>
+<script>
+wxUserId = {$Think.session.user.id};//"{$Think.session.wxLogin.id}"
+title = '{$data.title}'
+shareDesc = '{$data.subhead}';
+imgUrl = 'http://'+window.location.host+'__ROOT__/Uploads/{$data.thumb}';
+toUrl = window.location.host+'__ACTION__?id={$data.id}';
+//微信文章分享成功提示
+function sucMeg(msg){
+	$.ajax({
+		'url':URL+'/share',
+		'type':'post',
+		'data':{
+			'user_id':wxUserId,
+			'news_id':{$data.id},
+			'share_type':msg
+		},
+		'success':function(re){
+			//alert('感谢您的分享，\n我们会继续努力的')
+		}
+	})
+}
+</script>
+
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">返回</li>
+		
+		<li class="right head_share" onclick="$('.rt_share,#zhezhao').show()">&nbsp;</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<div class="head_title">
+		<div class="title">{$data.title} </div>
+		<div class="subhead">{$data.pub_time|date='Y-m-d H:i',###}</div>
+	</div>
+	<div class="next_pre_title" style="font-size:16px;color:#ffb000">相关产品</div>
+	<ul class="next_pre hotel_oper news_pro">
+		<li class="clearfix">
+			<img class="left" src="__ROOT__/Uploads/{$data.pro_images}" alt="">
+			<div class="right">
+				<div class="title">{$data.name}</div>
+				
+				<div class="detail">
+					<span><span class="fuhao">￥</span>{$data.pro_price}</span>
+					<a>查看详情</a>
+				</div>
+			</div>
+		</li>
+	</ul>
+	<div class="dmt"></div>
+	<div class="news_content">{$data.content}</div>
+	<if condition="($Think.session.user.status eq 3) OR ($Think.session.user.status eq 1)">
+		<div style="height:50px"></div>
+		<div class="send clearfix">
+		<a onclick="send(this)" data-href="__URL__/sendLink/id/{$data.id}" class="left">发送链接到微信</a><a onclick="send(this)" data-href="__URL__/sendPoster/id/{$data.id}" class="right">发送海报到微信</a>
+		</div>
+	</if>
+</div>
+<include file="Public/menu"/>
+<script src="__JS__jquery.min.js"></script>
+<script src="__STATICS__layer/layer.js"></script>
+<script>
+function send(t){
+	$.ajax({
+		'url':$(t).attr('data-href'),
+		'success':function(re){
+			if(re == '1'){
+				layer.msg('发送成功');
+			}else{
+				layer.msg('发送失败，请主动给公众号发送消息后尝试');
+			}
+		}
+	})
+}
+</script>
+</body>
+</html>

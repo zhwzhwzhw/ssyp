@@ -1,0 +1,13 @@
+<foreach name="list" item="v">
+	<li class="clearfix" onclick="location.href='__URL__/detail/id/{$v.id}'">
+		<img class="left" src="__ROOT__/Uploads/{$v.log_images}" alt="">
+		<div class="right">
+			<div class="title">{$v.log_name}</div>
+			<div class="subhead">{$v.log_describe}</div>
+			<div class="detail">
+				<span class="pri"><span class="fuhao">￥</span>{$v.price}</span>
+				<a>查看详情</a>
+			</div>
+		</div>
+	</li>
+</foreach>

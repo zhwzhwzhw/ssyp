@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <head>
+        <meta charset="utf-8">
+        <title>希格斯后台登录</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="__PUBLIC__/assets/css/reset.css">
+        <link rel="stylesheet" href="__PUBLIC__/assets/css/supersized.css">
+        <link rel="stylesheet" href="__PUBLIC__/assets/css/style.css">
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <h1>希格斯后台登陆</h1>
+            <form onsubmit="return form_submit(this)" action="__URL__/check" method="post">
+                <input type="text" name="phone" required class="username" placeholder="电话号码">
+                <input type="password" name="password" required class="password" placeholder="密码">
+                <button type="submit">登&nbsp;&nbsp;&nbsp;陆</button>
+                <div class="error"><span>+</span></div>
+            </form>
+        </div>
+
+        <!-- Javascript -->
+        <script>
+			var bg_img = '__PUBLIC__/assets/img/backgrounds/'
+		</script>
+		<script src="__JS__jquery.min.js"></script>
+		
+		<script src="__PUBLIC__/assets/js/supersized.3.2.7.min.js"></script>
+        <script src="__PUBLIC__/assets/js/supersized-init.js"></script>
+        <script src="__PUBLIC__/assets/js/scripts.js"></script>
+		<script src="__STATICS__layer/layer.js"></script>
+        
+		<script type="text/javascript" src="__STATICS__js/request.js"></script>
+    	
+    </body>
+
+</html>
+

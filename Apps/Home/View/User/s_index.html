@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>分销商中心</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style type="text/css">
+.user_index .right{
+	line-height:45px;color:#aaa;margin-right:20px;
+}
+.cash_wrap {background:#fff;width:90%;margin:auto;}
+.cash_wrap .one{margin-top:10px;font-size:16px;}
+.cash_wrap .one p{line-height:50px;font-size:20px;border-bottom:1px solid #ccc}
+.cash_wrap .one input{width:calc(100% - 100px);margin-left:10px;font-size:20px;background:none;border:none;line-height:50px;height:50px}
+.cash_wrap .two{margin-top:10px ;}
+.cash_wrap .three{border:none;margin-top:10px;width:100%;height:50px;background:#ffb000;color:#fff;font-size:20px;}
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<div class="headimg_wrap" >
+		<div class="msg_wrap">
+			<img class="headimg" src="{$data.headimgurl}">
+			<span class="name">{$data.nickname}</span>
+		</div>
+		<div class="bg_img" style="background:url({$data.headimgurl})"></div>
+		<div class="zz_img"></div>
+	</div>
+	<div class="dmt" style="position:relative;z-index:5" ></div>
+<!-- 	<div class="user_c clearfix">
+		<div class="menu left">
+			<a style="border-right:2px solid #f0f0f0">
+				<span class="num">0<span class="unit">元</span></span><br>
+				<span class="exp">余额</span>
+			</a>
+		</div>
+		<div class="menu right">
+			<a>
+				<span class="num">0<span class="unit">分</span></span></span><br>
+				<span class="exp">积分</span>
+			</a>
+		</div>
+	</div>
+	<div class="dmt" style="height:5px;"></div> -->
+	
+	<ul class="main_msg user_index">
+	<if condition="$status eq 1">
+		<li class="tit_w" onclick="cash_show()"><div class="tit">
+			<span class="text" style="padding-left:10px;">余额(元)：<span style="color:#b04138">{$data.money}</span></span>
+			<div class="right" style="color:#feb100">立即提现</div>
+		</div></li>
+		<li class="dmt" style="height:4px;"></li>
+	</if>
+		<li class="tit_w" onclick="location.href='__MODULE__/Index/index'"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__wdwd_2x.png)">我的微店</span>
+			<div class="right">首页信息</div>
+		</div></li>
+		
+		<li class="tit_w" onclick="location.href='__URL__/ord_1'"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__dd_2x.png)">订单查询</span>
+			<div class="right">用户订单</div>
+		</div></li>
+	<if condition="$status eq 3">
+		<li class="tit_w" onclick="ticket('__MODULE__')"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__yq_2x.png)">邀请粉丝</span>
+			<div class="right">扫一扫关注</div>
+		</div></li>
+	</if>	
+	<if condition="$status eq 1">	
+		<li class="tit_w" onclick="location.href='__URL__/cash'"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__txjl_2x.png)">提现记录</span>
+			<div class="right">记录报表</div>
+		</div></li>
+	</if>
+	<if condition="$status eq 3">
+		<li class="tit_w" onclick="location.href='__URL__/p_list'"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__qy_2x.png)">企业分销商管理</span>
+			<div class="right">企分专属管理</div>
+		</div></li>
+	</if>
+	<li class="tit_w" onclick="location.href='__URL__/user'"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__xgzl_2x.png)">修改资料</span>
+	</div></li>
+<!-- 		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__hy_2x.png)">分享的会员</span>
+		</div></li>
+		
+		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__jgicon_2x.png)">分享的成果</span>
+		</div></li> -->
+		
+		
+	</ul>
+	
+<include file="user_footer"/>
+	<div id="cash_html" style="display:none;">
+		<form  onsubmit="return form_submit(this)" action="__URL__/apply_cash" method="post" class="cash_wrap" >
+			<div class="one">
+				提现金额
+				<p>￥<input type="text" name="cash"></p>
+			</div>
+			<div class="two">
+				当前余额：{$data.money} ，<span onclick="$('[name=\'cash\']').val({$data.money})" style="color:#3884e6">全部提现</span>
+			</div>
+			<input class="three" type="submit" value="立即提现">
+		</form>
+		
+	</div>
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script src="__STATICS__layer/layer.js"></script>
+<script src="__JS__shop.js"></script>
+<script>
+
+function cash_show(){
+	var html = $('#cash_html').html()
+	layer.open({
+		  type: 1,
+		  title:'<span style="color:#3884e6">余额直接转入微信钱包</span>',
+		  area: ['80%', '225px'], //宽高
+		  content: html
+		});
+}
+</script>
+</body>
+</html>

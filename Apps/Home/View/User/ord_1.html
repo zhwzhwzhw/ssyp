@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>{$title}</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center" style="color:#ffb000;width:calc(100% - 190px)">{$title}</li>
+		<li class="right">&nbsp;</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<div class="det_time" >
+		<form class="form" style="border-radius:5px;width:80%;">
+			<input style="width:80%" type="text" name="p|name[v]" value="{$assign.p_name_where}" placeholder="请输入订单关键词">
+			<input type="hidden" name="p|name[e]" value="like">
+			<div onclick="$(this).parent().submit()" class="sea_but"><img src="__IMG__fd_2x.png" alt="" width="25px"></div>
+		</form>
+	</div>
+	<ul class="ord_list" id="ord_1">
+		<!-- <li>
+			<div class="wrap">
+				<div class="title"><span class="tit_s">已支付</span>阿斯顿法师是否阿斯顿飞</div>
+				<div class="msg">金额：188&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游客：啊啊啊</div>
+				<div class="subhead">下单：2000-99-99 88:88<br/>有效期：2099-99-99 至 2099-99-99</div>
+			</div>
+		</li> -->
+		<foreach name="list" item="v">
+			<li onclick="location.href='__URL__/ord_detail/id/{$v.id}'">
+				<div class="wrap">
+					<div class="title"><span class="tit_s">
+					<if condition="$v.is_pay eq 1">
+						<if condition="$v.ord_is_pre eq 1">待预约
+						<elseif condition="$v.ord_is_pre eq 3"/>已预约
+						<else/>已支付
+						</if>
+					<else/>待支付
+					</if>
+					</span>{$v.name}</div>
+					<div class="msg">金额：{$v.ord_money}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<if condition="$v.custom_name neq ''">游客：{$v.custom_name}</if></div>
+					<div class="subhead">下单：{$v.pub_time|date='Y-m-d H:i',###}<br/>有效期：2099-99-99 至 2099-99-99</div>
+				</div>
+			</li>
+		</foreach>
+	</ul>
+<include file="user_footer"/>
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script src="__JS__shop.js"></script>
+<script>
+	pageLoad('__ACTION__/ajax/ajax','ord_1')
+</script>
+</body>
+</html>

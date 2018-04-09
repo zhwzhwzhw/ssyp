@@ -1,0 +1,81 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.Money-applyCash,.Money').addClass('active')
+})
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		财务管理
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<table id="detail" class="list">
+	<tr>
+		<th>申请金额</th>
+		<th>发布时间</th>
+		<th>真实姓名</th>
+		<th>联系电话</th>
+		<th>微信昵称</th>
+		
+		<th>状态</th>
+		
+	</tr>
+	<foreach name="list" item="v">
+		<tr>
+			<td>{$v.money_reduce}</td>
+			<td>{$v.pub_time|date='Y-m-d H:i:s',###}</td>
+			<td>{$v.realname}</td>
+			<td>{$v.phone}</td>
+			<td><img src="{$v.headimgurl}" width="35px">{$v.nickname}</td>
+			<td>
+				<if condition="$v.status eq 1"><a href="javascript:qy_pay('{$v.id}')">待同意</a>
+				<elseif condition="$v.status eq 9"/>已驳回
+				<elseif condition="$v.status eq 9"/>已完成
+				</if>
+			</td>
+		</tr>
+	</foreach>
+</table>
+</block>
+<block name="footer">
+<script>
+function show_ticket(name){
+	layer.alert('<img style="margin:auto;display: block;" src="__APP__/Home/Public/ticket?size=6&content=123">',{
+	  title:name+' 的微信绑定二维码',
+	  skin: 'layer-ext-moon',
+	  btn: 0	  
+	})
+}
+
+function qy_pay(id){
+	$.ajax({
+		'url':'__URL__/qy_pay',
+		'type':'post',
+		'data':{'id':id},
+		'dataType':'json',
+		'success':function(res){
+			//{"info":"\u5bc6\u7801\u9519\u8bef","status":0,"url":""}
+			if(res.status == 0){
+				layer.msg(res.info);
+			}else if(res.status == 1){
+				layer.msg(res.info);
+				setTimeout(function(){
+					location.href=res.url
+				},1000);
+			}
+		}
+	});
+}
+</script>
+</block>

@@ -1,0 +1,61 @@
+<extend name="Common/base"/>
+<block name="header">
+<style>
+#detail td{
+	padding:2px 10px !important;
+}
+</style>
+<script>
+$(function(){
+	$('.category-index,.category').addClass('active');
+})
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		分类管理
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<ul id="head_menu" class="clearfix"  >
+	<li <if condition="$Think.get.status eq 1">class="active"</if> ><a href="__ACTION__/status/1">商品分类</a></li>
+<!-- 	<li <if condition="$Think.get.status eq 2">class="active"</if>><a href="__ACTION__/status/2">展示状态</a></li> -->
+	<li <if condition="$Think.get.status eq 3">class="active"</if>><a href="__ACTION__/status/3">商品规格</a></li>
+</ul>
+<br/>
+<table id="detail" class="list">
+	<tr>
+		<th>id号</th>
+		<th>分类名字</th>
+ 		<th>图标</th> 
+		<th>排序值（0为不显示）</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="list" item="vo">
+		<tr>
+			<td>{$vo.id}</td>
+			<td>{:str_repeat('|-',$vo['s']-1)}{$vo.c_name}</td>
+ 			<td>
+				<if condition="$vo.c_icons neq ''">
+					<img src="__ROOT__/Uploads/{$vo.c_icons}" width="50px">
+				</if>
+			</td> 
+			<td>{$vo.c_ordernum}</td>
+			<td>
+				<a href="__URL__/update/id/{$vo.id}">编辑</a><br/>
+			</td>
+		</tr>
+	</foreach>
+</table>
+</block>
+<block name="footer">
+
+</block>

@@ -1,0 +1,75 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+
+
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		资金管理
+		<small>供应商查询</small>
+	</h1> 
+					
+</section>
+</block>
+<block name="main">
+
+<table id="detail" class="list">
+	<tr>
+		<!-- <th></th> -->
+		<th>小计</th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>{$xj.num}</th>
+		<th>{$xj.sell}</th>
+		<th>{$xj.cost}</th>
+	</tr>
+	<tr>
+		<!-- <th></th> -->
+		<th>供货商</th>
+		<th>产品信息</th>
+		<th>零售价</th>
+		<th>特惠价</th>
+		<th>供货价</th>
+		<th>数量</th>
+		<th>销售额小计</th>
+		<th>成本小计</th>
+	</tr>
+	<foreach name="list" item="v">
+	<tr>
+		<td>
+			{$v.supply}
+		</td>
+		<td>
+			{$v.symbol}
+		</td>
+		<td>
+			{$v.pro_price}
+		</td>
+		<td>
+			{$v.discount_price}
+		</td>
+		<td>
+			{$v.cost_price}
+		</td>
+		<td>
+			{$v.ord_number}
+		</td>
+		<td>{$v.sell_money}</td>
+		<td>{$v['cost_price']*$v['ord_number']}</td>
+		
+	</tr>
+	</foreach>
+</table>
+<div id="page"> {$page}</div>
+
+</block>
+
+
+
+
+

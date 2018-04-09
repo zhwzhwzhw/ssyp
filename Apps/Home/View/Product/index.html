@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>抢购ing</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style>
+.thumb{position:relative;height:150px;background-repeat:no-repeat !important;background-position:center !important;background-size:cover !important;}
+.sell_status{position:absolute;width:100%;height:100%;background:#000;
+		filter:alpha(opacity=40); /*IE滤镜，透明度50%*/
+		-moz-opacity:0.4; /*Firefox私有，透明度50%*/
+		opacity:0.4;bottom:0}
+.kuc{position:absolute;bottom:0;left:10px;height:30px;color:#fff;font-size:16px;z-index:3;line-height:30px;}
+</style>
+</head>
+<body>
+<div class="body_wrap bottom_0">
+	<ul class="header clearfix header_2" id="pro_index">
+		<li class="left" onclick="history.go(-1)">返回</li>
+		
+		<li class="right" onclick="$('.list_menu,#zhezhao').show()">&nbsp;</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<ul class="rob_list">
+<!-- 		<li class="rob_wrap">
+			<img src="__IMG__fj_bg.png" alt="" class="thumb">
+			<div class="msg">
+				<div class="title">标题</div>
+				<div class="subhead">辅助信息</div> 
+				<ul class="msg_num">
+					<li class="money"><span class="fuhao">￥</span><span class="money_num">110.00</span></li>
+					<li class="time">11:00 开抢</li>
+				</ul>
+			</div>
+		</li> -->
+		<foreach name="list_1" item="v">
+			<li class="rob_wrap">
+				<a href="__URL__/rob/id/{$v.id}">
+				<div style="background:url(__ROOT__/Uploads/{$v.pro_images})" class="thumb">
+				<if condition="$v.pro_number gt 0">
+					<div class="kuc">还剩下 {$v.pro_number} 件&nbsp;&nbsp;&nbsp;结束时间：{$v.pre_end|date='m/d H:i',###}</div>
+					<div class="sell_status" style="height:30px;"></div>
+				<else/>
+					<div class="sell_status"></div>
+					<img style="position:relative;z-index:3" src="__IMG__sell_out.png">
+				</if>
+				</div>
+				<div class="msg">
+					<div class="title">{$v.name}</div>
+					<div class="subhead">{$v.pro_describe}</div> 
+					<ul class="msg_num" style="text-align:center;">
+						<li class="money"><span class="fuhao">￥</span><span class="money_num">{$v.pro_price}</span></li>
+						<li class="time">倒计时{$v.pre_end|timeDown=###}</li>
+					</ul>
+				</div>
+				</a>
+			</li>
+		</foreach>
+		
+		
+		<foreach name="list_2" item="v">
+			<li class="rob_wrap">
+				<a href="__URL__/rob/id/{$v.id}">
+				<div style="background:url(__ROOT__/Uploads/{$v.pro_images})" class="thumb">
+				<div class="kuc">库存 {$v.pro_number} &nbsp;&nbsp;&nbsp;开抢时间：{$v.pre_start|date='Y/m/d H:i',###}</div>
+				<div class="sell_status" style="height:30px;"></div>
+				
+				</div>
+				<div class="msg">
+					<div class="title">{$v.name}</div>
+					<div class="subhead">{$v.pro_describe}</div> 
+					<ul class="msg_num" style="text-align:center;">
+						<li class="money"><span class="fuhao">￥</span><span class="money_num">{$v.pro_price}</span></li>
+						<li class="time">倒计时{$v.pre_end|timeDown=###}</li>
+					</ul>
+				</div>
+				</a>
+			</li>
+		</foreach>
+	</ul>
+	
+</div>
+<include file="Public/menu" />
+<script src="__JS__jquery.min.js"></script>
+<script src="__JS__shop.js"></script>
+<script>
+	pageLoad('__ACTION__/ajax/ajax','pro_index');
+
+
+</script>
+</body>
+</html>

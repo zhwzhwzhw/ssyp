@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>填写预约信息</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<link type="text/css" rel="stylesheet" href="__STATICS__css/calendar-pro.css">
+<style>
+.ht-rili-td{background:none;}
+</style>
+</head>
+<body>
+<div class="body_wrap bottom_0">
+	<ul class="header clearfix header_2">
+		<li class="left">&nbsp;</li>
+		<li class="center">填写预约信息</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<form action="__URL__/pre_do" method="post">
+	<input type="hidden" name="id" value="{$data.id}">
+	<input type="hidden" id="date_input" name="v_date">
+	<input type="hidden" name="pro_id" value="{$data.pro_id}">
+	<ul class="form_list">
+		<li class="dmt"></li>
+		<li>
+			<div class="title">{$data.name}</div>
+			<div class="subhead">
+				<a href="__MODULE__/Product/rob/id/{$data.pro_id}" style="color:#3b689f">查看商品信息</a>
+			</div>
+		</li>
+		<li class="dmt"></li>
+		
+		<li class="dmt" style="height:3px;"></li>
+		
+		<li>
+			<div class="title inline main_title"><img src="__IMG__xx_2x.png" alt="" style="width:25px; vertical-align:-5px;">&nbsp;&nbsp;预约提示</div>
+		</li>
+		<li>
+			<div class="subhead" style="margin-top:0">{$data.pre_msg}</div>
+		</li>
+		
+		
+		<li id="date_box">
+			
+		</li>
+		<li>
+			<div class="title inline main_title" style="margin-bottom:-5px;"><img src="__IMG__sZ_2x.png" alt="" style="width:25px; vertical-align:-6px;">&nbsp;&nbsp;卡券（预约码）输入</div>
+		</li>
+		<li>
+			<for start="0" end="$data.ord_number">
+				<div class="kah">
+					<span class="ka_one"><span style="color:#f00">*</span>券号{$i+1}</span>
+					<input name="card[{$i+1}]" type="text" class="ka_input" placeholder="请填写一个正确的券号">
+				</div>
+			</for>
+		</li>
+		<li class="dmt" style="height:3px;"></li>
+		<li>
+			<div class="title inline main_title"><img src="__IMG__rw_2x.png" alt="" style="width:25px; vertical-align:-5px;">&nbsp;&nbsp;客人信息</div>
+		</li>
+		<li>
+			<div class="title inline">真实姓名</div>
+			<input  type="text" name="custom_name" >
+		</li>
+		<li>
+			<div class="title inline">手机号码</div>
+			<input  type="text" name="custom_phone" >
+		</li>
+		<li class="dmt" style="height:3px;"></li>
+		<li>
+			<div class="title inline main_title"><img src="__IMG__bg_2x.png" alt="" style="width:25px; vertical-align:-5px;">&nbsp;&nbsp;备注信息</div>
+		</li>
+		<li>
+			<div class="title inline">备注信息</div>
+			<input  type="text" name="comment_ord" placeholder="可填写备注信息">
+		</li>
+		<li class="dmt" style="height:1px"></li>
+		<li class="tit_w">
+			<input class="msg_sumbit"  type="submit" value="立即预约"/>
+		</li>
+	</ul>
+	</form>
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script type="text/javascript" src="__STATICS__js/calendar-pro.js"></script>
+<script>
+$('.calendar-box').calendar({
+	ele : '#date_box', //依附
+	title : '',
+	beginDate : '{$data.use_start|date="Y-m-d",###}',
+	endDate : '{$data.use_end|date="Y-m-d",###}',
+	data : {$data.pre_data_num}
+});
+function click_date_ext(t){
+	var data = $('#date_box').calendarGetActive();
+	//alert($(t).html())
+	$('.ht-rili-onclick').css('background','none');
+	$(t).css('background','#ccc');
+	$('#date_input').val(data.date);
+}
+$(function(){
+	$('.tit_w').click(function(){
+		var obj = $(this).next('.body_w')
+		if(obj.css('display') == 'none'){
+			obj.show()
+		}else{
+			//$(this).find('.tit').css('background-image','url(__IMG__xyb_2x.png)')
+			obj.hide()
+		}
+	})
+})
+</script>
+</body>
+</html>

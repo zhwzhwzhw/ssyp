@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>商城首页</title>
+<link rel="stylesheet" href="__CSS__swiper.min.css">
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style>
+.swiper-slide img{
+	width:100%;
+}
+.index-top{
+	display:block;
+	height:135px;;
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	width:100%;
+}
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	    	<foreach name="lb" item="v">
+	        	<div class="swiper-slide"><a class="index-top" style="background-image:url(__ROOT__/Uploads/{$v.cover_img})" href="__MODULE__/News/detail/id/{$v.id}"></a></div>
+	        </foreach>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination" style="bottom:10px;"></div>
+	    
+	    
+	</div>  
+	<ul class="index_cate clearfix">
+		<li><a href="__MODULE__/Hotel/index"><img src="__IMG__/jd_2x.png" alt="">酒店预订</a></li>
+		<li><a href="__MODULE__/Hotel/index/category/2"><img src="__IMG__/mp_2x.png" alt="">门票预订</a></li>
+		<li><a href="__MODULE__/Product/index"><img src="__IMG__/ing_2x.png" alt="">抢购ing</a></li>
+		<li><a href="__MODULE__/News/index"><img src="__IMG__/bb_2x.png" alt="">资讯播报</a></li>
+	</ul>
+	<div class="dmt"></div>
+	<div class="more"><a href="">更多&nbsp;</a></div>
+	<div class="index_qg">
+		<div class="title">今日抢购</div>
+		<div class="swiper-wrapper" >
+		<foreach name="rob_turn" item="v">
+            <div class="swiper-slide" >
+            	<a href="__MODULE__/Product/rob/id/{$v.id}">
+	            	<img style="border-radius:10px 10px 0 0 " src="__ROOT__/Uploads/{$v.pro_images}" alt="">
+	            	<div class="clb_m">
+	            		￥<span style="font-size:18px">{$v.pro_price}</span> <span class="right">{$v.pre_start|date="m/d H:i",###}&nbsp;开抢</span>
+	            	</div>
+	            	<div class="clb_b">
+	            		<div class="b_title">{$v.name}</div>
+	            		<div class="b_subhead"><span class="b_bg">抢购时间</span> {$v.pre_start|date="m/d H:i",###} 至 {$v.pre_end|date="m/d H:i",###}</div>
+	            	</div>
+            	</a>
+            </div>
+         </foreach>
+        </div>
+	</div>
+	<div class="dmt"></div>
+	<div class="list_head" >下期预告</div>
+	<ul class="next_pre">
+		<!-- <li class="clearfix">
+			<img class="left" src="__PUBLIC__/Home/test/aa.png" alt="">
+			<div class="right">
+				<div class="title">我是标题我是标题我是标题我是标题我是标题我是标题</div>
+				<div class="subhead">描述</div>
+				<div class="detail">
+					<span><span class="fuhao">￥</span>99</span>
+					<a>查看详情</a>
+				</div>
+			</div>
+		</li> -->
+		<foreach name="rob_next" item="v">
+			<li class="clearfix">
+				<img class="left" src="__ROOT__/Uploads/{$v.pro_images}" alt="">
+				<div class="right">
+					<div class="title">{$v.name}</div>
+					<div class="subhead">{$v.pro_describe}</div>
+					<div class="detail">
+						<span><span class="fuhao">￥</span>99</span>
+						<a href="__MODULE__/Product/rob/id/{$v.id}">查看详情</a>
+					</div>
+				</div>
+			</li>
+		</foreach>
+	</ul>
+	<ul class="footer clearfix">
+		<li ><a href="" style="color:#feb100"><img src="__IMG__qy_2x.png" alt="" style="margin:2px auto 0px">首页</a></li>
+		<li><a href="__MODULE__/News/index"><img src="__IMG__/shouye_2.png" alt="">播报</a></li>
+		<li><a href="__MODULE__/Order/pre_list"><img src="__IMG__/yyy_2x.png" alt="">预约</a></li>
+		<li><a href="__MODULE__/User/index"><img src="__IMG__/shouye_4.png" alt="" style="margin:2px auto 0px">我的</a></li>
+	</ul>
+</div>
+<script src="__JS__/swiper.min.js"></script>
+<script> 
+
+  var mySwiper = new Swiper ('.swiper-container', {
+   // direction: 'vertical',
+    loop: true,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    autoplay:3000,//隔多久换
+    speed:800
+    // 如果需要前进后退按钮
+/*     nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev', */
+    // 如果需要滚动条
+   // scrollbar: '.swiper-scrollbar',
+  })  
+  var swiper = new Swiper('.index_qg', {
+      pagination: '.swiper-pagination',
+      effect: 'coverflow',
+      autoplay:5000,//隔多久换
+      speed:800,
+      loop: true,   //是否循环
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflow: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows : true
+      }
+  });
+  </script>
+</body>
+</html>

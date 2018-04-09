@@ -1,0 +1,223 @@
+<extend name="Common:base" />
+<block name="header">
+<meta charset="utf-8">
+<title>聊天</title>	
+<link href="__PUBLIC__/message/message.css" type="text/css" rel="stylesheet"/>
+<style>
+	.message_wrap{width:760px;}
+	#message{height:426px;}
+    .left_side .other li{border-top: 1px solid #999;}
+	.left_side .other .other_meg .other_name{height:50px;line-height:50px;}
+.left_side .search_user input{background:#f1f1f1}
+.left_side .other{height:calc(100% - 68px)}
+#message .me .meg_content{color:#fff}
+</style>
+<script type="text/javascript" src="__PUBLIC__/message/jquery1.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/message/jquery.qqFace.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.biaoq').qqFace({
+		id : 'facebox', 
+		assign:'saytext', 
+		path:'__PUBLIC__/message/arclist/'	//表情存放的路径
+	});
+});
+
+//查看结果
+function replace_em(str){
+/* 	str = str.replace(/\</g,'&lt;');
+	str = str.replace(/\>/g,'&gt;');
+	str = str.replace(/\n/g,'<br/>'); */
+	str = str.replace(/\[em_([0-9]*)\]/g,'<img src="__PUBLIC__/message/arclist/$1.gif" border="0" />');
+	return str;
+}
+</script>
+
+
+<script type="text/javascript" >
+var URL='__URL__'
+var STATICS = '__STATICS__';
+var MODULE = '__MODULE__'
+	var session="{$Think.session.lawyerLogin.id}"
+		var meid = 'l_{$Think.session.lawyerLogin.id}'
+</script>
+<script type="text/javascript" src="__PUBLIC__/message/message.js"></script>
+<script>
+function addReadUser(v_nickname,v_headimgurl,v_m_from){ 
+	var current = '';
+	var src_head = 'src="'+STATICS+'images/other_header.png"';
+	var nickname='匿名用户';
+	if(v_nickname){
+		nickname = v_nickname
+	}
+	if(v_headimgurl){
+		src_head = 'src="'+v_headimgurl+'"';
+	}
+	if(v_m_from == $('input[name="m_to"]').val()){
+		current = 'style="background:#999"'
+	}
+	var str = '<li '+current+'><div class="other_header" onclick="click_user(this)"  uid="'+v_m_from+'">\
+		<img '+src_head+' width="35px" height="35px" alt="">\
+		</div>\
+		<div class="other_meg" >\
+			<dl class="other_name" onclick="click_user(this)" uid="'+v_m_from+'">'+nickname+'</dl>\
+		</div></li>';
+		
+	
+	
+	$('.other_header[uid="'+v_m_from+'"]').parents('li').remove()
+	//alert(readUser)
+	$('.left_side .other').prepend(str);
+}
+</script>
+
+</block>
+<block name="main">
+<div class="net_error">网络异常！</div>
+<div class="message_wrap clearfix">
+<div class="left_side" >
+	<ul class="self">
+		<!-- <li class="header_img">
+		<img src="__PUBLIC__/message/images/self_header.png" height="42px" width="42px" alt="">
+		</li> -->
+		<li style="width:150px;" class="lawyer_name"><span class="list_title">客户列表 </span>
+		<if condition="$my.online eq 1">
+			<a style="color:#0f0" href="__URL__/online/s/2">【在线中】</a>
+		<else/>
+			<a style="color:#f00" href="__URL__/online/s/1">【已下线】</a>
+		</if>
+		<li class="message_shezhi"><a class="img_shezhi" href=""></a></li>
+	</ul>
+<!-- 	<form class="search_user"><input id="search_user" type="text" autocomplete="off" placeholder="搜索联系人"/><div class="search_user_zoom"></div></form>
+ -->	<ul class="other clearfix">
+<!-- 		<li>
+			<div class="other_header">
+				<img src="__PUBLIC__/message/images/other_header.png" width="35px" height="35px" alt="">
+			</div>
+			<div class="other_meg">
+				<dl class="other_name">张三年</dl>
+				<div>
+				<dt class="other_update"></dt><dt class="other_bz">备注一个</dt>
+				</div>
+			</div>
+		</li> -->
+		<foreach name="user" item="v" >
+		<li>
+			<div class="other_header" onclick="click_user(this)"  uid="u_{$v.id}">
+				<if condition="$v.headimgurl neq ''">
+				<img src="{$v.headimgurl}" width="35px" height="35px" alt="">
+				<else/>
+				<img src="__PUBLIC__/message/images/other_header.png" width="35px" height="35px" alt="">
+				</if>
+			</div>
+			<div class="other_meg" >
+				<dl class="other_name" onclick="click_user(this)" uid="u_{$v.id}">
+				<if condition="$v.nickname neq ''">{$v.nickname}
+				<else/>匿名用户
+				</if>
+				</dl>
+			</div>
+		</li>
+		</foreach>
+	</ul>
+
+	
+</div>
+<div class="center_side" >
+<!-- <h2 class="center_header">
+	<ul>
+		<li class="qiehuan_bz">咨询记录备注</li>
+		<li class="qiehuan_dh current">对话</li>
+	</ul>
+</h2> -->
+<div class="meg_wite">请稍后...</div>
+
+<ul style="" id="message">
+
+	<!-- 对话内容 -->
+<!-- 	<li class="meg_time">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016/12/17&nbsp;&nbsp;08:61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</li>
+	<li class="beizhu clearfix">asasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfdfasdf</li>
+	<li class="meg_time">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016/12/17&nbsp;&nbsp;08:61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</li>
+	<li class="me clearfix"><div class="meg_header"><img src="__STATICS__/images/other_header.png" width="35px" height="35px" alt=""/></div><div class="meg_content">asdfasdf</div></li>
+	<li class="meg_time">//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016/12/17&nbsp;&nbsp;08:61&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//</li>
+	<li class="me clearfix"><div class="meg_header"><img src="__STATICS__/images/other_header.png" width="35px" height="35px" alt=""/></div><div class="meg_content">asdfasdf</div></li>
+ --></ul>
+<div class="shouc_wrap">
+<div id="shouc_meg"></div>
+	<table >
+		<tr>
+			<th>类别：</th>
+			<td>
+				<select name="type">
+					<option value='0'>--请选择--</option>
+					<foreach name="type" item="v">
+						<option value="{$v.id}">{$v.type_name}</option>
+					</foreach>	
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<th>添加标题：</th>
+			<td><input type="text"/></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="shouc_footer"><div class="shouc_qr">收 藏</div><div class="shouc_qx">取消</div></td>
+		</tr>
+	</table>
+</div>
+<div class="send_wrap" >
+	<div class="grey clearfix">
+		<!-- <div class="biaoq"></div>
+		<div class="shouc"></div> -->
+	</div>
+	<form id="send" action="__URL__/send" method="post">
+		<input autocomplete="off" type="hidden" value="" name="m_to" />
+		<textarea id="saytext" autocomplete="off" name="content" placeholder="按 Enter 发送"></textarea>
+		<input class="submit"  type="submit" value="发送"/>
+	</form>
+</div>
+</div>
+<div class="right_side" style="display:none">
+	<div class="search_ph"><input class="ph_text" type="text" autocomplete="off" placeholder="常见问题搜索"/><input class="ph_button" type="button" value="搜索"></div>
+	<div class="ph_wrap"><div class="phrase" id="se_ph"></div></div>
+	<div class="ph_wrap">
+		<div class="wenben">常见问题：</div>
+		
+		<div class="phrase">
+		<dl id="shouc_me" class="shouc_me">我的收藏</dl>
+		<foreach name="type" item="v">
+			
+			<dl typeid="{$v.id}">{$v.type_name}</dl>
+		</foreach>
+<!-- 			<dl>问候语</dl>
+			<dl>刑事</dl>
+			<dl class="ph_dl_current">民事</dl>
+			<dt>
+				<dd class="ph_title">适用居住的情形有哪些？</dd>
+				<dd class="ph_content">根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定</dd>
+				<dd class="ph_caina">325次采纳</dd>
+			</dt>
+			<dt>
+				<dd class="ph_title">适用居住的情形有哪些？</dd>
+				<dd class="ph_content">根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定</dd>
+				<dd class="ph_caina">325次采纳</dd>
+			</dt>
+			<dt>
+				<dd class="ph_title">适用居住的情形有哪些？</dd>
+				<dd class="ph_content">根据法律规定根据法律规定根据法律规定根据法律规定根据法律根据法律规定根据法律规定根据法律规定根据法律规定根据法律根据法律规定根据法律规定根据法律规定根据法律规定根据法律根据法律规定根据法律规定根据法律规定根据法律规定根据法律根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定根据法律规定</dd>
+				<dd class="ph_caina">325次采纳</dd>
+			</dt> -->
+		</div>
+	</div>
+</div>
+
+</div>
+  
+
+
+</block>	

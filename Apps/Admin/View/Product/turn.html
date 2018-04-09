@@ -1,0 +1,127 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.product-turn,.product').addClass('active');
+})
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:40%;}
+.cate_fid select{width:20% !important;}
+#detail th{width:20%;}
+.images_unit{float:left;display:table-cell !important;width:200px;height:150px;position:relative;margin:3px;background:#fff;box-shadow: 0px 0px 5px #888888; vertical-align:middle;text-align:center;}
+.images_unit img,.images_unit .images_but{max-width:200px;max-height:150px;vertical-align:middle;}
+.images_unit>.close{background:#fff url(__IMG__close_16.png) no-repeat center center;width:20px;height:20px;position:absolute;top:0;right:0;border-radius:50%;}
+.images_unit .num_wrap{background:#fff;border-top:1px solid #eee;position:absolute;bottom:0;width:100%;height:25px;line-height:25px;font-size:12px;}
+.images_unit .num_wrap input{height:100%;width:150px};
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		商品管理
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+
+<form onsubmit="return form_submit(this)" method="post" action="__URL__/turnsave">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >首页轮播展示
+		<input type="hidden" name="id" value="{$id}">
+		</th>
+	</tr>
+	
+	<tr>
+		<th>首页轮播图 375:300</th>
+		<td class="clearfix">
+		<foreach name="img_list" item="v">
+			<div class="images_unit">
+				<div class="close" title="删除图片" onclick="del_images(this,'{$v.img_name}','{$v.id}')"></div>
+				<input type="hidden" name="img_id[]" value="{$v.id}" />
+				<input type="hidden" name="img_name[]" value="{$v.img_name}" />
+				<img id="images_show" src="__ROOT__/Uploads/{$v.img_name}">
+				<div class="num_wrap">网址：<input type="text" name="pro_id[]" value="{$v.pro_id}"/></div>
+			</div>
+		</foreach>
+
+			<input class="images_but" id="images_but" type="button" value="上传图片" />
+		</td>
+	</tr>
+
+	
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		
+		</th>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+</form>
+
+
+</block>
+<block name="footer">
+
+<script>
+
+
+$(function(){
+	h_upload('wx_image_but','__MODULE__/Upload/Upload','callback_wx_image');
+	h_upload('images_but','__MODULE__/Upload/Upload','callback_images');
+})
+var oldImgName = '{$data.pro_images}';
+function callback_wx_image(imgdata){
+	if(oldImgName != ''){
+		$.ajax({
+			'url':'__MODULE__/Upload/delImg',
+			'type':'post',
+			'data':{'imgname':oldImgName}
+		});
+	}
+	oldImgName = imgdata;
+	$('#wx_image_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
+	$('input[name="wx_image"]').val(imgdata);
+}
+
+
+function callback_images(imgdata){
+	var wrap = '<div class="images_unit">\
+	<div class="close" title="删除图片" onclick="del_images(this,\''+imgdata+'\')"></div>\
+	<input type="hidden" name="img_name[]" value="'+imgdata+'" />\
+	<img id="images_show" src="__ROOT__/Uploads/'+imgdata+'">\
+	<div class="num_wrap">网址：<input type="text" name="pro_id[]" /></div>\
+	</div>';
+	
+	$('#images_but').before(wrap);
+	
+}
+function del_images(t,imgName,id){
+	if(!confirm('确定删除吗？'))return false;
+	if(id){
+		$.ajax({'url':'__URL__/del_tb_img/id/'+id})
+	}
+	$.ajax({
+		'url':'__MODULE__/Upload/delImg',
+		'type':'post',
+		'data':{'imgname':imgName},
+		'success':function(re){
+			$(t).parents('.images_unit').remove()
+		}
+	});
+}
+
+</script>
+</block>

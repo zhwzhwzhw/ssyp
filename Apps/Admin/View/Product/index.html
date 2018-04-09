@@ -1,0 +1,249 @@
+<extend name="Common/base"/>
+<block name="header">
+<link type="text/css" rel="stylesheet" href="__STATICS__css/calendar-pro.css">
+<script type="text/javascript" src="__STATICS__js/calendar-pro.js"></script>
+<script>
+$(function(){
+	$('.product-index,.product').addClass('active');
+})
+
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		商品管理
+		<small>商品列表</small>
+	</h1>
+</section>
+</block>
+<block name="main">
+<form style="margin-bottom: 10px">
+<div id="where" class="clearfix" style="display: inline-block;width:55%">
+
+	<dl>
+		<dt>发布日期：</dt>
+		<dd>
+			<input id="pub_time_1" type="text" name="pub_time_start" value="{$start}" style="padding:3px"> 至
+			<input id="pub_time_2" type="text" name="pub_time_end" value="{$end}" style="padding:3px">
+			<!--<input type="hidden" name="p|pub_time[e]" value="between">
+			<input type="hidden" name="p|pub_time[call]" value="strtotime">-->
+		</dd>
+	</dl>
+	<dl>
+		<dt>供货商：</dt>
+		<dd>
+			<input type="text" name="supply" value="{$supply}" placeholder="模糊搜索" style="padding:3px">
+			<!--<input type="hidden" name="supply" value="like">-->
+		</dd>
+	</dl><br/>
+	<!--<dl>
+		<dt>下单日期：</dt>
+		<dd>
+			<input id="pub_time_1_o" type="text" name="start" value="{$Think.get.start}"> 至
+			<input id="pub_time_2_o" type="text" name="end" value="{$Think.get.end}">
+		</dd>
+	</dl>-->
+</div>
+<input class="where_submit" type="submit" value="搜索" style="display: inline-block;">
+</form>
+<table id="detail" class="list">
+	<tr>
+		<th colspan="7">
+			当前条件下  已支付的销售量{$z_else}。 &nbsp;&nbsp;&nbsp;未支付的销售量{$z_1}。&nbsp;&nbsp;&nbsp;总库存量{$z_number}
+		</th>
+	</tr>
+	<tr>
+		<!-- <th></th> -->
+		<th>产品信息</th>
+		<th>销售信息</th>
+		<th>规格</th>
+		<th>编辑信息</th>
+		<th>产品价格</th>
+		<th>状态信息</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="list" item="v">
+	<tr>
+		<td>
+			（id：{$v.id}）（编号：{$v.symbol}）<br/>{$v.name}<br/>
+			所属分类：{$v.category_str}
+		</td>
+		<td>
+			已支付总件数：{$v.sell_pronum_else} <br/>
+			未支付总件数：{$v.sell_pronum_1}
+		</td>
+		<td>
+			<foreach name="v.norms" item="nv">
+				<div>{$nv.norms}(库存：{$nv.number_norms})</div>
+			</foreach>
+		</td>
+		<td>
+			发布时间：{$v.pub_time|date='Y-m-d H:i:s',###}<br/>
+			上次修改时间：<if condition="$v.edi_time gt 0">{$v.edi_time|date='Y-m-d H:i:s',###}<else/>未修改</if><br/>
+		</td>
+		<td>
+			销售价格：{$v.pro_price}<br/>
+			特惠价格：{$v.discount_price}<br/>
+			成本价格：{$v.cost_price}<br/>
+		</td>
+		<td>
+			库存量：{$v.pro_number}<br/>
+			显示状态：<if condition="$v.status_str eq ''">无<else/>{$v.status_str}</if><br/>
+			排序值(0表示下架):{$v.ordernum}<br/>
+			是否特惠:
+			<if condition="$v.is_discount eq 1">
+				<a style="color:red" href="__URL__/changeGet/tb/product/id/{$v.id}/is_discount/2">当前特惠</a>
+			<elseif condition="$v.is_discount eq 2"/>
+				<a href="__URL__/changeGet/tb/product/id/{$v.id}/is_discount/1">当前正常</a>
+			</if><br/>
+		</td>
+		<td>
+			
+			<a href="__URL__/update/id/{$v.id}">编辑</a><br>
+			<a onclick="productDel(this) " data-id="{$v.id}">删除</a><br>
+			<a href="__URL__/norms/id/{$v.id}">产品规格</a>
+		</td>
+	</tr>
+	</foreach>
+</table>
+<div id="page"> {$page}</div>
+<script>
+var pub_start = {
+  elem: '#pub_time_1',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00', //设定最小日期为当前日期
+  max: '2099-06-16 23:59:59', //最大日期
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_end.min = datas; //开始日选好后，重置结束日的最小日期
+	  pub_end.start = datas //将结束日的初始值设定为开始日
+  }
+};
+var pub_end = {
+  elem: '#pub_time_2',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00',
+  max: '2099-06-16 23:59:59',
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_start.max = datas; //结束日选好后，重置开始日的最大日期
+  }
+};
+laydate(pub_start);
+laydate(pub_end);
+var pub_start_o = {
+  elem: '#pub_time_1_o',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00', //设定最小日期为当前日期
+  max: '2099-06-16 23:59:59', //最大日期
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_end_o.min = datas; //开始日选好后，重置结束日的最小日期
+	  pub_end_o.start = datas //将结束日的初始值设定为开始日
+  }
+};
+var pub_end_o = {
+  elem: '#pub_time_2_o',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00',
+  max: '2099-06-16 23:59:59',
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_start_o.max = datas; //结束日选好后，重置开始日的最大日期
+  }
+};
+
+laydate(pub_start_o);
+laydate(pub_end_o);
+</script>
+</block>
+<block name="footer">
+<script>
+var product_id;
+var use_start;
+var use_end;
+function data_num(id,start,end){
+	product_id = id;
+	use_start = start;
+	use_end = end;
+	layer.open({
+	  type: 1,
+	  skin: 'layui-layer-rim', //加上边框
+	  area: ['512px', '388px'], //宽高
+	  content: '<div  class="calendar-box demo-box"></div>'
+	});
+	$.ajax({
+		'url':'__URL__/dateJson',
+		'data':{'id':id},
+		'dataType':'json',
+		'success':function(re){
+			$('.calendar-box').calendar({
+				ele : '.demo-box', //依附
+				title : '选择预约时间',
+				beginDate : start,
+				endDate : end,
+				data : re
+			});
+		}
+	})
+}
+
+//点击日历 填写数字
+function click_date_ext(){
+	var data = $('.calendar-box').calendarGetActive();
+	layer.prompt({title: '输 '+data.date+' 的预定限制数量', formType: 3}, function(number, index){
+	  layer.close(index);
+	  $.ajax({
+		'url':'__URL__/dataNum',
+		'type':'post',
+		'data':{'id':product_id,'date':data.date,'num':number},
+		'success':function(re){
+			if(re == '1'){
+				layer.closeAll();
+				data_num(product_id,use_start,use_end);
+			}
+		}
+	  })
+	});
+	//alert(data.date+" "+data.money);
+}
+//商品删除
+function productDel(obj){
+    var id=$(obj).data('id');
+    layer.confirm('删除后不能恢复，确认删除吗？', {
+        btn: ['确定','取消'] //按钮
+    }, function(){
+        $.ajax({
+                'url':'__URL__/del',
+                'type':'get',
+                'data':{'id':id},
+                'success':function(re){
+                    if(re.ec == 200){
+                        layer.msg('', {icon: 1});
+                        /*layer.closeAll();
+                        data_num(product_id,use_start,use_end);*/
+                    }else{
+
+					}
+                }
+            });
+
+    }, function(){
+        layer.msg('也可以这样', {
+            time: 20000, //20s后自动关闭
+            btn: ['明白了', '知道了']
+        });
+    });
+}
+</script>
+</block>
+
+
+
+
+

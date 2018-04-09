@@ -1,0 +1,19 @@
+﻿<foreach name="list_2" item="v">
+	<li class="rob_wrap">
+		<a href="__URL__/rob/id/{$v.id}">
+		<div style="background:url(__ROOT__/Uploads/{$v.pro_images})" class="thumb">
+		<div class="kuc">库存 {$v.pro_number} &nbsp;&nbsp;&nbsp;开抢时间：{$v.pre_start|date='Y/m/d H:i',###}</div>
+		<div class="sell_status" style="height:30px;"></div>
+		
+		</div>
+		<div class="msg">
+			<div class="title">{$v.name}</div>
+			<div class="subhead">{$v.pro_describe}</div> 
+			<ul class="msg_num" style="text-align:center;">
+				<li class="money"><span class="fuhao">￥</span><span class="money_num">{$v.pro_price}</span></li>
+				<li class="time">倒计时{$v.pre_end|timeDown=###}</li>
+			</ul>
+		</div>
+		</a>
+	</li>
+</foreach>

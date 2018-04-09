@@ -1,0 +1,128 @@
+<extend name="Common/base"/>
+<block name="header">
+<meta charset="UTF-8">
+<style>
+#detail th{width:30%;}
+</style>
+<script>
+$(function(){
+	$('.sys,.sys-index').addClass('active')
+})
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		个人信息修改
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+
+<form method="post" action="__URL__/re_pwd" onsubmit="return form_submit(this)">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >密码修改 (不修改密码，不用填写以下内容)
+		
+		</th>
+	</tr>
+ 	<tr >
+		<th>原密码</th>
+		<td>
+			<input type="password" name="old_password" placeholder="原密码" />
+		</td>
+	</tr>
+	<tr >
+		<th>新密码</th>
+		<td>
+			<input type="password" name="password"  placeholder="新密码" />
+		</td>
+	</tr>
+	<tr >
+		<th>重复新密码</th>
+		<td>
+			<input type="password" name="re_password"  placeholder="重新输入密码" />
+		</td>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+</form>
+
+<br/>
+
+<form method="post" action="__URL__/re_name" onsubmit="return form_submit(this)">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >基本信息
+		<input type="hidden" name="re_url" value="self">
+		</th>
+	</tr>
+	<tr>
+		<th>真实姓名</th>
+		<td>
+			<input type="text" name="realname" placeholder="真实姓名" value="{$data.realname}"/>
+		</td>
+	</tr>
+<!-- 	<tr>
+		<th>联系电话</th>
+		<td>
+			<input type="text" name="phone"  placeholder="联系电话" value="{$data.phone}" />
+
+		</td>
+	</tr> -->
+
+<!--	<tr>
+		<th colspan="2" class="det_title" >密码修改 (不修改密码，不用填写以下内容)
+		</th>
+	</tr>
+ 	<tr >
+		<th>原密码</th>
+		<td>
+			<input type="password" name="old_password" placeholder="原密码" />
+		</td>
+	</tr>
+	<tr >
+		<th>新密码</th>
+		<td>
+			<input type="password" name="password"  placeholder="新密码" />
+		</td>
+	</tr>
+	<tr >
+		<th>重复新密码</th>
+		<td>
+			<input type="password" name="re_password"  placeholder="重新输入密码" />
+		</td>
+	</tr> -->
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+</form>
+
+
+</block>
+<block name="footer">
+<script type="text/javascript">
+$("#user_area").click(function (e) {
+	SelCity(this,e);
+});
+function dx_send(val){
+	var phone = $(val).prev().val();
+	alert(phone);
+	$.ajax({
+		'url':'__URL__/dxSend/phone/'+phone
+	})
+	
+}
+</script>
+
+</block>

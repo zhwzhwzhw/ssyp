@@ -1,0 +1,48 @@
+<extend name="Common:base" />
+<block name="header">
+<meta charset="utf-8">
+<title>角色管理</title>	
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		角色管理
+		<small>角色列表</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+<block name="main">
+<br>
+<a href="__MODULE__/Role/add/role_type/1">创建后台角色</a>
+<br>
+<table id="detail">
+	<tr>
+		<th>角色名</th>
+		<th>权限列表</th>
+		<th>操作</th>
+	</tr>
+<foreach name="role" item="v">
+	<tr>
+		<td>{$v.role_name}</td>
+		<td>
+		<ul>
+			<foreach name="v.power" item="pid">
+				<foreach name="power" item="pv">
+					<eq name="pid" value="$pv.id">
+						<li>{$pv.power_name}：{$pv.module}/{$pv.controller}/{$pv.action}</li>
+					</eq>
+				</foreach>
+			</foreach>
+		</ul>
+		</td>
+		<td>
+			<a href="__URL__/add/role_type/{$v.role_type}/id/{$v.id}">编辑</a>
+		</td>
+	</tr>
+</foreach>
+</table>
+</block>

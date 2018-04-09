@@ -1,0 +1,34 @@
+[ 2017-10-27T17:42:16+08:00 ] 127.0.0.1 /ssyp/index.php/Home/Wx/qrcode?user_id=admin_1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: code E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 16 行.
+NOTIC: [2] file_get_contents(): Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 31 行.
+NOTIC: [2] file_get_contents(https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=wx1b496a2ecc70a7dd&amp;secret=11d6933541e22f836c159d4adfe162ff): failed to open stream: No such file or directory E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 31 行.
+NOTIC: [8] Trying to get property of non-object E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 33 行.
+NOTIC: [8] Undefined property: stdClass::$ticket E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 11 行.
+NOTIC: [2] imagecreatefromjpeg(): Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 13 行.
+NOTIC: [2] imagecreatefromjpeg(https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=): failed to open stream: No such file or directory E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 13 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, boolean given E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 14 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, boolean given E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 15 行.
+
+[ 2017-10-27T17:42:32+08:00 ] 127.0.0.1 /ssyp/index.php/Home/Wx/qrcode?user_id=admin_1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: code E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 16 行.
+NOTIC: [2] file_get_contents(): Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 31 行.
+NOTIC: [2] file_get_contents(https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=wx1b496a2ecc70a7dd&amp;secret=11d6933541e22f836c159d4adfe162ff): failed to open stream: No such file or directory E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 31 行.
+NOTIC: [8] Trying to get property of non-object E:\www\ssyp\ThinkPHP\Library\Org\Wechat\Base.class.php 第 33 行.
+NOTIC: [8] Undefined property: stdClass::$ticket E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 11 行.
+NOTIC: [2] imagecreatefromjpeg(): Unable to find the wrapper &quot;https&quot; - did you forget to enable it when you configured PHP? E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 13 行.
+NOTIC: [2] imagecreatefromjpeg(https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=): failed to open stream: No such file or directory E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 13 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, boolean given E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 14 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, boolean given E:\www\ssyp\ThinkPHP\Library\Org\Wechat\QrCode.class.php 第 15 行.
+

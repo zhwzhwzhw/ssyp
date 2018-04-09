@@ -1,0 +1,63 @@
+/* reset */
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,table,caption,th,td,form,fieldset,legend,input,button,textarea{
+	margin:0;
+	padding:0;
+}
+body{
+	background:#fff;
+	font:14px/22px 微软雅黑;
+}
+::-webkit-input-placeholder{color:#b3b3b3;font-size:14px;}
+		:-moz-input-placeholder{color:#b3b3b3;font-size:14px;}
+		::-moz-input-placeholder{color:#b3b3b3;font-size:14px;}
+		:-ms-input-placeholder{color:#b3b3b3;font-size:14px;}
+:focus{
+	outline:none;
+}
+input:focus{                   
+	outline:0;/*去掉默认谷歌点击input边框显示蓝色  */
+            }
+ul,ol{
+	list-style:none;
+}
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+caption,th{
+	text-align:left;
+	font-weight:normal;
+}
+img,iframe{
+	border:0; 
+}
+i,cite,em,var,address{
+	font-style:normal;
+}
+
+i:hover{color:#00a0e9;}
+h1,h2,h3,h4,h5,h6,small{
+	//font-size:100%;
+}
+button{
+	cursor:pointer; display:block;
+}
+h1,h2,h3,h4,h5,h6,em,strong,b{
+/*	font-weight:bold;*/
+}
+del,ins,u,s,a{
+	text-decoration:none;
+}
+a,a:hover{
+	color:#333;
+}
+.clearfix:after{
+	display:block;
+	height:0;
+	content:"";
+	visibility:hidden;
+	clear:both;
+}
+.clearfix{
+	zoom:1;
+}

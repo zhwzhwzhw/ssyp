@@ -1,0 +1,124 @@
+<extend name="Common:base" />
+
+
+<block name="header">
+<meta charset="utf-8">
+<script>
+$(function(){
+	//模块找控制器
+	$.ajax({
+		'url':'__MODULE__/Power/getControllerName',
+		'type':'post',
+		'data':{'module':'Admin'},
+		'dataType':'json',
+		'success':function(re){
+			$('#action').empty()
+			if(re){
+				$('[name="controller"]').html('<option value="">--选择控制器--</option>');
+				$.each(re,function(i,v){
+					$('[name="controller"]').append('<option value="'+v+'">'+v+'</option>');
+				});
+			}else{
+				$('[name="controller"]').html('<option value="">--选择控制器--</option>');
+			}
+		}
+	});
+	
+	
+	//控制器找方法
+	$('[name="controller"]').change(function(){
+		$.ajax({
+			'url':'__MODULE__/Power/getActionName',
+			'type':'post',
+			'data':{'controller':$('[name="controller"]').val(),'module':'Admin'},
+			'dataType':'json',
+			'success':function(re){
+				if(re){
+					$('#action').html('<li><input onchange="checkAll(this)" type="checkbox">全选</li>');
+					$.each(re,function(i,v){
+						$('#action').append('<li><input type="checkbox" name="action[]" value="'+v.action+'">'+v.action+'('+v.name+')'+'</li>');
+					});
+				}else{
+					$('#action').empty()
+				}
+			}
+		});
+	});
+	
+	$('.addPower').submit(function(){
+		$controller = $('[name="controller"]').val();
+		$action = $('[name="action[]"]').is(':checked');
+		if(!$controller){
+			alert('请选择控制器')
+			return false;
+		}else if(!$action){
+			alert('请选择方法')
+			return false;
+		}
+	});
+});
+//全选
+function checkAll(t){
+	if($(t).is(':checked')){
+		$("input[type='checkbox']").prop("checked","checked");
+	}else{
+		$("input[type='checkbox']").removeProp("checked");
+	}
+}
+
+
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:20%;}
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		订单管理
+		<small>订单详情</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+<block name="main">
+<form class="addPower" action="__MODULE__/Power/save" method="post">
+<input type="hidden" name="module" value="Admin"/>
+<table id="detail">
+	<tr>
+		<th>控制器选择</th>
+		<td>
+			<select name="controller">
+				<option value="">--选择控制器--</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th>方法选择</th>
+		<td>
+			<ul id="action">
+
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<th>权限名称</th>
+		<td>
+			<input type="text" name="power_name"/>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+
+
+
+<input type="submit" value="提交"/>
+</form>
+
+</block>

@@ -1,0 +1,50 @@
+<extend name="Common/base"/>
+<block name="header">
+<link type="text/css" rel="stylesheet" href="__STATICS__css/calendar-pro.css">
+<script type="text/javascript" src="__STATICS__js/calendar-pro.js"></script>
+<script>
+$(function(){
+	$('.product-index,.product').addClass('active');
+})
+
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		产品管理
+		<small>产品列表</small>
+	</h1> 
+					
+</section>
+</block>
+<block name="main">
+<table id="detail" class="list">
+	<tr>
+		<th>问题</th>
+		<th>答案</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="list" item="v">
+	<tr>
+		<td>
+			{$v.problem}
+		</td>
+		<td>
+			{$v.answer}
+		</td>
+		
+		<td>
+			<a href="__MODULE__/Phrase/update/id/{$v.id}">编辑</a><br>
+		</td>
+	</tr>
+	</foreach>
+</table>
+<div id="page"> {$page}</div>
+
+</block>
+
+
+
+
+

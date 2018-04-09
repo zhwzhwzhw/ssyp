@@ -1,0 +1,82 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		会员信息
+		<small>会员列表</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+	<form style="margin-bottom: 10px">
+		<div id="where" class="clearfix" style="display: inline-block;width:30%">
+			<dl>
+				<dt style="margin-right: 14px;" >昵称：</dt>
+				<dd>
+					<input type="text" name="nickname"  value="{$nickname}" style="width: 100px;margin-right: 14px;padding:3px"  placeholder="">
+					<!--<input type="hidden" name="id" value="eq">-->
+				</dd>
+			</dl>
+			<dl>
+				<dt>电话：</dt>
+				<dd>
+					<input type="text" name="phone"  value="{$phone}" style="width: 100px;padding:3px" placeholder="">
+				</dd>
+			</dl>
+			<br/>
+		</div>
+		<input class="where_submit" type="submit" value="搜索" style="display: inline-block;">
+	</form>
+<table id="detail" class="list"><tr>
+	<th colspan="7">
+		当前用户总积分：{$score}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		待审核的提现积分： {$cash} 
+	</th>
+	<tr>
+		<th>用户id</th>
+		<th>微信头像</th>
+		<th>昵称</th>
+		<!--<th>姓名</th>-->
+		<th>电话</th>
+		<!--<th>生日</th>-->
+		
+		<th>积分</th>
+		<th>操作</th>
+		
+	</tr>
+	<foreach name="list" item="vo">
+		<tr>
+			<td>{$vo.id}</td>
+			<td><img src="{$vo.headimgurl}" alt="" width="46px"></td>
+			<td><if condition="$vo.nickname eq ''">未获取<else/>{$vo.nickname}</if></td>
+			<!--<td>{$vo.realname}</td>-->
+			<td>{$vo.phone}</td>
+			<!--<td>{$vo.birthday}</td>-->
+			<td>{$vo.score}</td>
+			<td><a href="__APP__/admin/admin/add?id={$vo.id}&&nickName={$vo.nickname}">设置为管理员</a></td>
+		</tr>
+	</foreach>
+</table>
+<div id="page">{$page}</div>
+</block>
+<block name="footer">
+<script>
+function show_ticket(name,id){
+	layer.alert('<img style="margin:auto;display: block;" src="__APP__/Home/Public/ticket?size=6&host=1&content={:U(\'Home/Public/wxBind\')}?id='+id+'">',{
+	  title:name+' 的微信绑定二维码',
+	  skin: 'layer-ext-moon',
+	  btn: 0	  
+	})
+}
+</script>
+</block>

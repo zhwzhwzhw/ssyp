@@ -1,0 +1,255 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.orders,.orders-index').addClass('active');
+})
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:20%;}
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		订单管理
+		<small>订单详情</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >订单信息
+		</th>
+	</tr>
+	<tr>
+		<th>订单id</th>
+		<td>
+			{$data.id}
+		</td>
+	</tr>
+	<tr>
+		<th>订单编号</th>
+		<td>
+			{$data.bh}
+		</td>
+	</tr>
+	<tr>
+		<th>下单时间</th>
+		<td>
+			{$data.pub_time|date="Y-m-d H:i:s",###}
+		</td>
+	</tr>
+	<tr>
+		<th>订单状态</th>
+		<td>
+			<if condition="$data.status eq 1">
+				已下单 待支付
+			<elseif condition="$data.status eq 2"/>
+				已支付 待发货
+			<elseif condition="$data.status eq 3"/>
+				已发货 待确认
+			<elseif condition="$data.status eq 9"/>
+				已完成
+			</if>				
+		</td>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >金额信息
+		</th>
+	</tr>
+	<tr>
+		<th>订单金额</th>
+		<td>
+			{$data['ord_money']+$data['score_money']}
+		</td>
+	</tr>
+	<tr>
+		<th>订单实付</th>
+		<td>
+			订单金额{$data.ord_money} + 邮费{$data.mail_price} = {$data['ord_money']+$data['mail_price']}
+		</td>
+	</tr>
+	
+	<tr>
+		<th>积分抵扣</th>
+		<td>
+			{$data.score_money}
+		</td>
+	</tr>
+	<tr>
+		<th>分销提成</th>
+		<td>
+			{$data.sell}
+		</td>
+	</tr>
+	<tr>
+		<th>实付金额</th>
+		<td>
+			<if condition="$pay['money'] gt 0">
+				{$pay['money']/100}
+			<else/>未支付
+			</if>
+		</td>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >邮寄信息
+		</th>
+	</tr>
+	<tr>
+		<th>快递单号</th>
+		<td>
+			{$data.mail_code}
+		</td>
+	</tr>
+	<tr>
+		<th>姓名</th>
+		<td>
+			{$data.custom_name}
+		</td>
+	</tr>
+	<tr>
+		<th>电话</th>
+		<td>
+			{$data.custom_phone}
+		</td>
+	</tr>
+	<tr>
+		<th>收货地址</th>
+		<td>
+			{$data.address}
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >产品信息
+		</th>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<table class="in_tb">
+				<tr>
+					<td class="in_tb_th" >图片</td>
+					<td class="in_tb_th" style="width:30%">产品名称</td>
+					<td class="in_tb_th">规格</td>
+					<td class="in_tb_th">下单价格</td>
+					<td class="in_tb_th">购买数量</td>
+				</tr>
+				<foreach name="list" item="pv">
+				<tr>
+					<td><img src="__ROOT__/Uploads/{$pv.wx_image}" style="max-height:200px;max-width:200px;"></td>
+					<td>{$pv.name}</td>
+					<td>{$pv.norms}</td>
+					<td>{$pv.ord_price}</td>
+					<td>{$pv.ord_number}</td>
+					
+				</tr>
+				</foreach>
+			</table>
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2" class="th_br">
+		
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >订单处理流程
+		</th>
+	</tr>
+	<tr>
+		<th >预订环节</th>
+		<td>
+			<ul class="ord_process clearfix">
+				<li class="pro">
+					<span class="title">下单</span><br>
+					{$data.pub_time|date="Y-m-d H:i",###}
+				</li>
+				<if condition ="$data.pay_time gt 0">
+					<li class="dmt"> </li>
+					<li class="pro">
+						<span class="title">支付</span><br>
+						{$pay['time_end']|date_wx=###}<br/>
+						￥ {$pay['money']/100}
+					</li>
+				</if>
+				<if condition="$data.send_time gt 0">
+					<li class="dmt"> </li>
+					<li class="pro">
+						<span class="title">发货时间</span><br>
+						{$data.send_time|date="Y-m-d H:i",###}
+					</li>
+				</if>
+				<if condition="$data.confirm_time gt 0">
+					<li class="dmt"> </li>
+					<li class="pro">
+						<span class="title">收货时间</span><br>
+						{$data.confirm_time|date="Y-m-d H:i",###}
+					</li>
+				</if>
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		
+		</th>
+	</tr>
+	
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >订单备注
+		</th>
+	</tr>
+	<tr>
+		<th>分销备注</th>
+		<td>
+			{$data.text}
+		</td>
+	</tr>
+	<tr>
+		<th>订单备注（可修改）</th>
+		<td>
+			<form onsubmit="return form_submit(this)" action="__URL__/save" method="post">
+			<input type="hidden" name="id" value="{$data.id}">
+			<textarea name="comment">{$data.comment}</textarea>
+			<br/><input style="margin:5px 10px;" type="submit" value="保存备注">
+			</form>
+		</td>
+	</tr>
+	
+	
+	
+</table>
+
+
+</block>

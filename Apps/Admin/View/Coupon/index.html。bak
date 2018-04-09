@@ -1,0 +1,175 @@
+<extend name="Common/base"/>
+<block name="header">
+<link type="text/css" rel="stylesheet" href="__STATICS__css/calendar-pro.css">
+<script type="text/javascript" src="__STATICS__js/calendar-pro.js"></script>
+<script>
+$(function(){
+	$('.coupon-index,.coupon').addClass('active');
+})
+
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		产品管理
+		<small>产品列表</small>
+	</h1> 
+					
+</section>
+</block>
+<block name="main">
+<form>
+<div id="where" class="clearfix">
+	<dl>
+		<dt>发布日期：</dt>
+		<dd>
+			<input id="pub_time_1" type="text" name="p|pub_time[v1]" value="{$assign.p_pub_time_where_1}"> 至
+			<input id="pub_time_2" type="text" name="p|pub_time[v2]" value="{$assign.p_pub_time_where_2}">
+			<input type="hidden" name="p|pub_time[e]" value="between">
+			<input type="hidden" name="p|pub_time[call]" value="strtotime">
+		</dd>
+	</dl>
+</div>
+<input class="where_submit" type="submit" value="搜索">
+</form>
+<table id="detail" class="list">
+	<tr>
+		<!-- <th></th> -->
+		<th style="width:3.5em">编号</th>
+		<th>优惠券名称</th>
+		<th style="width:25%">优惠券描述</th>
+		<th>时间</th>
+		<th>数量</th>
+		<th>是否允许领取</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="list" item="v">
+	<tr>
+		<!-- <td><input type="checkbox" name="id[]" class="idCheck"></td> -->
+		<td>{$v.id}</td>
+		<td>
+			名称：{$v.cou_name}<br/>
+			类型：
+			<if condition="$v.status eq 1">线上
+			<elseif condition="$v.status eq 2"/>线下（领取码：{$v.code}）
+			<elseif condition="$v.status eq 3"/>生日
+			</if>
+			<br/>
+			金额：满{$v.full} 减 {$v.reduce}
+		</td>
+		<td>
+			{$v.cou_des}
+		</td>
+		
+		<td>
+			发布时间：{$v.pub_time|date='Y-m-d H:i:s',###}<br/>
+			有效时间：<br/>{$v.start|date='Y-m-d H:i:s',###} 至 {$v.end|date='Y-m-d H:i:s',###}<br/>
+		</td>
+		<td>
+			数量：{$v.number}<br/>
+			已领取：{$v.re_num}
+		</td>
+		<td>
+			<if condition="$v.allow_get eq 1">
+				<a href="__URL__/changeGet/tb/coupon/id/{$v.id}/allow_get/2">当前允许</a>
+			<else/>
+				<a href="__URL__/changeGet/tb/coupon/id/{$v.id}/allow_get/1">当前不允许</a>
+			</if>
+		</td>
+		<td>
+			<a href="__URL__/update/id/{$v.id}">编辑</a>
+			
+		</td>
+	</tr>
+	</foreach>
+</table>
+<div id="page"> {$page}</div>
+<script>
+var pub_start = {
+  elem: '#pub_time_1',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00', //设定最小日期为当前日期
+  max: '2099-06-16 23:59:59', //最大日期
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_end.min = datas; //开始日选好后，重置结束日的最小日期
+	  pub_end.start = datas //将结束日的初始值设定为开始日
+  }
+};
+var pub_end = {
+  elem: '#pub_time_2',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00',
+  max: '2099-06-16 23:59:59',
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_start.max = datas; //结束日选好后，重置开始日的最大日期
+  }
+};
+
+laydate(pub_start);
+laydate(pub_end);
+</script>
+</block>
+<block name="footer">
+<script>
+
+
+var product_id;
+var use_start;
+var use_end;
+function data_num(id,start,end){
+	product_id = id;
+	use_start = start;
+	use_end = end;
+	layer.open({
+	  type: 1,
+	  skin: 'layui-layer-rim', //加上边框
+	  area: ['512px', '388px'], //宽高
+	  content: '<div  class="calendar-box demo-box"></div>'
+	});
+	$.ajax({
+		'url':'__URL__/dateJson',
+		'data':{'id':id},
+		'dataType':'json',
+		'success':function(re){
+			$('.calendar-box').calendar({
+				ele : '.demo-box', //依附
+				title : '选择预约时间',
+				beginDate : start,
+				endDate : end,
+				data : re
+			});
+		}
+	})
+}
+
+//点击日历 填写数字
+function click_date_ext(){
+	var data = $('.calendar-box').calendarGetActive();
+	layer.prompt({title: '输 '+data.date+' 的预定限制数量', formType: 3}, function(number, index){
+	  layer.close(index);
+	  $.ajax({
+		'url':'__URL__/dataNum',
+		'type':'post',
+		'data':{'id':product_id,'date':data.date,'num':number},
+		'success':function(re){
+			if(re == '1'){
+				layer.closeAll();
+				data_num(product_id,use_start,use_end);
+			}
+		}
+	  })
+	});
+	//alert(data.date+" "+data.money);
+}
+</script>
+</block>
+
+
+
+
+

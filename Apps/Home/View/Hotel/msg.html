@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>门票信息</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<link type="text/css" rel="stylesheet" href="__STATICS__css/calendar-pro.css">
+<style>
+.ht-rili-td{background:none;line-height:50px;}
+.ht-rili-datebox{float:left}
+.msg_sumbit{display:block;margin:10px auto;color:#fff;background:#ffb000 ;border:none;font-size:20px;height:35px;width:40%;border-radius:5px;}
+</style>
+</head>
+<body>
+<div class="body_wrap bottom_0">
+	<ul class="header clearfix ">
+		<li class="left" onclick="history.go(-1)">返回</li>
+		
+		<li class="right" onclick="$('.list_menu,#zhezhao').show()">&nbsp;</li>
+	</ul>
+	<div class="head_img_wrap">
+		<img class="fj_bg" src="__IMG__/fj_bg.png" alt="">
+		<div class="head_img_name">景区民资景区民资景民资景民资景民资景民资景民资景民资景民资景区民资景区民资</div>
+		<div class="head_img_name_bg"></div>
+	</div>
+	<form action="__URL__/order/category/2">
+	<input type="hidden" name="pro_id" value="{$product.id}">
+	<ul class="main_msg">
+		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__msg_1.png)">选择时间</span>
+		</div>
+			<input id="date_input" type="hidden" name="date_time" value="{$start}">
+		</li>
+		
+		<li class="body_w" id="date_box"></li>
+		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__msg_2.png)">基本信息</span>
+		</div></li>
+		
+		<li class="body_w">
+			<div class="body_d">产品编号：{$product.id}</div>
+			<div class="body_d">景点名称：{$product.log_name} {$product.name}</div>
+		</li>
+		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__msg_3.png)">产品描述</span>
+		</div></li>
+		
+		<li class="body_w"><div class="body_d" style="font-size:14px;">{$product.pro_describe}</div></li>
+		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__msg_3.png)">预订须知</span>
+		</div></li>
+		
+		<li class="body_w"><div class="body_d" style="font-size:14px;">{$product.pre_notice}</div></li>
+		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__msg_5.png)">费用包含</span>
+		</div></li>
+		
+		<li class="body_w"><div class="body_d" style="font-size:14px;">{$product.pay_inc}</div></li>
+		<li class="tit_w">
+			<input class="msg_sumbit"  type="submit" value="立即预约"/>
+		</li>
+	</ul>
+	</form>
+</div>
+<include file="Public/menu"/>
+<script src="__JS__jquery.min.js"></script>
+<script type="text/javascript" src="__STATICS__js/calendar-pro.js"></script>
+<script>
+$('.calendar-box').calendar({
+	ele : '#date_box', //依附
+	title : '',
+	beginDate : '{$start}',
+	endDate : '{$end}',
+	data : {$dateJson}
+});
+function click_date_ext(t){
+	var data = $('#date_box').calendarGetActive();
+	//alert($(t).html())
+	$('.ht-rili-onclick').css('background','none');
+	$(t).css('background','#ccc');
+	$('#date_input').val(data.date);
+}
+$(function(){
+	$('.tit_w').click(function(){
+		var obj = $(this).next('.body_w')
+		if(obj.css('display') == 'none'){
+			obj.show()
+		}else{
+			//$(this).find('.tit').css('background-image','url(__IMG__xyb_2x.png)')
+			obj.hide()
+		}
+	})
+})
+</script>
+</body>
+</html>

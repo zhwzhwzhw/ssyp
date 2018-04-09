@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>酒店查找</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap hotel_index">
+	<ul class="header clearfix ">
+		<li class="left" onclick="location.href='__ROOT__'">首页</li>
+		
+		<li onclick="$('.list_menu,#zhezhao').show()" class="right">&nbsp;</li>
+	</ul>
+	<div class="header_bg"></div>
+	<img class="fj_bg" src="__IMG__/fj_bg.png" alt="">
+	<form action="__URL__/oper" >
+	<table class="search_tb">
+		<tr>
+			<th>城市</th>
+			<td>
+				<input type="text" name="log_area[v]"  placeholder="不限城市" id="gr_zone_ids">
+				<input type="hidden" name="log_area[e]" value="like">
+			</td>
+			<td class="td_bg"></td>
+		</tr>
+		<tr>
+			<th>时间</th>
+			<td>
+				<div><input type="date" name="date_start" value="{$date_1}" style="width:100%"><span class="bc">入住</span></div>
+				<div><input type="date" name="date_end" value="{$date_2}" style="width:100%"><span class="bc">离店</span></div>
+			</td>
+			<td class="td_bg"></td>
+		</tr>
+		<tr>
+			<th>搜索</th>
+			<td>
+				<input type="text" name="log_name[v]" placeholder="酒店/地名/关键词">
+				<input type="hidden" name="log_name[e]" value="like">
+			</td>
+			<td class="td_bg"></td>
+		</tr>
+		<tr>
+			<th>价格</th>
+			<td>
+				<select name="price">
+					<option value="">不限</option>
+					<option value="100">100元以下</option>
+					<option value="300">300元以下</option>
+					<option value="500">500元以下</option>
+					<option value="1000">1000元以下</option>
+				</select>
+			</td>
+			<td class="td_bg"></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<input type="submit" value="查找酒店" class="submit">
+			</td>
+		</tr>
+	</table>
+	</form>
+	<ul class="pro_list_2 clearfix">
+<!-- 		<li>
+			<img src="__PUBLIC__/Home/test/cc.png">
+			<div class="title">撒地方看见阿斯顿飞发阿萨德飞飞奥斯卡交电话费</div>
+			<div class="price">￥<span class="num_price">99.9</span></div>
+		</li> -->
+		<foreach name="list" item="v">
+			<li onclick="location.href='__URL__/detail/id/{$v.id}'">
+				<div class="img_wrap" style="background-image:url(__ROOT__/Uploads/{$v.log_images})"></div>
+				<div class="title">{$v.log_name}</div>
+				<div class="price">￥<span class="num_price">{$v.price}</span></div>
+			</li>
+		</foreach>
+	</ul>
+	
+</div>
+<include file="Public/city"/>
+<include file="Public/menu"/>
+</body>
+</html>

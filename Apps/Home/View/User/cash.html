@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>提现记录</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center" style="color:#ffb000;width:calc(100% - 190px)">提现记录</li>
+		
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+<!-- 	<div class="cash_c clearfix">
+		<div class="left">
+			本月
+		</div>
+		<div class="right">
+			选择时间
+		</div>
+	</div> -->
+	<ul class="cash_list">
+	<foreach name="list" item="v">
+		<if condition="$v.status eq 9">
+			<li class="clearfix">
+				<div class="left">
+					<div class="title">提现<span class="money">￥<span style="font-size:20px;">{$v.money_reduce}</span></span></div>
+					<div class="subhead">{$v.finish_time|date='Y-m-d  H:i:s',###}</div>
+				</div>
+				<div class="right">
+					<div class="but wc" >已完成</div>
+				</div>
+			</li>
+		<else/>
+			<li class="clearfix">
+				<div class="left">
+					<div class="title">提现<span class="money">￥<span style="font-size:20px;">99.99</span></span></div>
+					<div class="subhead">{$v.pub_time|date='Y-m-d   H:i:s',###}</div>
+				</div>
+				<div class="right">
+					<div class="but sh">审核中</div>
+				</div>
+			</li>
+		</if>
+	</foreach>
+		<!-- <li class="clearfix">
+			<div class="left">
+				<div class="title">提现<span class="money">￥<span style="font-size:20px;">99.99</span></span></div>
+				<div class="subhead">2019-11-11 &nbsp;&nbsp; 66:99:00</div>
+			</div>
+			<div class="right">
+				<div class="but wc" >已完成</div>
+			</div>
+		</li> -->
+	</ul>
+<include file="user_footer"/>
+</div>
+
+</body>
+</html>

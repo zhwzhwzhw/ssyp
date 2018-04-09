@@ -1,0 +1,116 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.admin-add,.admin').addClass('active');
+})
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:40%;}
+.cate_fid select{width:20% !important;}
+#detail th{width:20%;}
+.images_unit{float:left;display:table-cell !important;width:200px;height:150px;position:relative;margin:3px;background:#fff;box-shadow: 0px 0px 5px #888888; vertical-align:middle;text-align:center;}
+.images_unit img,.images_unit .images_but{max-width:200px;max-height:150px;vertical-align:middle;}
+.images_unit>.close{background:#fff url(__IMG__close_16.png) no-repeat center center;width:20px;height:20px;position:absolute;top:0;right:0;border-radius:50%;}
+.images_unit .num_wrap{background:#fff;border-top:1px solid #eee;position:absolute;bottom:0;width:100%;height:25px;line-height:25px;font-size:12px;}
+.images_unit .num_wrap input{height:100%;width:50px};
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		管理员
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+
+<form onsubmit="return form_submit(this)" method="post" action="__URL__/save">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >用户基本信息
+		<input type="hidden" name="id" value="{$data.id}" />
+		</th>
+	</tr>
+	<if condition="$useid gt 0">
+		<tr>
+			<th>微信昵称</th>
+			<td>
+				<input type="text" disabled="disabled"  name="nickName" value="{$nickName}">
+				<input type="hidden" name="user_id"  value="{$useid}">
+			</td>
+		</tr>
+	</if>
+	<tr>
+		<th>电话号码</th>
+		<td><input type="text" name="phone" placeholder="填写电话号码" value="{$data.phone}"></td>
+	</tr>
+	<tr>
+		<th>真实姓名</th>
+		<td><input type="text" name="realname" placeholder="填写真实姓名" value="{$data.realname}"></td>
+	</tr>
+	<tr>
+		<th>选择商铺</th>
+		<td>
+			<select name="cat_shop"  onchange="shop_change(this)">
+					<option <eq name="data.role_id" value="0">selected</eq> value="0">总店</option>
+					<foreach name="shop_list" item="rv">
+						<option <eq name="rv.id" value="$data.cat_shop">selected</eq> value="{$rv.id}">{$rv.seller_name}</option>
+					</foreach>
+			</select>
+			选择分店时角色请选择 【分店账号】。选择总店时角色 不要选 【分店账号】
+		</td>
+	</tr>
+	
+	<tr>
+		<th>选择角色</th>
+		<td>
+			<select name="role_id"  onchange="role_change(this)">
+					<option <eq name="data.role_id" value="1">selected</eq> value="0">暂无权限</option>
+					<foreach name="role" item="rv">
+						<option <eq name="rv.id" value="$data.role_id">selected</eq> value="{$rv.id}">{$rv.role_name}</option>
+					</foreach>
+					<option <eq name="data.role_id" value="-1">selected</eq> value="-1">总管理员</option>
+			</select>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		
+		</th>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+</form>
+
+
+</block>
+<block name="footer">
+<script>
+var shop_fendian = '13';
+
+function shop_change(t){
+	if($(t).val() > 0){
+		$('[name="role_id"]').val(shop_fendian)
+	}
+}
+function role_change(t){
+	if($(t).val() != shop_fendian){
+		$('[name="cat_shop"]').val(0)
+	}
+}
+</script>
+</block>

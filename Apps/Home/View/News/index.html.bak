@@ -1,0 +1,19 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex, nofollow">
+<title>播报列表</title>
+
+
+
+</head>
+<body>
+<h2>播报列表</h2>
+<ul>
+	<foreach name="list" item="v">
+		<li><a href="__URL__/detail/id/{$v.id}">{$v.title}</a></li>
+	</foreach>
+</ul>
+</body>
+</html>

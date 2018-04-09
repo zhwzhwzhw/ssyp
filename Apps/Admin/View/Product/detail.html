@@ -1,0 +1,98 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.product-index,.product').addClass('active');
+})
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:40%;}
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		产品管理
+		<small>产品详情</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<ul id="head_menu" class="clearfix" >
+	<li  class="active"><a href="">基础信息</a></li>
+	<if condition="$admin_status eq 9">
+		<li><a href="__URL__/proLog/id/{$data.id}">操作日志</a></li>
+	</if>
+</ul>
+<br/>
+<form method="post" action="__URL__/save">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >产品信息
+		</th>
+	</tr>
+	<tr>
+		<th>产品id</th>
+		<td>
+			{$data.id}
+		</td>
+	</tr>
+	<tr>
+		<th>产品编号</th>
+		<td>
+			{$data.symbol}
+		</td>
+	</tr>
+	<tr>
+		<th>产品名称</th>
+		<td>
+			{$data.name}
+		</td>
+	</tr>
+	<tr>
+		<th>状态</th>
+		<td>
+			<if condition="$data.status eq 1">在售
+			<elseif condition="$data.status eq 2"/>下架
+			</if>
+		</td>
+	</tr>
+	<tr>
+		<th>创建时间</th>
+		<td>
+			由【{$data.pub_webname}】于{$data.pub_time|date="Y-m-d H:i:s",###} 创建
+		</td>
+	</tr>
+	<tr>
+		<th>最后修改时间</th>
+		<td>
+			{$data.edi_time|date="Y-m-d H:i:s",###}
+		</td>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >销售情况
+		</th>
+	</tr>
+	<tr>
+		<th>订单数</th>
+		<td>
+			{$ord_count}单<br/>
+			{$ord_sum}套
+		</td>
+	</tr>
+<!-- 	<tr>
+		<th>供应商</th>
+		<td>
+			{$data.webname}
+		</td>
+	</tr> -->
+	
+</table>
+</form>
+</block>

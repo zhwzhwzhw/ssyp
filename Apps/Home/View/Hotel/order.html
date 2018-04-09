@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>填写预订信息</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center">填写预订信息</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<form id="ord_form" onsubmit="return form_submit(this)" action="__MODULE__/Order/add" method="post">
+	<input type="hidden" name="pid" value="{$product.id}">
+	<ul class="form_list">
+		<li>
+			<div class="title">{$product.log_name} {$product.name}</div>
+			<div class="subhead">
+				<span class="hei">{$days}晚</span>&nbsp;&nbsp;&nbsp;入住：{$start}&nbsp;&nbsp;&nbsp;离店：{$end}
+			</div>
+		</li>
+		<li class="dmt"></li>
+		<li>
+			<div class="title inline">游客姓名</div>
+			<input  type="text" name="custom_name">
+		</li>
+		<li>
+			<div class="title inline">联系手机</div>
+			<input  type="text" name="custom_phone">
+		</li>
+		<li>
+			<div class="title inline" >到店时间</div>
+			<select name="comment_ord">
+				<option>18:00 之前</option>
+				<option>20:00 之前</option>
+				<option>23:59 之前</option>
+			</select>
+		</li>
+		<li class="dmt" style="height:5px;"></li>
+		<foreach name="dayArr" item="v">
+			<li class="clearfix">
+				<div class="title inline lineheight">{$v} （1间） </div>
+				<input type="hidden" name="v_date[]" value="{$v}">
+				<img onclick="valChange(1,this,'{$product.pro_price}')" class="right but_img" src="__IMG__jia_2x.png">
+				<input name="ord_num[]" type="text" readonly class="right number" value="1">
+				<img onclick="valChange(-1,this,'{$product.pro_price}')" class="right but_img" src="__IMG__j_2x.png">
+			</li>
+		</foreach>
+		<!-- <li class="clearfix">
+			<div class="title inline lineheight">2002-09-09 （1间） </div>
+			<img class="right but_img" src="__IMG__jia_2x.png">
+			<input type="text" class="right number">
+			<img class="right but_img" src="__IMG__j_2x.png">
+		</li> -->
+		<li class="dmt"></li>
+		<li>
+			<div class="subhead" style="margin-top:5px;"><input id="pre_checkbox" type="checkbox" >&nbsp;&nbsp;我已经查看 <a href="javascript:pre_notice()" class="pro_notice">预订须知</a> ，并同意其内容</div>
+		</li>
+	</ul>
+	</form>
+	<div class="footer_2">
+		<div class="left foot_price">合计：<span class="z_price">￥<span style="font-size:22px;" id="zongjia">{$product['pro_price']*$days}</span></span></div>
+		<div class="right" onclick="$('#ord_form').submit()">提交订单</div>
+	</div>
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script src="__STATICS__layer/layer.js"></script>
+<script src="__JS__shop.js"></script>
+<script>
+function for_submit_in(){
+	if($("#pre_checkbox").is(':checked')){
+		return true;
+	}else{
+		layer.msg('请先阅读预订须知');
+		return false;
+	}
+}
+function pre_notice(){
+	layer.alert('{$product.pre_notice}', {
+	  title:'预订须知',
+	  skin: 'layer-ext-moon' //该皮肤由layer.seaning.com友情扩展。关于皮肤的扩展规则，去这里查阅
+	})
+}
+
+</script>
+</body>
+</html>

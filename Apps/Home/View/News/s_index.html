@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>播报</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style>
+.swiper-slide img{
+	width:100%;
+}
+.pro_list_2 li{
+	border:1px solid #ddd;
+	width:calc(48% - 4px);
+}
+.pro_list_2 li .price{
+	background:url(__IMG__dw_2x.png) no-repeat left center;
+	background-size:10px 15px;
+	text-indent:1em;
+}
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center" style="color:#ffb000">播报</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<div class="dmt" style="height:5px;"></div>
+	<ul id="news_index" class="pro_list_2 clearfix" style="padding-top:10px;">
+<!-- 		<li>
+			<img src="__PUBLIC__/Home/test/cc.png">
+			<div class="title">撒地方看见阿斯顿飞发阿萨德飞飞奥斯卡交电话费</div>
+			<div class="price">￥<span class="num_price">99.9</span></div>
+		</li> -->
+		<foreach name="list" item="v">
+			<li onclick="location.href='__MODULE__/News/detail/id/{$v.id}'">
+				<div class="img_wrap" style="height:170px;background-image:url(__ROOT__/Uploads/{$v.thumb})">
+					<img class="cate" src="__IMG__jd_{$v.category}.png" alt="">
+				</div>
+				<div class="title">{$v.title}</div>
+				<div class="price">asdfsadf</div>
+			</li>
+		</foreach>
+	</ul>
+</div>
+<include file="User/user_footer" />
+<script src="__JS__jquery.min.js"></script>
+<script src="__JS__shop.js"></script>
+<script>
+	var ft="ft_two"
+	var img="__IMG__/bbb2_2x.png"
+	pageLoad('__ACTION__/ajax/ajax','news_index');
+</script>
+</body>
+</html>

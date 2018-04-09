@@ -1,0 +1,69 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.admin,.admin-index').addClass('active')
+})
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		管理员
+		<small>管理员列表</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<form method="post" action="">
+	<table id="detail" class="list">
+		<tr>
+			<th>id</th>
+			<th>店铺名称</th>
+			<!-- <th>UNitId</th> -->
+			<th>联系电话</th>
+			<th>地址</th>
+			<th>导航位置</th>
+			<th style="width:200px">允许权限(无表示所有)</th>
+			<th>操作</th>
+		</tr>
+		<foreach name="list" item="v">
+			<tr>
+				<td>{$v.id}</td>
+				<td>{$v.seller_name}</td>
+				<!-- <td>{$v.unit_id}</td> -->
+				<td>{$v.seller_phone}</td>
+				<td>{$v.seller_address}</td>
+				<td>{$v.seller_position}</td>
+				<td>{$v.cat_list|return_cat_list=###}</td>
+				<td><a href="__ACTION__?del=del&id={$v.id}">删除</a>&nbsp;&nbsp;&nbsp;
+					<a href="__URL__/shop_add?id={$v.id}">编辑</a>
+				</td>
+			</tr>
+		</foreach>
+		
+	</table>
+</form>
+</block>
+<block name="footer">
+<script>
+function show_ticket(name,id){
+	$.ajax({
+		'url':'__APP__/Home/Wx/qrcode?user_id=admin_'+id+'',
+		'success':function(res){
+			layer.alert('<img style="margin:auto;display: block;width:200px;" src="'+res+'">',{
+				  title:name+' 的微信绑定二维码',
+				  skin: 'layer-ext-moon',
+				  btn: 0	  
+			})
+		}
+	})
+	
+}
+</script>
+</block>

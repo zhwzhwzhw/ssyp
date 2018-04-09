@@ -1,0 +1,26 @@
+
+<ul class="footer clearfix">
+	<li id="ft_one"><a href="__ROOT__"><img src="__IMG__bb_1.png" alt="">首页</a></li>
+	<li id="ft_two"><a href="__MODULE__/News/index"  ><img src="__IMG__shouye_2.png" alt="">播报</a></li>
+	<li onclick="$('.list_menu,#zhezhao,.rt_share').show()" id="ft_three"><a><img src="__IMG__yyy_2x.png" alt="">预订</a></li>
+	<li id="ft_four"><a  href="__MODULE__/User/index"><img src="__IMG__shouye_4.png" alt="" style="margin:2px auto 0px">我的</a></li>
+</ul>
+<ul class="list_menu" style="padding:0;bottom:67px;left:50%;top:initial;right:initial;box-shadow:0px 0px 5px 5px #ccc;">
+	<li style="border-bottom:1px solid #ccc;"><a href="__MODULE__/Product/index">今日抢购</a><li>
+	<li style="border-bottom:1px solid #ccc;"><a href="__MODULE__/Hotel/index">酒店预订</a><li>
+	<li><a href="__MODULE__/Hotel/index/category/2">门票预订</a><li>
+</ul>
+<div id="zhezhao" style="background:none;" onclick="$('.list_menu,#zhezhao,.rt_share').hide()"></div>
+
+<script src="__JS__jquery.min.js"></script>
+<script>
+var ft="ft_four";
+var img = '__IMG__wd_2x.png';
+$(function(){
+	ft_active(ft,img);
+})
+function ft_active(ftname,img){
+	$('#'+ftname).find('a').css('color','#feb100');
+	$('#'+ftname).find('img').attr('src',img);
+}
+</script>

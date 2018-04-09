@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>票务查询</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">首页</li>
+		<li class="center" >票务查询</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<form action="__URL__/oper/category/2" >
+	<div class="det_time" >
+		<div class="form" style="border-radius:5px;">
+			<input style="width:100%;" type="text" name="log_name[v]" placeholder="景区名/城市/关键词">
+			<input type="hidden" name="log_name[e]" value="like">
+			<div onclick="$(this).parents('form').submit()" class="sea_but"><img src="__IMG__fd_2x.png" alt="" width="25px"></div>
+		</div>
+	</div>
+	<table class="search_tb" style="border-top:none;margin-top:0;">
+		<tr >
+			<th>城市</th>
+			<td>
+				<input type="text" name="log_area[v]" id="gr_zone_ids" placeholder="不限城市">
+				<input type="hidden" name="log_area[e]" value="like">
+			</td>
+			<td class="td_bg"></td>
+		</tr>
+		
+		<tr>
+			<th>价格</th>
+			<td>
+				<select name="price">
+					<option value="">不限</option>
+					<option value="100">100元以下</option>
+					<option value="300">300元以下</option>
+					<option value="500">500元以下</option>
+					<option value="1000">1000元以下</option>
+				</select>
+			</td>
+			<td class="td_bg"></td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<input type="submit" value="查找酒店" class="submit">
+			</td>
+		</tr>
+	</table>
+	</form>
+	<div class="pro_list_2_title">热门景点</div>
+	<ul class="pro_list_2 clearfix pro_list_2_border">
+	<foreach name="list" item="v">
+		<li onclick="location.href='__URL__/detail/id/{$v.id}'">
+			<div class="img_wrap" style="background-image:url(__ROOT__/Uploads/{$v.log_images})"></div>
+			<div class="title">{$v.log_name}</div>
+			<div class="price">￥<span class="num_price">{$v.price}</span></div>
+		</li>
+	</foreach>
+<!-- 		<li>
+			<img src="__PUBLIC__/Home/test/cc.png">
+			<div class="title">撒地方看见阿斯顿飞发阿萨德飞飞奥斯卡交电话费</div>
+			<div class="price">￥<span class="num_price">99.9</span></div>
+		</li> -->
+	</ul>
+	
+</div>
+<include file="Public/city"/>
+</body>
+</html>

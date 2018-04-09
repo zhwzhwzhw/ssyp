@@ -1,0 +1,679 @@
+[ 2017-12-20T17:01:44+08:00 ] 127.0.0.1 /ssyp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:01:44+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:01:53+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0330s ]
+SQL: SELECT `id`,`cat_shop` FROM `xgs_admin` WHERE `phone` = '18647971785' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `xgs_admin` SET `login_ip`='127.0.0.1',`login_time`='1513760513' WHERE ( id="1" ) [ RunTime:0.0230s ]
+SQL: UPDATE `xgs_admin` SET `login_number`=login_number+1 WHERE ( id="1" ) [ RunTime:0.0100s ]
+
+[ 2017-12-20T17:01:55+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0400s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: title E:\www\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 16 行.
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-20T17:10:32+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0060s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-20T17:15:25+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Admin/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SELECT * FROM `xgs_role`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_seller` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `xgs_seller`  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 85 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 153 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 158 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 162 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 168 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 169 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 169 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 179 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 180 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 180 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 180 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 180 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 180 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 180 行.
+NOTIC: [8] Undefined variable: data E:\www\ssyp\Apps\Runtime\Cache\Admin\faad21510841bdf99ef5d2497e4ead4d.php 第 181 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-20T17:15:26+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT a.id,`phone`,`seller_name`,`realname`,`role_name`,`role_id`,`cat_shop` FROM xgs_admin a left JOIN xgs_role as r on r.id = role_id left JOIN xgs_seller as s on s.id = cat_shop   [ RunTime:0.0190s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\3d4d6bb10505c55ffdfbeb84cdc09928.php 第 74 行.
+NOTIC: [8] Undefined index: openid E:\www\ssyp\Apps\Runtime\Cache\Admin\3d4d6bb10505c55ffdfbeb84cdc09928.php 第 165 行.
+NOTIC: [8] Undefined index: openid E:\www\ssyp\Apps\Runtime\Cache\Admin\3d4d6bb10505c55ffdfbeb84cdc09928.php 第 165 行.
+NOTIC: [8] Undefined index: openid E:\www\ssyp\Apps\Runtime\Cache\Admin\3d4d6bb10505c55ffdfbeb84cdc09928.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:15:33+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:15:33+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:15:41+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`cat_shop` FROM `xgs_admin` WHERE `phone` = '18888888888' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `xgs_admin` SET `login_ip`='127.0.0.1',`login_time`='1513761341' WHERE ( id="15" ) [ RunTime:0.0010s ]
+SQL: UPDATE `xgs_admin` SET `login_number`=login_number+1 WHERE ( id="15" ) [ RunTime:0.0010s ]
+
+[ 2017-12-20T17:15:42+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="15" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="13" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `xgs_power` WHERE `module` = 'Admin' AND `controller` = 'Index' AND `action` = 'index' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `xgs_power` WHERE `id` IN ('1','2','3','4','5','6','7','8','11','12','13') AND `fid` > 0  [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-12-20T17:15:45+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:15:45+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-12-20T17:15:53+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`cat_shop` FROM `xgs_admin` WHERE `phone` = '18647971785' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `xgs_admin` SET `login_ip`='127.0.0.1',`login_time`='1513761353' WHERE ( id="1" ) [ RunTime:0.0020s ]
+SQL: UPDATE `xgs_admin` SET `login_number`=login_number+1 WHERE ( id="1" ) [ RunTime:0.0010s ]
+
+[ 2017-12-20T17:15:54+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:17:57+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/power
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0030s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SELECT * FROM `xgs_power`  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\0243e37eb1ac9c6defc05453b3c966f5.php 第 79 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:18:05+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/power/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\8fd2ba78bfd62d3639dbcf899ea38741.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:18:05+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Power/getControllerName
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0050s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+
+[ 2017-12-20T17:18:10+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Power/getActionName
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0030s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SELECT `action` FROM `xgs_power` WHERE `module` = 'Admin' AND `controller` = 'Coupon'  [ RunTime:0.0010s ]
+
+[ 2017-12-20T17:19:53+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Power/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0030s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: INSERT INTO `xgs_power` (`power_name`,`module`,`controller`,`action`) VALUES ('','Admin','Coupon','index'),('','Admin','Coupon','del_coupon'),('','Admin','Coupon','coupon_info'),('','Admin','Coupon','coupon_list') [ RunTime:0.0310s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:19:54+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/power/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0030s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\8fd2ba78bfd62d3639dbcf899ea38741.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:19:54+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Power/getControllerName
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+
+[ 2017-12-20T17:26:03+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/power/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0030s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\8fd2ba78bfd62d3639dbcf899ea38741.php 第 139 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:26:03+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Power/getControllerName
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+
+[ 2017-12-20T17:26:04+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Coupon/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0030s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `xgs_coupon` [ RunTime:0.0420s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `xgs_coupon` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `xgs_coupon` ORDER BY id desc LIMIT 0,20   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 70 行.
+NOTIC: [8] Undefined variable: navigate_admin E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 136 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 190 行.
+NOTIC: [8] Undefined variable: coupons E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 190 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 198 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 199 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 200 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 190 行.
+NOTIC: [8] Undefined variable: coupons E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 190 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 198 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 199 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 200 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:28:55+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Coupon/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0050s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `xgs_coupon` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `xgs_coupon` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `xgs_coupon` ORDER BY id desc LIMIT 0,20   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 70 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 178 行.
+NOTIC: [8] Undefined variable: coupons E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 178 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 186 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 188 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 178 行.
+NOTIC: [8] Undefined variable: coupons E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 178 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 186 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 187 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 188 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:29:29+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Coupon/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0040s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `xgs_coupon` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `xgs_coupon` LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `xgs_coupon` ORDER BY id desc LIMIT 0,20   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 70 行.
+NOTIC: [8] Undefined variable: navigate_admin E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 136 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 186 行.
+NOTIC: [8] Undefined variable: coupons E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 186 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 194 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 195 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 196 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 186 行.
+NOTIC: [8] Undefined variable: coupons E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 186 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 194 行.
+NOTIC: [8] Use of undefined constant type - assumed 'type' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 195 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' E:\www\ssyp\Apps\Runtime\Cache\Admin\8686936d28a6b3e64b15b96c436d7ec4.php 第 196 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-12-20T17:29:33+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Coupon/coupon_info.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `xgs_admin` [ RunTime:0.0040s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `xgs_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_role` [ RunTime:0.0030s ]
+SQL: SELECT `power`,`role_name` FROM `xgs_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `xgs_power` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `xgs_power` WHERE `fid` > 0  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: status E:\www\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: headimgurl E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 71 行.
+NOTIC: [8] Undefined variable: navigate_admin E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 137 行.
+NOTIC: [8] Undefined index: name E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 165 行.
+NOTIC: [8] Undefined index: money E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 174 行.
+NOTIC: [8] Undefined index: condition E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 181 行.
+NOTIC: [8] Undefined index: type E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 188 行.
+NOTIC: [8] Undefined index: type E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 189 行.
+NOTIC: [8] Undefined index: type E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 189 行.
+NOTIC: [8] Undefined index: type E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 190 行.
+NOTIC: [8] Undefined index: type E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 191 行.
+NOTIC: [8] Undefined index: type E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 192 行.
+NOTIC: [8] Undefined index: createnum E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 197 行.
+NOTIC: [8] Undefined index: id E:\www\ssyp\Apps\Runtime\Cache\Admin\a50c5c2d7152cf1fa24534a5f4318c8f.php 第 253 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

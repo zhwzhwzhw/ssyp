@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>订单详情</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style>
+.ord_detail {width:90%;margin:auto;border:1px solid #ffb000;border-radius:5px;;}
+.ord_detail td,.ord_detail th{padding:10px;}
+.ord_detail th{color:#999;width:70px;}
+.ord_detail .tit{background:#ffb000;text-align:center;}
+.pay{background:#ac3d34;padding:3px 10px;color:#fff;}
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center" style="color:#ffb000;width:calc(100% - 190px)">订单详情</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	
+	<table class="ord_detail">
+		<tr>
+			<th>订单内容</th>
+			<td>{$data.name}</td>
+		</tr>
+		<tr>
+			<th>下单日期</th>
+			<td>{$data.pub_time|date='Y-m-d',###}</td>
+		</tr>
+		<tr>
+			<th>预约日期</th>
+			<td>{$data.ord_detail}</td>
+		</tr>
+		<tr>
+			<th>订单金额</th>
+			<td>{$data.ord_money}</td>
+		</tr>
+		<tr>
+			<th>备注信息</th>
+			<td>{$data.comment_ord}</td>
+		</tr>
+	</table>
+	<if condition="$data.custom_name">
+		<table class="ord_detail" style="margin-top:10px;">
+			<tr class="tit">
+				<td colspan="2">联系人信息</td>
+			</tr>
+			<tr>
+				<th>游客姓名</th>
+				<td>{$data.custom_name}</td>
+			</tr>
+			<tr>
+				<th>游客电话</th>
+				<td>{$data.custom_phone}</td>
+			</tr>
+			
+		</table>
+	</if>
+	<table class="ord_detail" style="margin-top:10px;">
+		<tr class="tit">
+			<td colspan="2">付款信息</td>
+		</tr>
+		<tr>
+			<th>订单支付</th>
+			<td>
+				<if condition="$data.is_pay eq 1">已支付
+				<else/> 待支付&nbsp;&nbsp;&nbsp;
+					<eq name="data.pub_user" value="$Think.session.user.id">
+						<if condition="$allow_pay eq 1">
+						<a href="__MODULE__/Order/pay/ord_id/{$data.id}" class="pay">立即支付</a>
+						<else/>已过期不能支付
+						</if>
+					</eq>
+				</if>
+			</td>
+		</tr>
+	</table>
+	
+	<if condition="$verify">
+		<table class="ord_detail" style="margin-top:10px;">
+		<tr class="tit">
+			<td colspan="2">预订信息</td>
+		</tr>
+		<foreach name="verify" item="v">
+			<tr>
+				<th>{$v.verify}</th>
+				<td>
+					<if condition="$data.is_pay neq 1">
+						请先支付
+					<else/>
+						<if condition="$v.v_date gt 0">
+							预约时间：{$v.v_date|date='Y-m-d',###}<br/>
+							姓名：{$v.v_name}<br/>
+							电话：{$v.v_phone}<br/>
+						<else/>
+							<if condition="$data.ord_is_pre eq 1">
+								<eq name="data.pub_user" value="$Think.session.user.id">
+									<a class="pay" href="__MODULE__/Order/pre/id/{$data.id}">立即预约</a>
+								<else/>待预约
+								</eq>
+							<else/>无需预约
+							</if>
+						</if>
+					</if>
+				</td>
+			</tr>
+		</foreach>
+	</table>
+	</if>
+<include file="user_footer"/>
+</div>
+
+</body>
+</html>

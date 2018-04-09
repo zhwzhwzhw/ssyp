@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>资料修改</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style type="text/css">
+.user_user li .tit{background:none !important;}
+.user_user li .text{padding-left:10px !important;}
+.user_user li .right{min-height:45px;text-align:right;}
+.user_user li .right input[type="text"]{font-size:18px;width:100%;height:45px;text-align:right;border:none;background:none;}
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center" style="color:#ffb000;width:calc(100% - 190px)">资料修改</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	
+	<div class="dmt" style="height:5px;"></div>
+	<form onsubmit="return form_submit(this)" action="__URL__/save" method="post">
+	<ul class="main_msg user_user">
+		<li  class="clearfix tit_w" onclick="location.href='__URL__/ord_1'"><div class="tit">
+			<span class="text" style="line-height:100px;">头像</span><div class="right"><img src="{$data.headimgurl}" width="100px" alt=""></div>
+		</div></li>
+		<li class="tit_w"><div class="tit">
+			<span class="text" >平台昵称</span>
+			<div class="right"><input type="text" value="{$data.webname}" name="webname"/></div>
+		</div></li>
+		
+		
+		
+		<li class="tit_w"><div class="tit">
+			<span class="text" >真实姓名</span>
+			<div class="right"><input type="text" value="{$data.realname}" name="realname"/></div>
+		</div></li>
+		<li class="tit_w"><div class="tit">
+			<span class="text" >电话号码</span>
+			<div class="right"><input type="text" value="{$data.phone}" name="phone"/></div>
+		</div></li>
+		
+		<li class="tit_w" style="border-bottom:none;">
+			<input class="msg_sumbit"  type="submit" value="修改资料"/>
+		</li>
+		
+		
+	</ul>
+	</form>
+<include file="user_footer"/>
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script src="__STATICS__layer/layer.js"></script>
+<script src="__JS__shop.js"></script>
+</body>
+</html>

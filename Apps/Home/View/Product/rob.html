@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>抢购</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<script src="__JS__/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+var URL="__URL__";
+</script>
+<script type="text/javascript" src="__JS__jsApiWx.js?a=1"></script>
+<script>
+wxUserId = {$Think.session.user.id};//"{$Think.session.wxLogin.id}"
+title = '{$data.name}'
+shareDesc = '{$data.pro_describe}';
+imgUrl = 'http://'+window.location.host+'__ROOT__/Uploads/{$data.pro_images}';
+toUrl = window.location.host+'__ACTION__?id={$data.id}';
+//微信文章分享成功提示
+function sucMeg(msg){
+	/* $.ajax({
+		'url':URL+'/share',
+		'type':'post',
+		'data':{
+			'user_id':wxUserId,
+			'news_id':{$data.id},
+			'share_type':msg
+		},
+		'success':function(re){
+			//alert('感谢您的分享，\n我们会继续努力的')
+		}
+	}) */
+}
+</script>
+<style type="text/css">
+.fj_bg{height:200px;background-repeat:no-repeat;background-position:center;background-size:cover;}
+.rob_but{position:relative;z-index:35}
+</style>
+</head>
+<body>
+<div class="body_wrap bottom_0">
+	<ul class="header clearfix ">
+		<li class="left" onclick="history.go(-1)">返回</li>
+		
+		<li class="right " style="background-image:url(__IMG__fx_2x.png)" onclick="$('.rt_share,#zhezhao').show()">&nbsp;</li>
+	</ul>
+	<div class="header_bg"></div>
+	<div class="head_img_wrap">
+		<div class="fj_bg" style="background-image:url(__ROOT__/Uploads/{$data.pro_images})"></div>
+		<div class="head_img_name">{$data.name}</div>
+		<div class="head_img_name_bg"></div>
+	</div>
+	<div class="rob_but">
+		<div class="left">￥<span style="font-size:18px">{$data.pro_price}</span>&nbsp;&nbsp;
+		
+		<if condition="$status eq ing"> {$data.pre_end|date='Y-m-d H:i:s',###}&nbsp;结束
+		<elseif condition="$status eq come"/> {$data.pre_start|date='Y-m-d H:i:s',###}&nbsp;开抢
+		</if>
+		</div>
+		
+		<if condition="$status eq ing"> <div class="right" onclick="ord_show()">立即抢购</div>
+		<elseif condition="$status eq come"/> <div class="right">设置提醒</div>
+		<else/> <div class="right">已结束</div>
+		</if>
+		
+		
+	</div>
+	<div class="dmt"> </div>
+	<ul class="rob_det_menu clearfix">
+		<li onclick="content_show(this,'one')"><a class="active text">抢购说明</a><div class="sx"></div></li>
+		<li onclick="content_show(this,'two')"><a class="text">产品描述</a><div class="sx"></div></li>
+		<li onclick="content_show(this,'three')"><a class="text">预订须知</a></li>
+	</ul>
+	<div class="dmt" style="height:3px;margin-top:-3px;"> </div>
+	<div class="rob_content" style="overflow-y:auto">
+		<div id="one">{$data.rob_notice}
+		</div>
+		<div style="display:none" id="two">{$data.pro_describe}</div>
+		<div style="display:none" id="three">{$data.pre_notice}</div>
+	</div>
+</div>
+
+<div style="display:none;" id="form_html">
+	<form id="ord_form" onsubmit="return form_submit(this)" action="__MODULE__/Order/add" method="post">
+		<ul class="form_list">
+			<li class="clearfix">
+				<div class="title inline lineheight">单价 {$data.pro_price} 元</div>
+				<input type="hidden" name="is_rob" value="1"/>
+				<input type="hidden" name="pid" value="{$data.id}">
+				<img onclick="valChange(1,this,'{$data.pro_price}')" class="right but_img" src="__IMG__jia_2x.png">
+				<input name="ord_num" type="text" readonly class="right number" value="1">
+				<img onclick="valChange(-1,this,'{$data.pro_price}')" class="right but_img" src="__IMG__j_2x.png">
+			</li>
+		</ul>
+	</form>
+<div class="footer_2">
+		<div class="left foot_price">合计：<span class="z_price">￥<span style="font-size:22px;" id="zongjia" class="zongjia">{$data.pro_price}</span></span></div>
+		<div class="right" onclick="$('#ord_form').submit()">提交订单</div>
+	</div>
+</div>
+<include file="Public/menu" />
+<script src="__JS__jquery.min.js"></script>
+<script src="__STATICS__layer/layer.js"></script>
+<script src="__JS__shop.js"></script>
+<script>	
+function ord_show(){
+	var content = $('#form_html').html()
+	layer.open({
+		  type: 1,
+		  title:' ',
+		  offset: 'b',
+		  area: ['100%', '240px'], //宽高
+		  content: content
+		});	
+}
+function allchange(v){$('.number').attr('value',v)}
+$(function(){
+	$('.rob_content').height($(window).height() - 330)
+})
+function content_show(t,idname){
+	$('.rob_det_menu a').removeClass('active');
+	$(t).find('a').addClass('active')
+	$('#one,#two,#three').hide()
+	$('#'+idname).show();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>用户中心</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap">
+	<div class="headimg_wrap" >
+		<div class="msg_wrap">
+			<img class="headimg" src="{$data.headimgurl}">
+			<span class="name">{$data.nickname}</span>
+		</div>
+		<div class="bg_img" style="background:url({$data.headimgurl})"></div>
+		<div class="zz_img"></div>
+	</div>
+	<div class="dmt" style="position:relative;z-index:5" ></div>
+<!-- 	<div class="user_c clearfix">
+		<div class="menu left">
+			<a style="border-right:2px solid #f0f0f0">
+				<span class="num">0<span class="unit">元</span></span><br>
+				<span class="exp">余额</span>
+			</a>
+		</div>
+		<div class="menu right">
+			<a>
+				<span class="num">0<span class="unit">分</span></span></span><br>
+				<span class="exp">积分</span>
+			</a>
+		</div>
+	</div>
+	<div class="dmt" style="height:5px;"></div> -->
+	
+	<ul class="main_msg user_index">
+		<li class="tit_w" onclick="location.href='__URL__/ord_1'"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__dd_2x.png)">我的订单</span>
+		</div></li>
+		<li class="tit_w" onclick="location.href='__URL__/user'"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__xgzl_2x.png)">修改资料</span>
+		</div></li>
+		
+<!--		<li class="dmt" style="height:4px;"></li>
+		
+ 		<li class="tit_w" onclick="ticket('__MODULE__/Public/ticket/host/1/size/6?content=__MODULE__/Index/index/fid/{$data.id}')"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__bbx_1.png)">分享二维码</span>
+		</div></li> -->
+<!-- 		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__hy_2x.png)">分享的会员</span>
+		</div></li>
+		
+		<li class="tit_w"><div class="tit">
+			<span class="text" style="background-image:url(__IMG__jgicon_2x.png)">分享的成果</span>
+		</div></li> -->
+		
+		
+	</ul>
+	
+	<ul class="footer clearfix">
+		<li id="ft_one"><a href="__ROOT__"><img src="__IMG__bb_1.png" alt="">首页</a></li>
+		<li id="ft_two"><a href="__MODULE__/News/index"  ><img src="__IMG__shouye_2.png" alt="">播报</a></li>
+		<li><a href="__MODULE__/Order/pre_list"><img src="__IMG__/yyy_2x.png" alt="">预约</a></li>
+		<li id="ft_four"><a  href="__MODULE__/User/index"><img src="__IMG__shouye_4.png" alt="" style="margin:2px auto 0px">我的</a></li>
+	</ul>
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script src="__STATICS__layer/layer.js"></script>
+<script src="__JS__shop.js"></script>
+</body>
+</html>

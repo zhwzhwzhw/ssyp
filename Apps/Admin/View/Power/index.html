@@ -1,0 +1,51 @@
+<extend name="Common:base" />
+<block name="header">
+<meta charset="utf-8">
+<title>权限列表</title>
+<script type ="application/javascript" src="__STATICS__js/jquery.js"></script>
+<script type ="application/javascript">
+$(function(){
+	
+});
+
+
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		订单管理
+		<small>订单详情</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<table id="detail">
+	<tr>
+		<th>id</th>
+		<th>模型</th>
+		<th>控制器</th>
+		<th>方法</th>
+		<th>权限名称</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="power" item="v">
+		<tr>
+			<td>{$v.id}</td>
+			<td>{$v.module}</td>
+			<td>{$v.controller}</td>
+			<td>{$v.action}</td>
+			<td>{$v.power_name}</td>
+			<td>
+				<a href="__URL__/update/id/{$v.id}">修改</a>
+				<a href="__URL__/del/id/{$v.id}">删除</a>
+			</td>
+		</tr>
+	</foreach>
+</table>
+</block>

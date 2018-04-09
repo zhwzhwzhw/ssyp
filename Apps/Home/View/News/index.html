@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>资讯列表</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style>
+.swiper-slide img{
+	width:100%;
+}
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center">资讯列表</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<ul class="list_noimg" id="news_index">
+		<foreach name="list" item="v">
+			<li>
+			<a href="__URL__/detail/id/{$v.id}" style="display:block">
+				<div class="title">{$v.title}</div>
+				<div class="subhead">{$v.pub_time|date='Y-m-d H:i',###}<div class="but">查看详情</div></div>
+			</a>
+			</li>
+		</foreach>
+	</ul>
+	
+	<ul class="footer clearfix">
+		<li><a href="__ROOT__"><img src="__IMG__/bb_1.png" alt="">首页</a></li>
+		<li><a href=""  style="color:#feb100"><img src="__IMG__/bbb2_2x.png" alt="">播报</a></li>
+		<li><a href="__MODULE__/Order/pre_list"><img src="__IMG__/yyy_2x.png" alt="">预约</a></li>
+		<li><a href="__MODULE__/User/index"><img src="__IMG__/shouye_4.png" alt="" style="margin:2px auto 0px">我的</a></li>
+
+	</ul>
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script src="__JS__shop.js"></script>
+<script>
+	pageLoad('__ACTION__/ajax/ajax','news_index');
+</script>
+</body>
+</html>

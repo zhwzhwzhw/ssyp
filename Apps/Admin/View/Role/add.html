@@ -1,0 +1,46 @@
+<extend name="Common:base" />
+<block name="header">
+<meta charset="utf-8">
+<title>角色创建</title>	
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		角色管理
+		<small>角色添加/编辑</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+<block name="main">
+
+<form  method="post">
+<input type="hidden" name="id" value="{$data.id}">
+<input type="hidden" name="role_type" value="{$Think.get.role_type}">
+<table id="detail">
+	<tr>
+		<th>角色名字</th>
+		<td>
+			<input type="text" name="role_name" value="{$data.role_name}"/>
+		</td>
+	</tr>
+		<tr>
+			<th>选择权限</th>
+			<td>
+				<foreach name="power" item="v">
+				<div><input <if condition="$v.have eq 1">checked</if> type="checkbox" name="powerid[]" value="{$v.id}"/>
+				{$v.module}/{$v.controller}/{$v.action}
+				{$v.power_name}</div>
+				</foreach>
+			</td>
+		</tr>
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+
+</form>
+</block>

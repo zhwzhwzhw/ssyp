@@ -1,0 +1,116 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.admin-add,.admin').addClass('active');
+})
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:40%;}
+.cate_fid select{width:20% !important;}
+#detail th{width:20%;}
+.images_unit{float:left;display:table-cell !important;width:200px;height:150px;position:relative;margin:3px;background:#fff;box-shadow: 0px 0px 5px #888888; vertical-align:middle;text-align:center;}
+.images_unit img,.images_unit .images_but{max-width:200px;max-height:150px;vertical-align:middle;}
+.images_unit>.close{background:#fff url(__IMG__close_16.png) no-repeat center center;width:20px;height:20px;position:absolute;top:0;right:0;border-radius:50%;}
+.images_unit .num_wrap{background:#fff;border-top:1px solid #eee;position:absolute;bottom:0;width:100%;height:25px;line-height:25px;font-size:12px;}
+.images_unit .num_wrap input{height:100%;width:50px};
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		管理员
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+
+<form onsubmit="return form_submit(this)" method="post" action="">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >用户基本信息
+		<input type="hidden" name="id" value="{$data.id}" />
+		</th>
+	</tr>
+	<tr>
+		<th>店铺名称</th>
+		<td><input type="text" name="seller_name" placeholder="输入店铺名称" value="{$data.seller_name}"></td>
+	</tr>
+	<tr>
+		<th>店铺描述</th>
+		<td><textarea type="text" name="seller_des" placeholder="店铺描述" >{$data.seller_des}</textarea></td>
+	</tr>
+	<tr>
+		<th>店铺logo</th>
+		<td>
+			<input type="hidden" name="seller_logo" value="{$data.seller_logo}" />
+			<img id="seller_logo_show" src="__ROOT__/Uploads/{$data.seller_logo}" <if condition="$data.seller_logo eq ''">style="display:none"</if> width="100px" alt="">
+			<input id="seller_logo" type="button" value="上传/更换 图片" />
+		</td>
+	</tr>
+	<tr>
+		<th>联系电话</th>
+		<td ><input type="text" name="seller_phone" placeholder="店铺联系电话" value="{$data.seller_phone}"></td>
+	</tr>
+	<tr>
+		<th>店铺地址</th>
+		<td ><input type="text" name="seller_address" placeholder="店铺地址" value="{$data.seller_address}"></td>
+	</tr>
+	<tr>
+		<th>店铺坐标&nbsp;&nbsp;<a href="http://lbs.qq.com/tool/getpoint/" target="_blank" >获取坐标方法</a></th>
+		<td ><input type="text" name="seller_position" placeholder="店铺坐标" value="{$data.seller_position}"></td>
+	</tr>
+	
+	<tr>
+		<th>允许分类：不选表示所有</th>
+		<td>
+			<foreach name="category" item="v">
+				<span style="display:inline-block;padding:3px 10px;">
+					<input <if condition="in_array($v['id'],$cat)">checked</if> type="checkbox" name="cat[]" value="{$v.id}">
+					 {$v.c_name}
+				 </span>
+			</foreach>
+		</td>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		
+		</th>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+</form>
+
+
+</block>
+<block name="footer">
+<script>
+$(function(){
+	h_upload('seller_logo','__MODULE__/Upload/Upload','seller_logo');
+})
+var oldImgName = '{$data.seller_logo}';
+function seller_logo(imgdata){
+	if(oldImgName != ''){
+		$.ajax({
+			'url':'__MODULE__/Upload/delImg',
+			'type':'post',
+			'data':{'imgname':oldImgName}
+		});
+	}
+	oldImgName = imgdata;
+	$('#seller_logo_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
+	$('input[name="seller_logo"]').val(imgdata);
+}
+</script>
+</block>

@@ -1,0 +1,9 @@
+﻿
+<foreach name="list" item="v">
+	<li>
+	<a href="__URL__/detail/id/{$v.id}">
+		<div class="title">{$v.title}</div>
+		<div class="subhead">{$v.pub_time|date='Y-m-d H:i',###}<div class="but">查看详情</div></div>
+	</a>
+	</li>
+</foreach>

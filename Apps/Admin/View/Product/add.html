@@ -1,0 +1,313 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.product-add,.product').addClass('active');
+})
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:40%;}
+.cate_fid select{width:20% !important;}
+#detail th{width:20%;}
+.images_unit{float:left;display:table-cell !important;width:200px;height:150px;position:relative;margin:3px;background:#fff;box-shadow: 0px 0px 5px #888888; vertical-align:middle;text-align:center;}
+.images_unit img,.images_unit .images_but{max-width:200px;max-height:150px;vertical-align:middle;}
+.images_unit>.close{background:#fff url(__IMG__close_16.png) no-repeat center center;width:20px;height:20px;position:absolute;top:0;right:0;border-radius:50%;}
+.images_unit .num_wrap{background:#fff;border-top:1px solid #eee;position:absolute;bottom:0;width:100%;height:25px;line-height:25px;font-size:12px;}
+.images_unit .num_wrap input{height:100%;width:50px}
+.task_msg{width:300px !important;}
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		商品管理
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+
+<form onsubmit="return form_submit(this)" method="post" action="__URL__/save">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >商品基本信息
+		<input type="hidden" name="id" value="{$data.id}" />
+		</th>
+	</tr>
+	<tr>
+		<th>商品分类</th>
+		<td class="cate_fid">
+			<select name="fid[]" onchange="getType(this,'__MODULE__/Category/getType')">
+				<option value="0">--请选择--</option>
+				<foreach name="category_0" item="v">
+					<option <eq name="v.id" value="$first">selected</eq> value="{$v.id}">{$v.c_name}</option>
+				</foreach>
+			</select>
+			<foreach name="c_list" item="v">
+				<select name="fid[]" onchange="getType(this,'__URL__/getType')">
+					<option value="{$v['id']}">{$v.c_name}</option>
+				</select>
+			</foreach>
+		</td>
+	</tr>
+	<tr>
+		<th>商品名称</th>
+		<td><input type="text" name="name" placeholder="填写商品名称" value="{$data.name}"></td>
+	</tr>
+	<tr>
+		<th>商品货号</th>
+		<td><input type="text" name="symbol" placeholder="填写商品货号" value="{$data.symbol}"></td>
+	</tr>
+	<tr>
+		<th>供应商</th>
+		<td><input type="text" name="supply" placeholder="填写供应商" value="{$data.supply}"></td>
+	</tr>
+	
+	<tr>
+		<th>价格</th>
+		<td><input type="text" name="pro_price" placeholder="价格" value="{$data.pro_price}"></td>
+	</tr>
+	<tr>
+		<th>特惠价</th>
+		<td><input type="text" name="discount_price" placeholder="特惠时间段的价格" value="{$data.discount_price}"></td>
+	</tr>
+	<tr>
+		<th>成本价</th>
+		<td><input type="text" name="cost_price" placeholder="成本价" value="{$data.cost_price}"></td>
+	</tr>
+	<tr>
+		<th>库存数量（总数）</th>
+		<td><input type="text" name="pro_number" placeholder="库存数量" value="{$data.pro_number}"></td>
+	</tr>
+	<tr>
+		<th>推荐排序值（1-99 0表示下架 推荐优先由大到小 ）</th>
+		<td><input type="text" name="ordernum" placeholder="推荐排序值 " value="{$data.ordernum}"> </td>
+	</tr>
+	<tr>
+		<th>商品备注（仅后台可见）</th>
+		<td><input type="text" name="pro_comment" placeholder="商品备注" value="{$data.pro_comment}"></td>
+	</tr>
+	<tr>
+		<th>封面图片（165:195）</th>
+		<td>
+			<input type="hidden" name="wx_image" value="{$data.wx_image}" />
+			<img id="wx_image_show" src="__ROOT__/Uploads/{$data.wx_image}" <if condition="$Think.get.id eq ''">style="display:none"</if> width="200px" alt="">
+			<input id="wx_image_but" type="button" value="上传/更换 图片" />
+			
+		</td>
+	</tr>
+	<tr>
+		<th>商品图片（商品详情轮播） 305:420</th>
+		<td class="clearfix">
+		<foreach name="img_list" item="v">
+			<div class="images_unit">
+				<div class="close" title="删除图片" onclick="del_images(this,'{$v.img_name}','{$v.id}')"></div>
+				<input type="hidden" name="img_id[]" value="{$v.id}" />
+				<input type="hidden" name="img_name[]" value="{$v.img_name}" />
+				<img id="images_show" src="__ROOT__/Uploads/{$v.img_name}">
+				<div class="num_wrap">排序(从大到小 1-99)：<input type="text" name="img_ordernum[]" value="{$v.img_ordernum}"/></div>
+			</div>
+		</foreach>
+<!-- 		<input type="hidden" name="images[]" value="{$data.wx_image}" />
+			<img id="images_show" src="__ROOT__/Uploads/{$data.wx_image}"> -->
+			<input class="images_but" id="images_but" type="button" value="上传图片" />
+		</td>
+	</tr>
+	<!--<tr>
+		<th>展示状态</th>
+		<td class="cate_fid">
+			<select name="status" >
+				<option value="0">&#45;&#45;不选择&#45;&#45;</option>
+				<foreach name="category_s2" item="v">
+					<option <eq name="v.id" value="$data.status">selected</eq> value="{$v.id}">{$v.c_name}</option>
+				</foreach>
+			</select>
+			
+		</td>
+	</tr>
+	<tr>
+		<th>关联商品id 用英文,分割</th>
+		<td>
+			<input type="text" name="relation" placeholder="相关商品id 用英文,分割" value="{$data.relation}">
+		</td>
+	</tr>-->
+	<tr class="pre">
+		<th>商品详情</th>
+		<td>
+			<script name="pro_detail" id="editor">{$data.pro_detail}</script>
+		</td>
+	</tr>
+	<tr class="pre">
+		<th>尺码指南</th>
+		<td>
+			<script name="size_notice" id="editor_size">{$data.size_notice}</script>
+		</td>
+	</tr>
+<!-- 	<tr>
+		<th colspan="2" class="th_br">
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >微信分享专用
+		</th>
+	</tr>
+	
+	<tr>
+		<th>分享描述</th>
+		<td>
+			<textarea name="wx_describe" placeholder="填写商品描述">{$data.wx_describe}</textarea>
+		</td>
+	</tr> -->
+
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		</th>
+	</tr>
+	<tr>
+		<th colspan="2" class="det_title" >商品任务设置
+		</th>
+	</tr>
+	
+	<tr>
+		<th>配菜任务</th>
+		<td>
+			是否显示:<input class="task_s" <if condition='$Think.const.ACTION_NAME eq "add" OR ($data["task_peicai"]["s"] gt 0)'>checked</if> type="checkbox" name="task_peicai[s]" value="1">&nbsp;&nbsp;&nbsp;
+			任务时间:<input type="time" {$data["task_peicai"]["s"]|taskIsShow=###} class="task_time" name="task_peicai[start]" value="{$data.task_peicai.start}">-<input type="time" {$data["task_peicai"]["s"]|taskIsShow=###} name="task_peicai[end]" value="{$data.task_peicai.end}">&nbsp;&nbsp;&nbsp;
+			提示信息:<input type="text" {$data["task_peicai"]["s"]|taskIsShow=###} class="task_msg" name="task_peicai[msg]" placeholder="配菜任务提示信息" value="{$data.task_peicai.msg}">
+		</td>
+	</tr> 
+	
+	<tr>
+		<th>锻炼任务</th>
+		<td>
+			是否显示:<input class="task_s" <if condition='$Think.const.ACTION_NAME eq "add" OR ($data["task_duanlian"]["s"] gt 0)'>checked</if> type="checkbox" name="task_duanlian[s]" value="1">&nbsp;&nbsp;&nbsp;
+			任务时间:<input type="time" {$data["task_duanlian"]["s"]|taskIsShow=###} class="task_time" name="task_duanlian[start]" value="{$data.task_duanlian.start}">-<input type="time" {$data["task_duanlian"]["s"]|taskIsShow=###} name="task_duanlian[end]" value="{$data.task_duanlian.end}">&nbsp;&nbsp;&nbsp;
+			提示信息:<input type="text" {$data["task_duanlian"]["s"]|taskIsShow=###} class="task_msg" name="task_duanlian[msg]" placeholder="锻炼任务提示信息" value="{$data.task_duanlian.msg}">
+		</td>
+	</tr>
+	<tr>
+		<th>音乐任务</th>
+		<td>
+			是否显示:<input class="task_s" <if condition='$Think.const.ACTION_NAME eq "add" OR ($data["task_yinyue"]["s"] gt 0)'>checked</if> type="checkbox" name="task_yinyue[s]" value="1">&nbsp;&nbsp;&nbsp;
+			任务时间:<input type="time" {$data["task_yinyue"]["s"]|taskIsShow=###} class="task_time" name="task_yinyue[start]" value="{$data.task_yinyue.start}">-<input type="time" {$data["task_yinyue"]["s"]|taskIsShow=###} name="task_yinyue[end]" value="{$data.task_yinyue.end}">&nbsp;&nbsp;&nbsp;
+			提示信息:<input type="text" {$data["task_yinyue"]["s"]|taskIsShow=###} class="task_msg" name="task_yinyue[msg]" placeholder="音乐任务提示信息" value="{$data.task_yinyue.msg}">
+		</td>
+	</tr>
+	<tr>
+		<th>品茶任务</th>
+		<td>
+			是否显示:<input class="task_s" <if condition='$Think.const.ACTION_NAME eq "add" OR ($data["task_pingcha"]["s"] gt 0)'>checked</if> type="checkbox" name="task_pingcha[s]" value="1">&nbsp;&nbsp;&nbsp;
+			任务时间:<input type="time" {$data["task_pingcha"]["s"]|taskIsShow=###} class="task_time" name="task_pingcha[start]" value="{$data.task_pingcha.start}">-<input type="time" {$data["task_pingcha"]["s"]|taskIsShow=###} name="task_pingcha[end]" value="{$data.task_pingcha.end}">&nbsp;&nbsp;&nbsp;
+			提示信息:<input type="text" {$data["task_pingcha"]["s"]|taskIsShow=###} class="task_msg" name="task_pingcha[msg]" placeholder="品茶任务提示信息" value="{$data.task_pingcha.msg}">
+		</td>
+	</tr>
+	<tr>
+		<th>喝水任务</th>
+		<td>
+			是否显示:<input class="task_s" <if condition='$Think.const.ACTION_NAME eq "add" OR ($data["task_heshui"]["s"] gt 0)'>checked</if> type="checkbox" name="task_heshui[s]" value="1">&nbsp;&nbsp;&nbsp;
+			任务时间:<input type="time" {$data["task_heshui"]["s"]|taskIsShow=###} class="task_time" name="task_heshui[start]" value="{$data.task_heshui.start}">-<input type="time" {$data["task_heshui"]["s"]|taskIsShow=###} name="task_heshui[end]" value="{$data.task_heshui.end}">&nbsp;&nbsp;&nbsp;
+			提示信息:<input type="text" {$data["task_heshui"]["s"]|taskIsShow=###} class="task_msg" name="task_heshui[msg]" placeholder="喝水任务提示信息" value="{$data.task_heshui.msg}">
+		</td>
+	</tr>
+	<tr>
+		<th>冥想任务</th>
+		<td>
+			是否显示:<input class="task_s" <if condition='$Think.const.ACTION_NAME eq "add" OR ($data["task_mingxiang"]["s"] gt 0)'>checked</if> type="checkbox" name="task_mingxiang[s]" value="1">&nbsp;&nbsp;&nbsp;
+			任务时间:<input type="time" {$data["task_mingxiang"]["s"]|taskIsShow=###} class="task_time" name="task_mingxiang[start]" value="{$data.task_mingxiang.start}">-<input type="time" {$data["task_mingxiang"]["s"]|taskIsShow=###} name="task_mingxiang[end]" value="{$data.task_mingxiang.end}">&nbsp;&nbsp;&nbsp;
+			提示信息:<input type="text" {$data["task_mingxiang"]["s"]|taskIsShow=###} class="task_msg" name="task_mingxiang[msg]" placeholder="冥想任务提示信息" value="{$data.task_mingxiang.msg}">
+		</td>
+	</tr>
+	
+	
+	<tr>
+		<th colspan="2" class="th_br">
+		
+		</th>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+</form>
+
+
+</block>
+<block name="footer">
+<script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+<script src="__JS__type-select.js"></script>
+<script>
+$(function(){
+	$('.task_s').change(function(){
+		if ($(this).is(':checked')) { // 全选 
+			$(this).parent('td').find('[type="text"],[type="time"]').css('background','#fff')
+	    }
+	    else { // 取消全选 
+	      $(this).parent('td').find('[type="text"],[type="time"]').css('background','#f1f1f1')
+	    }
+	})
+})
+var ue = UE.getEditor('editor',{
+	initialFrameWidth:800,
+	initialFrameHeight:300
+});
+var ue = UE.getEditor('editor_size',{
+	initialFrameWidth:800,
+	initialFrameHeight:300
+});
+
+$(function(){
+	h_upload('wx_image_but','__MODULE__/Upload/Upload','callback_wx_image');
+	h_upload('images_but','__MODULE__/Upload/Upload','callback_images');
+})
+var oldImgName = '{$data.pro_images}';
+function callback_wx_image(imgdata){
+	if(oldImgName != ''){
+		$.ajax({
+			'url':'__MODULE__/Upload/delImg',
+			'type':'post',
+			'data':{'imgname':oldImgName}
+		});
+	}
+	oldImgName = imgdata;
+	$('#wx_image_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
+	$('input[name="wx_image"]').val(imgdata);
+}
+
+
+function callback_images(imgdata){
+	var wrap = '<div class="images_unit">\
+	<div class="close" title="删除图片" onclick="del_images(this,\''+imgdata+'\')"></div>\
+	<input type="hidden" name="img_name[]" value="'+imgdata+'" />\
+	<img id="images_show" src="__ROOT__/Uploads/'+imgdata+'">\
+	<div class="num_wrap">排序(从大到小 1-99)：<input type="text" name="img_ordernum[]" value="50"/></div>\
+	</div>';
+	
+	$('#images_but').before(wrap);
+	
+}
+function del_images(t,imgName,id){
+	if(!confirm('确定删除吗？'))return false;
+	if(id){
+		$.ajax({'url':'__URL__/del_tb_img/id/'+id})
+	}
+	$.ajax({
+		'url':'__MODULE__/Upload/delImg',
+		'type':'post',
+		'data':{'imgname':imgName},
+		'success':function(re){
+			$(t).parents('.images_unit').remove()
+		}
+	});
+}
+
+</script>
+</block>

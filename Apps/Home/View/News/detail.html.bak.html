@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="noindex, nofollow">
+<title>播报详情页面</title>
+<script src="__STATICS__js/jquery.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+var URL="__URL__";
+</script>
+<script type="text/javascript" src="__JS__jsApiWx.js?a=1"></script>
+<script>
+wxUserId = {$Think.session.user.id};//"{$Think.session.wxLogin.id}"
+title = '{$data.title}'
+shareDesc = '{$data.subhead}';
+imgUrl = 'http://'+window.location.host+'__ROOT__/Uploads/{$data.thumb}';
+toUrl = window.location.host+'__ACTION__?id={$data.id}';
+//微信文章分享成功提示
+function sucMeg(msg){
+	$.ajax({
+		'url':URL+'/share',
+		'type':'post',
+		'data':{
+			'user_id':wxUserId,
+			'news_id':{$data.id},
+			'share_type':msg
+		},
+		'success':function(re){
+			//alert('感谢您的分享，\n我们会继续努力的')
+		}
+	})
+}
+</script>
+
+
+
+</head>
+<body>
+<div>播报详情页面</div>
+<div>
+	<p>{$data.title}</p>
+	<p><img src="__ROOT__/Uploads/{$data.poster}" alt=""></p>
+	<p><a href="__URL__/sendLink/id/{$data.id}">发送链接到微信</a><a href="__URL__/sendPoster/id/{$data.id}">发送海报到微信</a></p>
+</div>
+</body>
+
+</html>

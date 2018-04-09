@@ -1,0 +1,191 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.orders,.orders-index').addClass('active');
+});
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		订单管理
+		<small>订单列表</small>
+	</h1>
+</section>
+</block>
+<block name="main">
+<form>
+<div id="where" class="clearfix" >
+	<dl>
+		<dt style="margin-right: 14px;" >订单id：</dt>
+		<dd>
+			<input type="text" name="id"  value="{$id}" style="width: 100px;margin-right: 14px;padding:3px"  placeholder="输入id">
+			<!--<input type="hidden" name="id" value="eq">-->
+		</dd>
+	</dl>
+	<dl>
+		<dt>订单编号：</dt>
+		<dd>
+			<input type="text" name="bh"  value="{$bh}" style="width: 100px;padding:3px" placeholder="搜索订单编号">
+		</dd>
+	</dl>
+    
+	<br/><dl>
+		<dt>下单日期：</dt>
+		<dd>
+			<input id="pub_time_1" type="text" name="pub_time_start" value="{$start}" style="width: 175px;padding:3px"> 至
+			<input id="pub_time_2" type="text" name="pub_time_end" value="{$end}" style="width: 175px;padding:3px">
+			<!--<input type="hidden" name="pub_time[e]" value="between">
+			<input type="hidden" name="pub_time[call]" value="strtotime">-->
+		</dd>
+	</dl>
+	<br/>
+	<dl>
+		<dt>订单状态：</dt>
+		<dd>
+			全部&nbsp;<input type="radio" name="status" <if condition="$status eq ''">checked</if> value="" />&nbsp;&nbsp;&nbsp;
+			已下单，待支付&nbsp;<input type="radio" name="status" <if condition="$status heq '1'">checked</if> value="1" />&nbsp;&nbsp;&nbsp;
+			已支付，待发货&nbsp;<input type="radio" name="status" <if condition="$status heq '2'">checked</if> value="2" />&nbsp;&nbsp;&nbsp;
+			已发货，待完成&nbsp;<input type="radio" name="status" <if condition="$status heq '3'">checked</if> value="3" />&nbsp;&nbsp;&nbsp;
+			已完成&nbsp;<input type="radio" name="status" <if condition="$status heq '9'">checked</if> value="9" />&nbsp;&nbsp;&nbsp;
+		</dd>
+	</dl>
+    <dl>
+        <input class="where_submit" type="submit" value="搜索">
+    </dl>
+</div>
+</form>
+<form method="post" action="__URL__/excle">
+<table id="detail" class="list">
+	<tr>
+		<th colspan="6">
+		共 {$totalRows} 单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		
+		订单总金额 {$score_money + $ord_money + $mail_money} 元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（包含邮费{$mail_money}，订单{$ord_money}，积分抵扣{$score_money}）
+		<input style="border-radius:5px;color:#fff" type="submit" value="选中订单导出excle">
+	</th>
+	</tr>
+	<tr>
+ 		<th><input  type="checkbox" onclick="check_click(this)"></th>
+		<th>订单信息</th>
+		<th>产品信息(产品，规格，数量)</th>
+		<th>客户信息</th>
+		<th>物流信息</th>
+		<th>操作</th>
+	</tr>
+	<foreach name="list" item="v">
+		<tr>
+			<td>
+				<input type="checkbox" name="id[]" value="{$v.id}">
+			</td>
+			<td>
+				订单id:{$v.id}<br/>
+				<a href="__URL__/detail/id/{$v.id}">订单编号：{$v.bh}</a><br/>
+				下单时间：{$v.pub_time|date='Y/m/d H:i',###}<br/>
+			</td>
+			<td>
+				<table>
+					
+					<foreach name="v.product" item="pv">
+						<tr>
+							<th>{$pv.name}</th>
+							<th>{$pv.norms}</th>
+							<th>{$pv.ord_number}</th>
+						</tr>
+					</foreach>
+				</table>
+			</td>
+			<td>
+				姓名：{$v.custom_name}<br/>
+				电话：{$v.custom_phone}<br/>
+				地址：{$v.address}
+			</td>
+			<td>
+				<a href="https://www.kuaidi100.com/chaxun?com={$v.mail_code|mail_code=###,0}&nu={$v.mail_code|mail_code=###,1}" target="_blank">{$v.mail_code}</a>
+			</td>
+			<td>
+				<if condition="$v.status eq 1">
+					<a onclick="return confirm('确认删除吗')" href="__URL__/del/id/{$v.id}">删除</a>
+				<elseif condition="$v.status eq 2"/>
+					<a href="javascript:apply({$v.id})">发货</a>
+				<elseif condition="$v.status eq 3"/>
+					<a href="__URL__/finish/id/{$v.id}">确认完成</a>
+				<elseif condition="$v.status eq 9"/>
+					已完成
+				</if>
+			</td>
+		</tr>
+	</foreach>
+</table>
+</form>
+<div id="page"> {$page}</div>
+<script>
+function check_click(t) {
+    if ($(t).is(':checked')) { // 全选 
+      $("input[name='id[]']").each(function () {
+        $(this).attr("checked", true);
+      });
+    }
+    else { // 取消全选 
+      $("input[name='id[]']").each(function () {
+        $(this).attr("checked", false);
+      });
+    }
+};
+function apply(id){
+	layer.prompt({title: '输入快递单号', formType: 3,value:'韵达快运|'}, function(data, index){
+	  //layer.close(index);
+	  $.ajax({
+		'url':'__URL__/send',
+		'type':'post',
+		'data':{'id':id,'data':data},
+		'success':function(res){
+			if(res.status == 0){
+				layer.msg(res.info);
+			}else if(res.status == 1){
+				layer.closeAll();
+				layer.msg(res.info);
+				setTimeout(function(){
+					location.href=res.url
+				},1000);
+			}
+		}
+	  })
+	})
+}
+
+var pub_start = {
+		  elem: '#pub_time_1',
+		  format: 'YYYY/MM/DD hh:mm:ss',
+		  min: '2000-01-01 00:00:00', //设定最小日期为当前日期
+		  max: '2099-06-16 23:59:59', //最大日期
+		  istime: true,
+		  istoday: false,
+		  choose: function(datas){
+			  pub_end.min = datas; //开始日选好后，重置结束日的最小日期
+			  pub_end.start = datas //将结束日的初始值设定为开始日
+		  }
+		};
+		var pub_end = {
+		  elem: '#pub_time_2',
+		  format: 'YYYY/MM/DD hh:mm:ss',
+		  min: '2000-01-01 00:00:00',
+		  max: '2099-06-16 23:59:59',
+		  istime: true,
+		  istoday: false,
+		  choose: function(datas){
+			  pub_start.max = datas; //结束日选好后，重置开始日的最大日期
+		  }
+		};
+
+		laydate(pub_start);
+		laydate(pub_end);
+</script>
+</block>
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+<extend name="Common/base"/>
+<block name="header">
+<meta charset="UTF-8">
+<script src="__STATICS__laydate/laydate.js"></script>
+<style>
+#detail th{width:40%;}
+</style>
+
+<script>
+$(function(){
+	$('.news,.news-add').addClass('active');
+})
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+	专题管理
+		<small>编辑专题</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+
+
+<form method="post" action="__MODULE__/News/save">
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >通告信息
+			<input type="hidden" name="id" value="{$data.id}">
+		</th>
+	</tr>
+	
+	<tr>
+		<th>专题图片 340 * 200</th>
+		<td>
+			<input type="hidden" name="image" value="{$data.image}" />
+			<img id="image_show" src="__ROOT__/Uploads/{$data.image}" <if condition="$data.id eq ''">style="display:none"</if> width="200px" alt="">
+			<input id="image_button" type="button" value="上传图片" />	
+		</td>
+	</tr>
+	<tr>
+		<th>添加跳转链接</th>
+		<td >
+			 <textarea  name="content" >{$data.content}</textarea>			
+		</td>
+	</tr>
+	
+<!--  	<tr>
+		<td colspan="2">
+			 <script id="editor" type="text/plain" name="content" >{$data.content}</script>			
+		</td>
+	</tr>-->
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+</table>
+</form>
+</block>
+<block name="footer">
+<script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+<script>
+var ue = UE.getEditor('editor',{
+	initialFrameWidth:800,
+	initialFrameHeight:300
+});
+
+$(function(){
+	h_upload('image_button','__MODULE__/Upload/Upload','callback_image');
+})
+var oldImgName = '{$data.image}';
+function callback_image(imgdata){
+	if(oldImgName != ''){
+		$.ajax({
+			'url':'__MODULE__/Upload/image',
+			'type':'post',
+			'data':{'imgname':oldImgName}
+		});
+	}
+	oldImgName = imgdata;
+	$('#image_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
+	$('input[name="image"]').val(imgdata);
+}
+
+
+</script>
+
+</block>

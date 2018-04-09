@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>酒店查找</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center" style="color:#ffb000;width:calc(100% - 190px)">票务查询</li>
+		<li class="right">&nbsp;</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<div class="det_time" >
+		<form class="form" style="border-radius:5px;width:80%;">
+			<input type="text" placeholder="请输入订单关键词">
+			<div class="sea_but"><img src="__IMG__fd_2x.png" alt="" width="25px"></div>
+		</form>
+	</div>
+	<ul class="ord_list">
+		<li>
+			<div class="wrap">
+				<div class="title"><span class="tit_s">已支付</span>阿斯顿法师是否阿斯顿飞</div>
+				<div class="msg">金额：188&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游客：啊啊啊</div>
+				<div class="subhead">下单：2000-99-99 88:88<br/>有效期：2099-99-99 至 2099-99-99</div>
+			</div>
+		</li>
+		<li>
+			<div class="wrap">
+				<div class="title"><span class="tit_s">已支付</span>阿斯顿法师是否阿斯顿飞</div>
+				<div class="msg">金额：188&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游客：啊啊啊</div>
+				<div class="subhead">下单：2000-99-99 88:88<br/>有效期：2099-99-99 至 2099-99-99</div>
+			</div>
+		</li>
+		<li>
+			<div class="wrap">
+				<div class="title"><span class="tit_s">已支付</span>阿斯顿法师是否阿斯顿飞</div>
+				<div class="msg">金额：188&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游客：啊啊啊</div>
+				<div class="subhead">下单：2000-99-99 88:88<br/>有效期：2099-99-99 至 2099-99-99</div>
+			</div>
+		</li>
+		<li>
+			<div class="wrap">
+				<div class="title"><span class="tit_s">已支付</span>阿斯顿法师是否阿斯顿飞</div>
+				<div class="msg">金额：188&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;游客：啊啊啊</div>
+				<div class="subhead">下单：2000-99-99 88:88<br/>有效期：2099-99-99 至 2099-99-99</div>
+			</div>
+		</li>
+	</ul>
+	<ul class="footer clearfix">
+		<li><a href="123"><img src="__IMG__bb_1.png" alt="" style="margin:2px auto 0px">首页</a></li>
+		<li><img src="__IMG__shouye_2.png" alt="">播报</li>
+		<li><img src="__IMG__yyy_2x.png" alt="">预约</li>
+		<li style="color:#feb100"><img src="__IMG__wd_2x.png" alt="" style="margin:2px auto 0px">我的</li>
+	</ul>
+</div>
+
+</body>
+</html>

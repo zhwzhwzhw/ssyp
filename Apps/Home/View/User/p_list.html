@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>分销商管理</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style type="text/css">
+.user_index .right{
+	line-height:50px;color:#aaa;margin-right:20px;
+}
+.tit_w{padding:10px;}
+.user_index .tit_1{width: 95%;
+    margin: auto;
+    line-height: 50px;}
+.tit_img{height:50px;width:50px;float:left;border-radius:50%;}
+.text{padding-left:10px !important;line-height:normal;display:block;float:left;line-height: 50px;}
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center" >分销商管理</li>
+		
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	
+	<ul class="main_msg user_index" id="p_list">
+		<li class="dmt" style="height:5px;"></li>
+		<foreach name="list" item="v">
+			<li class="tit_w clearfix" onclick="location.href='__URL__/p_list'"><div class="tit_1">
+				<img src="{$v.headimgurl}" class="tit_img"><span class="text" >{$v.name}</span>
+				<div class="right">佣金贡献：{$v.money_to} 元</div>
+			</div></li>
+		</foreach>
+
+		
+		
+	</ul>
+	
+<include file="user_footer"/>
+
+</div>
+<script src="__JS__jquery.min.js"></script>
+<script src="__JS__shop.js"></script>
+<script>
+	pageLoad('__ACTION__/ajax/ajax','p_list');
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+﻿<foreach name="list" item="v">
+	<li onclick="location.href='__MODULE__/News/detail/id/{$v.id}'">
+		<div class="img_wrap" style="height:170px;background-image:url(__ROOT__/Uploads/{$v.thumb})">
+			<img class="cate" src="__IMG__jd_{$v.category}.png" alt="">
+		</div>
+		<div class="title">{$v.title}</div>
+		<div class="price">asdfsadf</div>
+	</li>
+</foreach>

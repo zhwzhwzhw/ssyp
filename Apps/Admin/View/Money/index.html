@@ -1,0 +1,135 @@
+<extend name="Common/base"/>
+<block name="header">
+<link type="text/css" rel="stylesheet" href="__STATICS__css/calendar-pro.css">
+<script type="text/javascript" src="__STATICS__js/calendar-pro.js"></script>
+<script>
+$(function(){
+	$('.product-index,.product').addClass('active');
+})
+
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		资金管理
+		<!--<small>收款列表</small>-->
+	</h1> 
+					
+</section>
+</block>
+<block name="main">
+
+<table id="detail" class="list">
+	<tr>
+		<!-- <th></th> -->
+		<th>交易单号</th>
+		<th>金额</th>
+		<th>交易时间</th>
+		<th>用户下单</th>
+	</tr>
+	<foreach name="list" item="v">
+	<tr>
+		<td>
+			{$v.transaction_id}
+		</td>
+		<td>
+			{$v['money']/100}元
+		</td>
+		<td>
+			{$v.time_end|date_wx=###}
+		</td>
+		<td>用户下单</td>
+		
+	</tr>
+	</foreach>
+</table>
+<div id="page"> {$page}</div>
+<script>
+var pub_start = {
+  elem: '#pub_time_1',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00', //设定最小日期为当前日期
+  max: '2099-06-16 23:59:59', //最大日期
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_end.min = datas; //开始日选好后，重置结束日的最小日期
+	  pub_end.start = datas //将结束日的初始值设定为开始日
+  }
+};
+var pub_end = {
+  elem: '#pub_time_2',
+  format: 'YYYY/MM/DD hh:mm:ss',
+  min: '2000-01-01 00:00:00',
+  max: '2099-06-16 23:59:59',
+  istime: true,
+  istoday: false,
+  choose: function(datas){
+	  pub_start.max = datas; //结束日选好后，重置开始日的最大日期
+  }
+};
+
+laydate(pub_start);
+laydate(pub_end);
+</script>
+</block>
+<block name="footer">
+<script>
+
+
+var product_id;
+var use_start;
+var use_end;
+function data_num(id,start,end){
+	product_id = id;
+	use_start = start;
+	use_end = end;
+	layer.open({
+	  type: 1,
+	  skin: 'layui-layer-rim', //加上边框
+	  area: ['512px', '388px'], //宽高
+	  content: '<div  class="calendar-box demo-box"></div>'
+	});
+	$.ajax({
+		'url':'__URL__/dateJson',
+		'data':{'id':id},
+		'dataType':'json',
+		'success':function(re){
+			$('.calendar-box').calendar({
+				ele : '.demo-box', //依附
+				title : '选择预约时间',
+				beginDate : start,
+				endDate : end,
+				data : re
+			});
+		}
+	})
+}
+
+//点击日历 填写数字
+function click_date_ext(){
+	var data = $('.calendar-box').calendarGetActive();
+	layer.prompt({title: '输 '+data.date+' 的预定限制数量', formType: 3}, function(number, index){
+	  layer.close(index);
+	  $.ajax({
+		'url':'__URL__/dataNum',
+		'type':'post',
+		'data':{'id':product_id,'date':data.date,'num':number},
+		'success':function(re){
+			if(re == '1'){
+				layer.closeAll();
+				data_num(product_id,use_start,use_end);
+			}
+		}
+	  })
+	});
+	//alert(data.date+" "+data.money);
+}
+</script>
+</block>
+
+
+
+
+

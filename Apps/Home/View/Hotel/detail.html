@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>产品信息</title>
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+
+</head>
+<body>
+<div class="body_wrap bottom_0">
+	<ul class="header clearfix ">
+		<li class="left" onclick="history.go(-1)">返回</li>
+		
+		<li class="right" onclick="$('#zhezhao,.list_menu').show()">&nbsp;</li>
+	</ul>
+	<div class="header_bg"></div>
+	<div class="main_msg">
+		<div class="fj_bg detail_head" style="background-image:url(__ROOT__/Uploads/{$list[0].log_images})" ></div>
+		<div class="title">{$list[0].log_name}</div>
+		<div class="subhead">{$list[0].log_describe}</div>
+	</div>
+	
+	<if condition="$list[0]['l_category'] eq 2">
+		<div class="dmt"></div>
+	<else/>
+		<div class="det_time">
+			<table class="form">
+				<tr>
+					<td class="td_left" rowspan="2">共一晚<div class="bor_right"></div></td>
+					<td>入住<input onchange="chengeCookie('__MODULE__/product/changeDate',this)" name="date_start" value="{$Think.cookie.date_start|date='Y-m-d',###}" type="date" class="time"/></td>
+					<td style="width:10px" class="bg"></td>
+				</tr>
+				<tr>
+					<td>离店<input onchange="chengeCookie('__MODULE__/product/changeDate',this)" name="date_end" value="{$Think.cookie.date_end|date='Y-m-d',###}" type="date" class="time"/><div class="bor_c"></div></td>
+					<td class="bg"></td>
+				</tr>
+			</table>
+		</div>
+	</if>
+	<div class="next_pre_title" style="margin-top:0;border:none;font-size:14px;">预订</div>
+	
+	<ul class="next_pre hotel_oper hotel_detail">
+		<!-- <li class="clearfix">
+			<img class="left" src="__PUBLIC__/Home/test/aa.png" alt="">
+			<div class="right">
+				<div class="title">我是标题我是标题我是标题我是标题我是标题我是标题</div>
+				<div class="subhead">描述</div>
+				<div class="detail">
+					<span><span class="fuhao">￥</span>99</span>
+					<a>预&nbsp;订</a>
+				</div>
+			</div>
+		</li> -->
+		<foreach name="list" item="v">
+			<li class="clearfix">
+				<img class="left" src="__ROOT__/Uploads/{$v.pro_images}" alt="">
+				<div class="right">
+					<div class="title">{$v.name}</div>
+					<div class="subhead">{$v.pro_describe}</div>
+					<div class="detail">
+						<span><span class="fuhao">￥</span>{$v.pro_price}</span>
+						<if condition="$v.category eq 2">
+							<a href="__URL__/msg/pro_id/{$v.id}">预&nbsp;订</a>
+						<else/>
+							<a href="__URL__/order/pro_id/{$v.id}">预&nbsp;订</a>
+						</if>
+					</div>
+				</div>
+			</li>
+		</foreach>
+	</ul>
+</div>
+<include file="Public/menu"/>
+<script src="__JS__jquery.min.js"></script>
+<script src="__JS__shop.js"></script>
+
+</body>
+</html>

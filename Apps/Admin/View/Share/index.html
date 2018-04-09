@@ -1,0 +1,53 @@
+<extend name="Common/base"/>
+<block name="header">
+<script type="text/javascript">
+$(function(){
+	$('.share,.share-index').addClass('active');
+})
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		动态通告
+		<small>公告列表</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<table id="detail" class="list">
+	<tr>
+		<th>序号</th>
+		<th>分享方式</th>
+		<th>分享时间</th>
+		<th>分享用户</th>
+		<th>页面内容</th>
+	</tr>
+	<foreach name="list" item="vo">
+		<tr>
+			<td>{$vo.id}</td>
+			<td>{$vo.share_type}</td>
+			<td>{$vo.share_time|date='Y-m-d',###}</td>
+			<td>{$vo.nickname}</td>
+			<td>{$vo.title}</td>
+		</tr>
+	</foreach>
+</table>
+<div id="page">{$page}</div>
+</block>
+<block name="footer">
+<script>
+function show_ticket(name){
+	layer.alert('<img style="margin:auto;display: block;" src="__APP__/Home/Public/ticket?size=6&content=123">',{
+	  title:name+' 的微信绑定二维码',
+	  skin: 'layer-ext-moon',
+	  btn: 0	  
+	})
+}
+</script>
+</block>

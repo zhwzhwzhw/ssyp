@@ -1,0 +1,188 @@
+<extend name="Common/base"/>
+<block name="header">
+<script>
+$(function(){
+	$('.product-index,.product').addClass('active');
+})
+</script>
+<meta charset="UTF-8">
+<style>
+#detail th{width:40%;}
+.cate_fid select{width:20% !important;}
+#detail th{width:20%;}
+.images_unit{float:left;display:table-cell !important;width:200px;height:150px;position:relative;margin:3px;background:#fff;box-shadow: 0px 0px 5px #888888; vertical-align:middle;text-align:center;}
+.images_unit img,.images_unit .images_but{max-width:200px;max-height:150px;vertical-align:middle;}
+.images_unit>.close{background:#fff url(__IMG__close_16.png) no-repeat center center;width:20px;height:20px;position:absolute;top:0;right:0;border-radius:50%;}
+.images_unit .num_wrap{background:#fff;border-top:1px solid #eee;position:absolute;bottom:0;width:100%;height:25px;line-height:25px;font-size:12px;}
+.images_unit .num_wrap input{height:100%;width:50px};
+#detail tr th{width:auto !important;padding:0 !important;text-align:center;}
+#detail tr th{width:30px !important;}
+#jia,.norms_do .jian{cursor:pointer;float:left;background: no-repeat center center;width:32px;height:32px;}
+.norms_do .jian{background-image:url(__IMG__jian.png)}
+#jia{background-image:url(__IMG__jia.png);background-size:29px 29px;margin-top: -2px;}
+.line_num{width:100%; background:none;border:none;text-align:center}
+.submit_norms{width:20%;height:35px;display:block;margin:10px auto;}
+</style>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		商品管理
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+
+<form onsubmit="return form_submit(this)" method="post" action="__URL__/saveNorms">
+<table id="detail">
+	<tr>
+		<th colspan="8" class="det_title" >商品名：{$data.name}
+		<input type="hidden" name="pro_id" value="{$data.id}" />
+		</th>
+	</tr>
+	
+	<tr>
+		<th >行号</th>
+		<th style="font-size:12px;">规格（尺寸,颜色）注意先后顺序 使用英文,</th>
+		<th>销售价</th>
+		<th>特惠价</th>
+		<th>成本价</th>
+		<th>库存量</th>
+		<!--<th>当前状态（0表示隐藏 1表示再用）</th>-->
+		<th >操作</th>
+	</tr>
+	<foreach name="list" item="v">
+		<tr class="norms_tr">
+			<th style="padding:0">
+			<input type="hidden" name="norms_id[]" value="{$v.id}">
+			<input value="id_{$v.id}" type="text" readonly name="line_num[]" class="line_num"></th>
+			<td>
+				<input onclick="normsSet(this,event)" type="text" value="{$v.norms}" name="norms[]" style="border:1px solid #ddd">
+			</td>
+			<td>
+				<input type="text" value="{$v.pro_norms}"  name="pro_norms[]" style="border:1px solid #ddd">
+			</td>
+			<td>
+				<input type="text" value="{$v.discount_norms}" name="discount_norms[]" style="border:1px solid #ddd">
+			</td>
+			<td>
+				<input type="text" value="{$v.cost_norms}" name="cost_norms[]" style="border:1px solid #ddd">
+			</td>
+			<td>
+				<input type="text" value="{$v.number_norms}" name="number_norms[]" style="border:1px solid #ddd">
+			</td>
+			<!--<td>
+				<input type="text" value="{$v.norms_status}" name="norms_status[]" style="border:1px solid #ddd">
+			</td>-->
+			<th class="norms_do" style="padding:0">
+				<div class="jian" onclick="jian(this,'{$v.id}')" ></div>
+			</th>
+		</tr>
+	</foreach>
+	<tr class="norms_tr">
+		<th style="padding:0"><input value="1" type="text" readonly name="line_num[]" class="line_num"></th>
+		<td>
+			<input onclick="normsSet(this,event)" type="text" name="norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.pro_price}" name="pro_norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.discount_price}" name="discount_norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.cost_price}" name="cost_norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.pro_number}" name="number_norms[]" style="border:1px solid #ddd">
+		</td>
+		<!--<td>
+				<input type="text" value="1" name="norms_status[]" style="border:1px solid #ddd">
+		</td>-->
+		<th class="norms_do" style="padding:0">
+			<div class="jian" onclick="jian(this)" ></div>
+			<div id="jia" onclick="jia(this)" ></div>
+		</th>
+	</tr>
+</table>
+
+	<input type="submit" class="submit_norms" value="提&nbsp;&nbsp;&nbsp;交">
+</form>
+
+<table id="init_html" style="display:none">
+		<tr class="norms_tr">
+		<th style="padding:0"><input  type="text" readonly name="line_num[]" class="line_num"></th>
+		<td>
+			<input onclick="normsSet(this,event)" type="text" name="norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.pro_price}" name="pro_norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.discount_price}" name="discount_norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.cost_price}" name="cost_norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+			<input type="text" value="{$data.pro_number}" name="number_norms[]" style="border:1px solid #ddd">
+		</td>
+		<td>
+				<input type="text" value="1" name="norms_status[]" style="border:1px solid #ddd">
+		</td>
+		<th class="norms_do" style="padding:0">
+			<div class="jian" onclick="jian(this)" ></div>
+			<div id="jia" onclick="jia(this)" ></div>
+		</th>
+	</tr>
+</table>
+
+
+
+</block>
+<block name="footer">
+<script src="__JS__norms-Set.js"></script>
+<script>
+var c_json = '{$c_json}';
+var norms = $.parseJSON( c_json );
+var province = norms[0].data
+var area1 = norms[1].data
+function jian(t,ids){
+	if(ids){
+		if(!confirm('删除后不能恢复，确定删除？'))return false;
+		$.ajax({
+			'url':'__URL__/delNorms',
+			'type':'post',
+			'data':{'id':ids}
+		})
+	}
+	if($('#detail').find('.norms_tr').length > 1){
+		//alert($(t).parents('.norms_tr').next('.norms_tr').length)
+		if($(t).parents('.norms_tr').next('.norms_tr').length <= 0){
+			jia_str = '<div id="jia" onclick="jia(this)" ></div>'
+			$(t).parents('.norms_tr').prev().find('.norms_do').append(jia_str);
+		}
+		$(t).parents('.norms_tr').remove();
+	}else{
+		alert('至少填写一项规格');
+	}
+}
+function jia(t){
+	var last = $(t).parents('.norms_tr').find('.line_num').val();
+	last = parseInt(last);
+	if(last<=0 || isNaN(last)){
+		last = 0;
+	}
+	$('#init_html').find('.line_num').attr('value',(last+1));
+	var init_html = $('#init_html').html();
+	$('#detail').append(init_html);
+	$(t).remove();
+}
+</script>
+</block>

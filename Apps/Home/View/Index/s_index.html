@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>分销首页</title>
+<link rel="stylesheet" href="__CSS__swiper.min.css">
+<link rel="stylesheet" href="__CSS__reset.css">
+<link rel="stylesheet" href="__CSS__shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style>
+.swiper-slide img{
+	width:100%;
+}
+
+.pro_list_2 li{
+	border:1px solid #ddd;
+	width:calc(48% - 4px);
+}
+
+</style>
+</head>
+<body>
+<div class="body_wrap">
+	<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	    	<foreach name="lb" item="v">
+	        	<div class="swiper-slide"><a><img src="__ROOT__/Uploads/{$v.cover_img}" alt="" ></a></div>
+	        </foreach>
+	    </div>
+	    <!-- 如果需要分页器 -->
+	    <div class="swiper-pagination" style="bottom:10px;"></div>
+	    
+	    
+	</div>  
+	<div class="dmt"></div>
+	<div class="list_head" style="border-bottom:none">热门分享</div>
+	<ul class="pro_list_2 clearfix">
+<!-- 		<li>
+			<img src="__PUBLIC__/Home/test/cc.png">
+			<div class="title">撒地方看见阿斯顿飞发阿萨德飞飞奥斯卡交电话费</div>
+			<div class="price">￥<span class="num_price">99.9</span></div>
+		</li> -->
+		<foreach name="lb" item="v">
+			<li onclick="location.href='__MODULE__/News/detail/id/{$v.id}'">
+				<div class="img_wrap" style="height:170px;background-image:url(__ROOT__/Uploads/{$v.thumb})">
+					<img class="cate" src="__IMG__jd_{$v.category}.png" alt="">
+				</div>
+				<div class="title">{$v.title}</div>
+				<div class="price">￥<span class="num_price">{$v.pro_price}</span></div>
+			</li>
+		</foreach>
+	</ul>
+</div>
+<include file="User/user_footer" />
+<script src="__JS__/swiper.min.js"></script>
+<script> 
+var ft='ft_one';
+var img='__IMG__qy_2x.png';
+  var mySwiper = new Swiper ('.swiper-container', {
+   // direction: 'vertical',
+    loop: true,
+    // 如果需要分页器
+    pagination: '.swiper-pagination',
+    autoplay:3000,//隔多久换
+    speed:800
+    // 如果需要前进后退按钮
+/*     nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev', */
+    // 如果需要滚动条
+   // scrollbar: '.swiper-scrollbar',
+  })  
+  var swiper = new Swiper('.index_qg', {
+      pagination: '.swiper-pagination',
+      effect: 'coverflow',
+      autoplay:5000,//隔多久换
+      speed:800,
+      loop: true,   //是否循环
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflow: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows : true
+      }
+  });
+  </script>
+</body>
+</html>

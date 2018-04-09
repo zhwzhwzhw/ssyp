@@ -1,0 +1,28 @@
+<?php
+namespace Api\Controller;
+use Think\Controller;
+class CouponController extends Controller{
+	public $where = array(
+			'allow_get'=>array('eq',1),
+			'start' => array('lt',NOW_TIME),
+			'end' => [array('gt',NOW_TIME),array('lt',0),'OR'],
+			're_num'=>array('exp','< `number`')
+	);
+	public function receive(){
+		$param = I('param.');
+		$user_id = $param['user_id'];
+		$user = M('user')->field('birthday,coupon')->where('id="%s"',$user_id)->find();
+		$my = explode(',', $user['coupon']);
+		$where = $this->where;
+		$where['status'] = array('eq','1');
+		
+		
+		$obj = M('coupon');
+		
+		$list = $obj->where($where)->select();
+		
+		echo $_GET['callback'].'('.json_encode(['data'=>$list,'my'=>$my]).')';
+	}
+	
+	
+}

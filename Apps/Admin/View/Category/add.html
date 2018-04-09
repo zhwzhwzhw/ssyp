@@ -1,0 +1,110 @@
+<extend name="Common/base"/>
+<block name="header">
+<meta charset="UTF-8">
+<style>
+#detail th{width:30%;}
+</style>
+<script>
+$(function(){
+	$('.category-add,.category').addClass('active');
+})
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		分类管理
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<ul id="head_menu" class="clearfix" <if condition="$Think.const.ACTION_NAME eq 'update'">style="display:none"</if>>
+	<li <if condition="$Think.get.status eq 1">class="active"</if> ><a href="__ACTION__/status/1">商品分类</a></li>
+<!-- 	<li <if condition="$Think.get.status eq 2">class="active"</if>><a href="__ACTION__/status/2">展示状态</a></li> -->
+	<li <if condition="$Think.get.status eq 3">class="active"</if>><a href="__ACTION__/status/3">商品规格</a></li>
+</ul>
+<br/>
+
+<form onsubmit="return form_submit(this)" method="post" action="__URL__/save">
+<input type="hidden" name="c_status"  value="{$Think.get.status}" >
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >{$title}</if>
+		<input type="hidden" name="id" value="{$data.id}">
+		</th>
+	</tr>
+	
+	
+	<tr>
+		<th>分类名称</th>
+		<td>
+			<input type="text" name="c_name" placeholder="分类名称" value="{$data.c_name}"/>
+		</td>
+	</tr>
+ 	<tr>
+		<th>分类图标</th>
+		<td>
+			<input type="hidden" name="c_icons" value="{$data.c_icons}" />
+			<img id="log_img_show" src="__ROOT__/Uploads/{$data.c_icons}" <if condition="$data.c_icons eq ''">style="display:none"</if> width="100px" alt="">
+			<input id="log_images" type="button" value="上传/更换 图片" />
+		</td>
+	</tr> 
+	<tr>
+		<th>排序值（由大到小）0为不显示</th>
+		<td>
+			<input type="text" name="c_ordernum" placeholder="排序值" value="{$data.c_ordernum}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th>选择父级:<br/>1、商品管理不大于3级<br/>   2、展示状态请选择顶级分类 <br/>3、商品规格不大于2级</th>
+		<td>
+			<select name="fid[]" onchange="getType(this,'__URL__/getType')">
+				<option value="0">顶级分类</option>
+				<foreach name="category_0" item="v">
+					<option <eq name="v.id" value="$first">selected</eq> value="{$v.id}">{$v.c_name}</option>
+				</foreach>
+			</select>
+			<foreach name="c_list" item="v">
+				<select name="fid[]" onchange="getType(this,'__URL__/getType')">
+					<option value="{$v['id']}">{$v.c_name}</option>
+				</select>
+			</foreach>
+		</td>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+	
+</table>
+</form>
+</block>
+<block name="footer">
+<script src="__JS__type-select.js"></script>
+<script>
+$(function(){
+	h_upload('log_images','__MODULE__/Upload/Upload','callback_sfz');
+})
+var oldImgName = '{$data.log_images}';
+function callback_sfz(imgdata){
+	if(oldImgName != ''){
+		$.ajax({
+			'url':'__MODULE__/Upload/delImg',
+			'type':'post',
+			'data':{'imgname':oldImgName}
+		});
+	}
+	oldImgName = imgdata;
+	$('#log_img_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
+	$('input[name="c_icons"]').val(imgdata);
+}
+
+</script>
+</block>

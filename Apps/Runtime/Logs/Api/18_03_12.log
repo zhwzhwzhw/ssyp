@@ -1,0 +1,933 @@
+[ 2018-03-12T09:44:05+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000437s ]
+
+[ 2018-03-12T09:45:06+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000425s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000483s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T09:46:41+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000481s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:08:28+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000477s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:07+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:08+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000354s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000434s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000464s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:08+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000795s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000851s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:08+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:08+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:09+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:09+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000675s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:09+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000449s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:09+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000583s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000621s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:11:57+08:00 ] 127.0.0.1 /ssyp/index.php/api/login/authlogin/openid/sdsdsdss
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+NOTIC: [8] Undefined index: openid D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\LoginController.class.php 第 44 行.
+
+[ 2018-03-12T10:12:37+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000550s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0104s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000660s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000695s ]
+
+[ 2018-03-12T10:13:31+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000795s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000947s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0085s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000732s ]
+
+[ 2018-03-12T10:15:05+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000679s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0093s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000770s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000802s ]
+
+[ 2018-03-12T10:25:18+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000476s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0090s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0076s ]
+SQL: SELECT `seller_name`,`seller_phone`,`seller_position`,`seller_address`,`seller_des`,`seller_logo`,`cat_list` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000622s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000653s ]
+
+[ 2018-03-12T10:30:03+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000443s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000460s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0077s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0072s ]
+SQL: SELECT `seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000677s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000710s ]
+
+[ 2018-03-12T10:30:54+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000940s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0115s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0094s ]
+SQL: SELECT `seller_name`,`seller_phone`,`seller_position`,`seller_address`,`seller_des`,`seller_logo`,`cat_list` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001062s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001096s ]
+
+[ 2018-03-12T10:31:38+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000883s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000917s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0079s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`seller_name`,`seller_phone`,`seller_position`,`seller_address`,`seller_logo`,`cat_list` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001012s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001043s ]
+
+[ 2018-03-12T10:32:30+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000573s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0077s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0077s ]
+SQL: SELECT `seller_des`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000756s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000786s ]
+
+[ 2018-03-12T10:32:48+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000485s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0083s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0079s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000661s ]
+
+[ 2018-03-12T10:37:49+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0095s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`wx_image`,`pro_price` FROM `ssyp_product` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000648s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000695s ]
+
+[ 2018-03-12T10:42:30+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000427s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0080s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0077s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0077s ]
+SQL: SELECT `id`,`wx_image`,`pro_price` FROM `ssyp_product` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000653s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000684s ]
+
+[ 2018-03-12T10:42:47+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000489s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0104s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0096s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0085s ]
+SQL: SELECT `id`,`wx_image`,`pro_price` FROM `ssyp_product` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000602s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000634s ]
+
+[ 2018-03-12T10:44:37+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000377s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000439s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000471s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0085s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0098s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0078s ]
+SQL: SELECT `id`,`wx_image`,`pro_price` FROM `ssyp_product` LIMIT 0,4   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000626s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2018-03-12T10:44:54+08:00 ] 127.0.0.1 /ssyp/index.php/api/product/detail/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000525s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: pro_norms D:\PHPstudy\WWW\ssyp\Apps\Common\Common\function.php 第 303 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="1" ) ORDER BY img_ordernum desc  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0082s ]
+ERR: 1054:Unknown column 'norms_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `ssyp_norms` WHERE ( pro_id="1" and norms_status="1" ) 
+ERR: 1054:Unknown column 'norms_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `ssyp_norms` WHERE ( pro_id="1" and norms_status="1" ) 
+
+[ 2018-03-12T10:48:37+08:00 ] 127.0.0.1 /ssyp/index.php/api/product/detail/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000818s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: pro_norms D:\PHPstudy\WWW\ssyp\Apps\Common\Common\function.php 第 303 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="1" ) ORDER BY img_ordernum desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: callback D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\ProductController.class.php 第 113 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000650s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000680s ]
+
+[ 2018-03-12T10:59:26+08:00 ] 127.0.0.1 /ssyp/index.php/api/product/detail/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000496s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: pro_norms D:\PHPstudy\WWW\ssyp\Apps\Common\Common\function.php 第 303 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="1" ) ORDER BY img_ordernum desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: callback D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\ProductController.class.php 第 113 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000798s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000828s ]
+
+[ 2018-03-12T10:59:27+08:00 ] 127.0.0.1 /ssyp/index.php/api/product/detail/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000445s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000569s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0073s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: pro_norms D:\PHPstudy\WWW\ssyp\Apps\Common\Common\function.php 第 303 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="1" ) ORDER BY img_ordernum desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: callback D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\ProductController.class.php 第 113 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000808s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000841s ]
+
+[ 2018-03-12T10:59:28+08:00 ] 127.0.0.1 /ssyp/index.php/api/product/detail/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001128s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0092s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0093s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: pro_norms D:\PHPstudy\WWW\ssyp\Apps\Common\Common\function.php 第 303 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0094s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="1" ) ORDER BY img_ordernum desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: callback D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\ProductController.class.php 第 113 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000844s ]
+
+[ 2018-03-12T10:59:28+08:00 ] 127.0.0.1 /ssyp/index.php/api/product/detail/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000434s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000566s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000597s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0102s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0079s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: pro_norms D:\PHPstudy\WWW\ssyp\Apps\Common\Common\function.php 第 303 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="1" ) ORDER BY img_ordernum desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: callback D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\ProductController.class.php 第 113 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000767s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2018-03-12T10:59:28+08:00 ] 127.0.0.1 /ssyp/index.php/api/product/detail/id/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000450s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0095s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0089s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: pro_norms D:\PHPstudy\WWW\ssyp\Apps\Common\Common\function.php 第 303 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="1" ) ORDER BY img_ordernum desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: callback D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\ProductController.class.php 第 113 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2018-03-12T11:00:05+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000571s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000603s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0078s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0091s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0085s ]
+SQL: SELECT `id`,`wx_image`,`pro_price` FROM `ssyp_product` LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0104s ]
+SQL: SELECT `id`,`c_name`,`c_icons` FROM `ssyp_category` WHERE ( fid=0 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001032s ]
+
+[ 2018-03-12T11:28:41+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000495s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000559s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0097s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0081s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0097s ]
+SQL: SELECT `id`,`wx_image`,`pro_price` FROM `ssyp_product` LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0091s ]
+SQL: SELECT `id`,`c_name`,`c_icons` FROM `ssyp_category` WHERE ( fid=0 )  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000861s ]
+
+[ 2018-03-12T11:28:41+08:00 ] 127.0.0.1 /ssyp/index.php/api/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000858s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0084s ]
+SQL: SELECT `turn` FROM `ssyp_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0076s ]
+SQL: SELECT `id`,`seller_logo` FROM `ssyp_seller` LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0086s ]
+SQL: SELECT `id`,`wx_image`,`pro_price` FROM `ssyp_product` LIMIT 0,4   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0077s ]
+SQL: SELECT `id`,`c_name`,`c_icons` FROM `ssyp_category` WHERE ( fid=0 )  [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000648s ]
+
+[ 2018-03-12T11:29:16+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000427s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000456s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0087s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=
+
+[ 2018-03-12T11:31:13+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000498s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000687s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0078s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+
+[ 2018-03-12T11:31:15+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001023s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0096s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+
+[ 2018-03-12T11:31:15+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0084s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+
+[ 2018-03-12T11:31:15+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0112s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+
+[ 2018-03-12T11:31:16+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000525s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000563s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0091s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'left product as p on s.pro_id=p.id where user_id=1' at line 1
+ [ SQL语句 ] : select*from shopcar as s join left product as p on s.pro_id=p.id where user_id=1
+
+[ 2018-03-12T11:33:41+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0074s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  ORDER BY c.id desc 
+
+[ 2018-03-12T11:41:53+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0104s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:16+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000451s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000605s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0092s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:19+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000840s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001066s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001125s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0089s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:19+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000911s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001127s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0076s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:20+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000952s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000607s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000640s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0075s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:20+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000913s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001097s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001159s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0083s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:20+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000903s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001090s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0094s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:21+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000792s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001325s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0081s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:43:21+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0097s ]
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+ERR: 1146:Table 'ssyp.product' doesn't exist
+ [ SQL语句 ] : SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:44:51+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0077s ]
+SQL: SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000805s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
+[ 2018-03-12T11:45:09+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001112s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0090s ]
+SQL: SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000768s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2018-03-12T11:45:11+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000522s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000570s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000600s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0096s ]
+SQL: SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000775s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000809s ]
+
+[ 2018-03-12T11:46:14+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000762s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0090s ]
+SQL: SELECT p.*,c.*,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=0 ) ORDER BY c.id desc  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000941s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000979s ]
+
+[ 2018-03-12T11:50:50+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0082s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:51:46+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000814s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0084s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:51:47+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0082s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+
+[ 2018-03-12T11:53:12+08:00 ] ::1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000695s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0100s ]
+SQL: SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000977s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001024s ]
+
+[ 2018-03-12T11:53:35+08:00 ] ::1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000400s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000650s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0090s ]
+SQL: SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2018-03-12T11:53:36+08:00 ] ::1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000564s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0081s ]
+SQL: SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000786s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2018-03-12T11:53:36+08:00 ] ::1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000574s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0094s ]
+SQL: SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000843s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000878s ]
+
+[ 2018-03-12T11:53:37+08:00 ] ::1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001134s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0093s ]
+SQL: SELECT p.id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000789s ]
+
+[ 2018-03-12T11:53:52+08:00 ] ::1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001177s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0075s ]
+SQL: SELECT p.id as pro_id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id=1 ) ORDER BY c.id desc  [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000805s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000836s ]
+
+[ 2018-03-12T16:22:18+08:00 ] 127.0.0.1 /ssyp/index.php/api/car/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000406s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000436s ]
+NOTIC: [8] Undefined index: user_id D:\PHPstudy\WWW\ssyp\Apps\Api\Controller\CarController.class.php 第 44 行.
+SQL: SHOW COLUMNS FROM `ssyp_shopcar` [ RunTime:0.0100s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id as pro_id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY c.id desc' at line 1
+ [ SQL语句 ] : SELECT p.id as pro_id,p.wx_image,p.name,p.pro_price,c.number,c.id as car_id FROM ssyp_shopcar c INNER JOIN ssyp_product as p on p.id = c.pro_id  WHERE (  c.number > 0 ) AND (  c.user_id= ) ORDER BY c.id desc 
+

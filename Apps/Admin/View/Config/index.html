@@ -1,0 +1,109 @@
+<extend name="Common/base"/>
+<block name="header">
+<meta charset="UTF-8">
+<style>
+#detail th{width:30%;}
+</style>
+<script>
+
+</script>
+</block>
+<block name="position">
+<section class="content-header">
+	<h1>
+		系统设置
+		<small>{$title}</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"> </a></li>
+		<li class="active"></li>
+	</ol> 
+					
+</section>
+</block>
+<block name="main">
+<form method="post" action="__URL__/save">
+<input type="hidden" name="c_status"  value="{$Think.get.status}" >
+<table id="detail">
+	<tr>
+		<th colspan="2" class="det_title" >系统设置，请谨慎修改</if>
+		<input type="hidden" name="id" value="{$data.id}">
+		</th>
+	</tr>
+	
+	
+	<tr>
+		<th>分销功能</th>
+		<td>
+			开启：<input <if condition="$data.is_share eq 1">checked</if> type="radio" value="1" name="is_share">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			关闭：<input <if condition="$data.is_share eq 2">checked</if> type="radio" value="2" name="is_share">
+		</td>
+	</tr>
+	<!--<tr>
+		<th>全场特惠</th>
+		<td>
+			开启：<input <if condition="$data.is_discount eq 1">checked</if> type="radio" value="1" name="is_discount">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			关闭：<input <if condition="$data.is_discount eq 2">checked</if> type="radio" value="2" name="is_discount">
+		</td>
+	</tr>-->
+	<!--<tr>
+		<th>一及分销</th>
+		<td>
+			<input type="text" name="s_one"  value="{$data.s_one}"/>
+		</td>
+	</tr>
+	<tr>
+		<th>二级分销</th>
+		<td>
+			<input type="text" name="s_two"  value="{$data.s_two}"/>
+		</td>
+	</tr>-->
+
+	<tr>
+		<th>上级会员返积分</th>
+		<td>
+			<input type="text" name="sc_top_user"  value="{$data.sc_top_user}"/>
+		</td>
+	</tr>
+	<tr>
+		<th>每日提现申请次数</th>
+		<td>
+			<input type="text" name="cash_time"  value="{$data.cash_time}"/>
+		</td>
+	</tr>
+	<tr>
+		<th>每日提现限额</th>
+		<td>
+			<input type="text" name="cash_money"  value="{$data.cash_money}"/>
+		</td>
+	</tr>
+	
+	<tr>
+		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
+	</tr>
+	
+</table>
+</form>
+</block>
+<block name="footer">
+<script src="__JS__type-select.js"></script>
+<script>
+$(function(){
+	h_upload('log_images','__MODULE__/Upload/Upload','callback_sfz');
+})
+var oldImgName = '{$data.log_images}';
+function callback_sfz(imgdata){
+	if(oldImgName != ''){
+		$.ajax({
+			'url':'__MODULE__/Upload/delImg',
+			'type':'post',
+			'data':{'imgname':oldImgName}
+		});
+	}
+	oldImgName = imgdata;
+	$('#log_img_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
+	$('input[name="c_icons"]').val(imgdata);
+}
+
+</script>
+</block>
