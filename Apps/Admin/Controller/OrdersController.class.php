@@ -102,18 +102,14 @@ class OrdersController extends BaseController{
         $bh      = $param['bh'];
         if($bh){
             $where['bh'] = array('like',"%$bh%");
-            $this->assign('bh',$id);
+            $this->assign('bh',$bh);
         }
         $start       = strtotime($param['pub_time_start']);
-        $where       = array();
-        if($start){
-            $where['pub_time'] = array('egt',$start);
-            $this->assign('start',$start);
-        }
         $end         = strtotime($param['pub_time_end']);
-        if($end){
-            $where['pub_time'] = array('elt',$end);
-            $this->assign('end',$end);
+        if($start&&$end){
+            $where['pub_time']=array('between',array($start,$end));
+            $this->assign('start',$param['pub_time_start']);
+            $this->assign('end',$param['pub_time_end']);
         }
         $status         = $param['status'];
         if($status){
@@ -144,10 +140,10 @@ class OrdersController extends BaseController{
 		}
 		if(!empty($where_child)){
 			$obj = M('ordpro');
-			$list_child = $obj->alias('op')->field('op.*,p.name,n.*,symbol')
+			$list_child = $obj->alias('op')->field('op.*,p.name,symbol')
 			->where('ord_id in ('.$where_child.')')
-			->join(C('DB_PREFIX').'norms as n on n.id=norms_id')
-			->join(C('DB_PREFIX').'product as p on p.id=n.pro_id')
+		/*	->join(C('DB_PREFIX').'norms as n on n.id=norms_id')*/
+			->join(C('DB_PREFIX').'product as p on p.id=op.pro_id')
 			->select();
 			foreach ($list as $k=>$v){
 				foreach ($list_child as $k_c => $v_c){
@@ -201,10 +197,10 @@ class OrdersController extends BaseController{
 		}
 		$pay = M('pay')->where('attach="%s"',$ord_id)->find();
 		
-		$list = $obj->alias('op')->field('op.*,p.name,p.wx_image,n.*')
+		$list = $obj->alias('op')->field('op.*,p.name,p.wx_image')
 		->where('ord_id="%s"',$ord_id)
-		->join(C('DB_PREFIX').'norms as n on n.id=norms_id')
-		->join(C('DB_PREFIX').'product as p on p.id=n.pro_id')
+	/*	->join(C('DB_PREFIX').'norms as n on n.id=norms_id')*/
+		->join(C('DB_PREFIX').'product as p on p.id=op.pro_id')
 		->select();
 		$this->assign('pay',$pay);
 		$this->assign('data',$data);

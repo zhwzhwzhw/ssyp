@@ -1,0 +1,120 @@
+[ 2018-04-16T15:45:18+08:00 ] 127.0.0.1 /ssyp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+
+[ 2018-04-16T15:45:18+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000662s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007609s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007671s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000889s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000919s ]
+
+[ 2018-04-16T15:45:28+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000971s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001597s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0128s ]
+SQL: SELECT `id`,`cat_shop` FROM `ssyp_admin` WHERE `phone` = '13213062375' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `ssyp_admin` SET `login_ip`='127.0.0.1',`login_time`='1523864728' WHERE ( id="16" ) [ RunTime:0.0032s ]
+SQL: UPDATE `ssyp_admin` SET `login_number`=login_number+1 WHERE ( id="16" ) [ RunTime:0.0030s ]
+
+[ 2018-04-16T15:45:30+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000750s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0094s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0127s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="13" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0121s ]
+SQL: SELECT `id` FROM `ssyp_power` WHERE `module` = 'Admin' AND `controller` = 'Index' AND `action` = 'index' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `id` IN ('1','2','3','4','5','6','7','8','11','12','13') AND `fid` > 0  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015910s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015953s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000630s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000663s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2018-04-16T15:45:33+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Orders/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0111s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0101s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="13" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0110s ]
+SQL: SELECT `id` FROM `ssyp_power` WHERE `module` = 'Admin' AND `controller` = 'Orders' AND `action` = 'index' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `id` IN ('1','2','3','4','5','6','7','8','11','12','13') AND `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: id D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\OrdersController.class.php 第 97 行.
+NOTIC: [8] Undefined index: bh D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\OrdersController.class.php 第 102 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\OrdersController.class.php 第 107 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\OrdersController.class.php 第 113 行.
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\OrdersController.class.php 第 118 行.
+SQL: SHOW COLUMNS FROM `ssyp_orders` [ RunTime:0.0119s ]
+SQL: SELECT COUNT(id) AS tp_count FROM ssyp_orders o LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_orders` ORDER BY id desc LIMIT 0,20   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ssyp_ordpro` [ RunTime:0.0112s ]
+SQL: SELECT op.*,p.name,n.*,`symbol` FROM ssyp_ordpro op INNER JOIN ssyp_norms as n on n.id=norms_id INNER JOIN ssyp_product as p on p.id=n.pro_id  WHERE ( ord_id in (1) )  [ RunTime:0.0036s ]
+SQL: SELECT SUM(ord_money) AS tp_sum FROM `ssyp_orders` LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT SUM(score_money) AS tp_sum FROM `ssyp_orders` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT SUM(mail_price) AS tp_sum FROM `ssyp_orders` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000159s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 74 行.
+NOTIC: [8] Undefined variable: id D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 137 行.
+NOTIC: [8] Undefined variable: bh D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 144 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 151 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 152 行.
+NOTIC: [8] Undefined variable: status D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 161 行.
+NOTIC: [8] Undefined variable: status D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 162 行.
+NOTIC: [8] Undefined variable: status D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 163 行.
+NOTIC: [8] Undefined variable: status D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 164 行.
+NOTIC: [8] Undefined variable: status D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\52faf28ae49279dbf722132b13777e34.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012449s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012480s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000639s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000671s ]
+

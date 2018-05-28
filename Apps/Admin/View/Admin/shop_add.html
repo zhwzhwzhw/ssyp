@@ -21,13 +21,13 @@ $(function(){
 <section class="content-header">
 	<h1>
 		管理员
-		<small>{$title}</small>
+		<!--<small>{$title}</small>-->
 	</h1>
 	<ol class="breadcrumb">
 		<li><a href="#"> </a></li>
 		<li class="active"></li>
-	</ol> 
-					
+	</ol>
+
 </section>
 </block>
 <block name="main">
@@ -67,7 +67,30 @@ $(function(){
 		<th>店铺坐标&nbsp;&nbsp;<a href="http://lbs.qq.com/tool/getpoint/" target="_blank" >获取坐标方法</a></th>
 		<td ><input type="text" name="seller_position" placeholder="店铺坐标" value="{$data.seller_position}"></td>
 	</tr>
-	
+  <!--  <tr>
+		<th class="control-label"><font color="red">*</font>详细地址：</th>
+
+		<td class="control-group" style="float: left;width: 63%;margin: 0;">
+			<input type="text" class="form-control" id="address" name="address" style="width: 50%;display: inline-block;margin-left: 18px;margin-top: 20px" placeholder="请填写具体地址" value="">
+			<input type="text" class="form-control" id="community" style="width: 43%;display: inline-block;margin-left: 5px;margin-top: 20px" name="community" placeholder="所在小区" required="required" value="">
+		</td>
+
+		<td class="control-group col-sm-2 text-left" style="margin-left: 0;margin-top: 54px">
+			<input type="hidden" id="lng" name="lng" placeholder="请在地图中标注分店位置" value="">
+			<input type="hidden" id="lat" name="lat" placeholder="请在地图中标注分店位置" value="">
+			<label class="btn btn-default btn-sm btn-map-search"> 搜索地图 </label>
+		</td>
+
+
+	</tr>
+	<tr id="container">
+		&lt;!&ndash;<div class="form-group">
+			<div class="control-group col-sm-9">
+				<div id="container"></div>
+			</div>
+		</div>
+		<div class="space-6"></div>&ndash;&gt;
+	</tr>-->
 	<tr>
 		<th>允许分类：不选表示所有</th>
 		<td>
@@ -79,13 +102,13 @@ $(function(){
 			</foreach>
 		</td>
 	</tr>
-	
+
 	<tr>
 		<th colspan="2" class="th_br">
-		
+
 		</th>
 	</tr>
-	
+
 	<tr>
 		<th colspan="2" class="det_footer"><input type="submit" value="提&nbsp;&nbsp;&nbsp;交"></th>
 	</tr>
@@ -95,6 +118,9 @@ $(function(){
 
 </block>
 <block name="footer">
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=099aa80c85be20b87ecf7fd6ad75bdc2"></script>
+<!--<script type="text/javascript" src="/public/admin/js/province-city-area.js"></script>-->
+<!--	<script type="text/javascript" src="/public/common/js/province-city-area.js"></script>-->
 <script>
 $(function(){
 	h_upload('seller_logo','__MODULE__/Upload/Upload','seller_logo');
@@ -111,6 +137,163 @@ function seller_logo(imgdata){
 	oldImgName = imgdata;
 	$('#seller_logo_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
 	$('input[name="seller_logo"]').val(imgdata);
+}
+$(function(){
+    //高德地图引入
+    var marker, geocoder,map = new AMap.Map('container',{
+        zoom            : 10,
+        keyboardEnable  : true,
+        resizeEnable    : true,
+        topWhenClick    : true
+    });
+    //添加地图控件
+    AMap.plugin(['AMap.ToolBar'],function(){
+        var toolBar = new AMap.ToolBar();
+        map.addControl(toolBar);
+    });
+
+    //地图添加点击事件
+    map.on('click', function(e) {
+        $('#lng').val(e.lnglat.getLng());
+        $('#lat').val(e.lnglat.getLat());
+        //添加地图服务
+        AMap.service('AMap.Geocoder',function(){
+            //实例化Geocoder
+            geocoder = new AMap.Geocoder({
+                city: "010"//城市，默认：“全国”
+            });
+            //TODO: 使用geocoder 对象完成相关功能
+            //逆地理编码
+            var lnglatXY=[e.lnglat.getLng(), e.lnglat.getLat()];//地图上所标点的坐标
+            geocoder.getAddress(lnglatXY, function(status, result) {
+                console.log(result);
+                if (status === 'complete' && result.info === 'OK') {
+                    addMarker(e.lnglat.getLng(), e.lnglat.getLat(),result.regeocode.formattedAddress);
+
+                    //详细地址处理
+                    var pcz  = {
+                        'province'  : result.regeocode.addressComponent.province,
+                        'city'      : result.regeocode.addressComponent.city,
+                        'zone'      : result.regeocode.addressComponent.district
+                    };
+
+                    var province    = result.regeocode.addressComponent.province;
+                    var city       = result.regeocode.addressComponent.city;
+                    var zone        = result.regeocode.addressComponent.district;
+                    var township    =  result.regeocode.addressComponent.township;
+                    var street      =  result.regeocode.addressComponent.street;
+                    var streetNumber=  result.regeocode.addressComponent.streetNumber;
+                    var neighborhood=  result.regeocode.addressComponent.neighborhood;
+                    town = zone;
+                    var adds = province + city + zone + township + street + streetNumber + neighborhood;
+                    $('#zone').val(zone);
+                    $('#address').val(township+street+streetNumber);
+                }else{
+                    //获取地址失败
+                }
+            });
+        });
+    });
+    //搜索地图位置
+    $('.btn-map-search').on('click',function(){
+        var addr = $('#address').val();
+        var zone = $('#zone').val();
+        var community = $('#community').val();
+        var detail  = '江苏省连云港市'+zone+''+addr+''+community;
+        if(detail){
+            var address = detail;
+            console.log(address);
+            AMap.service('AMap.Geocoder',function(){ //回调函数
+                //实例化Geocoder
+                geocoder = new AMap.Geocoder({
+                    'city'   : '', //城市，默认：“全国”
+                    'radius' : 1000   //范围，默认：500
+                });
+                //TODO: 使用geocoder 对象完成相关功能
+                //地理编码,返回地理编码结果
+                geocoder.getLocation(address, function(status, result) {
+                    console.log(result);
+                    if (status === 'complete' && result.info === 'OK') {
+                        var loc_lng_lat = result.geocodes[0].location;
+                        $('#lng').val(loc_lng_lat.getLng());
+                        $('#lat').val(loc_lng_lat.getLat());
+                        addMarker(loc_lng_lat.getLng(),loc_lng_lat.getLat(),result.geocodes[0].formattedAddress);
+                    }else{
+                        layer.msg('您输入的地址无法找到，请确认后再次输入');
+                    }
+                });
+            });
+
+        }else{
+            layer.msg('请填写详细地址');
+        }
+    });
+    /**
+     * 添加一个标签和一个结构体
+     * @param lng
+     * @param lat
+     * @param address
+     */
+    function addMarker(lng,lat,address) {
+        if (marker) {
+            marker.setMap();
+        }
+        marker = new AMap.Marker({
+            icon    : "https://webapi.amap.com/theme/v1.3/markers/n/mark_b.png",
+            position: [lng,lat]
+        });
+        marker.setMap(map);
+
+        infoWindow = new AMap.InfoWindow({
+            offset  : new AMap.Pixel(0,-30),
+            content : '您选中的位置：'+address
+        });
+        infoWindow.open(map, [lng,lat]);
+    }
+
+});
+
+function initCityRegion(fid,selectId,df){
+    if(fid > 0) {
+        var data = {
+            'fid': fid
+        };
+        $.ajax({
+            'type'   : 'post',
+            'url'   : '/shop/house/region',
+            'data'  : data,
+            'dataType'  : 'json',
+            'success'   : function(ret){
+                if(ret.ec == 200){
+                    region_html(ret.data,selectId,df);
+                    if(!df){
+                        if(selectId == 'city'){
+                            initWxappRegion(ret.data[0].region_id,'zone');
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+
+function initWxappRegion(fid,selectId,df){
+    if(fid > 0) {
+        var data = {
+            'fid': fid
+        };
+        $.ajax({
+            'type'   : 'post',
+            'url'   : '/shop/index/region',
+            'data'  : data,
+            'dataType'  : 'json',
+            'success'   : function(ret){
+                if(ret.ec == 200){
+                    region_html(ret.data,selectId,df);
+                }
+            }
+        });
+    }
 }
 </script>
 </block>

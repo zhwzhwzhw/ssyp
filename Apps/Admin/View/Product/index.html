@@ -31,9 +31,9 @@ $(function(){
 		</dd>
 	</dl>
 	<dl>
-		<dt>供货商：</dt>
+		<dt>商品名称：</dt>
 		<dd>
-			<input type="text" name="supply" value="{$supply}" placeholder="模糊搜索" style="padding:3px">
+			<input type="text" name="name" value="{$name}" placeholder="模糊搜索" style="padding:3px">
 			<!--<input type="hidden" name="supply" value="like">-->
 		</dd>
 	</dl><br/>
@@ -55,29 +55,29 @@ $(function(){
 	</tr>
 	<tr>
 		<!-- <th></th> -->
-		<th>产品信息</th>
+		<th>商品信息</th>
 		<th>销售信息</th>
-		<th>规格</th>
+		<!--<th>规格</th>-->
 		<th>编辑信息</th>
-		<th>产品价格</th>
+		<th>商品价格</th>
 		<th>状态信息</th>
 		<th>操作</th>
 	</tr>
 	<foreach name="list" item="v">
 	<tr>
 		<td>
-			（id：{$v.id}）（编号：{$v.symbol}）<br/>{$v.name}<br/>
+			id：{$v.id}<!--（编号：{$v.symbol}）--><br/>商品名称：{$v.name}<br/>
 			所属分类：{$v.category_str}
 		</td>
 		<td>
 			已支付总件数：{$v.sell_pronum_else} <br/>
 			未支付总件数：{$v.sell_pronum_1}
 		</td>
-		<td>
+		<!--<td>
 			<foreach name="v.norms" item="nv">
 				<div>{$nv.norms}(库存：{$nv.number_norms})</div>
 			</foreach>
-		</td>
+		</td>-->
 		<td>
 			发布时间：{$v.pub_time|date='Y-m-d H:i:s',###}<br/>
 			上次修改时间：<if condition="$v.edi_time gt 0">{$v.edi_time|date='Y-m-d H:i:s',###}<else/>未修改</if><br/>
@@ -85,11 +85,11 @@ $(function(){
 		<td>
 			销售价格：{$v.pro_price}<br/>
 			特惠价格：{$v.discount_price}<br/>
-			成本价格：{$v.cost_price}<br/>
+		<!--	成本价格：{$v.cost_price}<br/>-->
 		</td>
 		<td>
 			库存量：{$v.pro_number}<br/>
-			显示状态：<if condition="$v.status_str eq ''">无<else/>{$v.status_str}</if><br/>
+		<!--	显示状态：<if condition="$v.status_str eq ''">无<else/>{$v.status_str}</if><br/>-->
 			排序值(0表示下架):{$v.ordernum}<br/>
 			是否特惠:
 			<if condition="$v.is_discount eq 1">
@@ -101,8 +101,8 @@ $(function(){
 		<td>
 			
 			<a href="__URL__/update/id/{$v.id}">编辑</a><br>
-			<a onclick="productDel(this) " data-id="{$v.id}">删除</a><br>
-			<a href="__URL__/norms/id/{$v.id}">产品规格</a>
+			<a onclick="productDel(this) " data-id="{$v.id}" style="cursor: pointer">删除</a><br>
+			<!--<a href="__URL__/norms/id/{$v.id}">商品规格</a>-->
 		</td>
 	</tr>
 	</foreach>
@@ -221,14 +221,22 @@ function productDel(obj){
         $.ajax({
                 'url':'__URL__/del',
                 'type':'get',
-                'data':{'id':id},
-                'success':function(re){
-                    if(re.ec == 200){
-                        layer.msg('', {icon: 1});
-                        /*layer.closeAll();
-                        data_num(product_id,use_start,use_end);*/
+                'data':{'id':8},
+            'dataType':"json",
+                'success':function(ret){
+                  /*  var ret=eval('('+re+')');//把JSON字符串转换成JSON对象*/
+                    if(ret.ec == 200){
+                        layer.msg(ret.msg, {icon: 1});
+                       /* layer.msg(re.msg, {icon: 1});
+                        /!*layer.closeAll();
+                        data_num(product_id,use_start,use_end);*!/*/
+                        window.location.href(ret.action);
                     }else{
-
+                        layer.msg(ret.msg, {icon: 1});
+                        /* layer.msg(re.msg, {icon: 1});
+                         /!*layer.closeAll();
+                         data_num(product_id,use_start,use_end);*!/*/
+                        window.location.href(ret.action);
 					}
                 }
             });

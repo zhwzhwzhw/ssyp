@@ -15,7 +15,7 @@
         <link href="/ssyp/Public/Admin/css//AdminLTE.css" rel="stylesheet" type="text/css" />
         <title><?php echo ($title); ?></title>
 		<script src="/ssyp/Public/Admin/js/jquery.min.js"></script>
-		
+        <script src="/ssyp/Public/Admin/js/jquery.min.js"></script>
 		<script src="/ssyp/Public/Statics/js/Popt.js"></script>
 		<script src="/ssyp/Public/Statics/js/cityJson.js"></script>
 		<script src="/ssyp/Public/Statics/js/citySet.js"></script>
@@ -181,6 +181,7 @@ $(function(){
 
         <!-- AdminLTE App -->
         <script src="/ssyp/Public/Admin/js/AdminLTE/app.js" type="text/javascript"></script>
+        <script src="/ssyp/Public/Admin/js/plugins/layer/layer.js"></script>
         
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
        <!-- <script src="/ssyp/Public/Admin/js/AdminLTE/dashboard.js" type="text/javascript"></script> -->

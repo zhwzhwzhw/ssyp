@@ -264,14 +264,14 @@ $(function(){
 				<tr>
 					<td class="in_tb_th" >图片</td>
 					<td class="in_tb_th" style="width:30%">产品名称</td>
-					<td class="in_tb_th">规格</td>
+					<!--<td class="in_tb_th">规格</td>-->
 					<td class="in_tb_th">下单价格</td>
 					<td class="in_tb_th">购买数量</td>
 				</tr>
 				<?php if(is_array($list)): foreach($list as $key=>$pv): ?><tr>
 					<td><img src="/ssyp/Uploads/<?php echo ($pv["wx_image"]); ?>" style="max-height:200px;max-width:200px;"></td>
 					<td><?php echo ($pv["name"]); ?></td>
-					<td><?php echo ($pv["norms"]); ?></td>
+					<!--<td><?php echo ($pv["norms"]); ?></td>-->
 					<td><?php echo ($pv["ord_price"]); ?></td>
 					<td><?php echo ($pv["ord_number"]); ?></td>
 					
@@ -332,12 +332,12 @@ $(function(){
 		<th colspan="2" class="det_title" >订单备注
 		</th>
 	</tr>
-	<tr>
+	<!--<tr>
 		<th>分销备注</th>
 		<td>
 			<?php echo ($data["text"]); ?>
 		</td>
-	</tr>
+	</tr>-->
 	<tr>
 		<th>订单备注（可修改）</th>
 		<td>

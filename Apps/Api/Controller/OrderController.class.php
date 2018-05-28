@@ -38,29 +38,38 @@ class OrderController extends Controller {
      		$re = false;
      	}
 
-     	if($re){
+     /*	if($re){
      		$arr = ['status'=>1,'msg'=>'下单成功','ord_id'=>$last_id];
      	}else{
      		$arr = ['status'=>0,'msg'=>'下单失败'];
      	}
-     	echo $_GET['callback'].'('.json_encode($arr).')';
-    	
+     	echo $_GET['callback'].'('.json_encode($arr).')';*/
+        if($re){
+            $this->ajaxReturn(['status'=>1,'msg'=>'下单成功','data'=>$last_id]);
+        }else{
+            $this->ajaxReturn(['status'=>0,'msg'=>'没有相关数据']);
+        }
 		
     }
     public function detail(){
     	$param = I('param.');
 		$ord_id = $param['ord_id'];
 		$obj = M('ordpro');
-		$where = array(
+	/*	$where = array(
 				'ord_id'=>$ord_id
-		);
+		);*/
 		$data = M('orders')->where('id="%s"',$ord_id)->find();
 		$list = $obj->alias('op')->field('op.*,pro_id,name,wx_image,n.*,symbol')
 		->where('ord_id="%s"',$ord_id)
 		->join(C('DB_PREFIX').'norms as n on n.id=norms_id')
 		->join(C('DB_PREFIX').'product as p on p.id=n.pro_id')
 		->select();
-		echo $_GET['callback'].'('.json_encode(['ord'=>$data,'pro'=>$list]).')';
+/*		echo $_GET['callback'].'('.json_encode(['ord'=>$data,'pro'=>$list]).')';*/
+        if($list){
+            $this->ajaxReturn(['status'=>1,'msg'=>'','ord'=>$data,'pro'=>$list]);
+        }else{
+            $this->ajaxReturn(['status'=>0,'msg'=>'没有相关数据']);
+        }
     }
     public function save(){
     	//优惠券

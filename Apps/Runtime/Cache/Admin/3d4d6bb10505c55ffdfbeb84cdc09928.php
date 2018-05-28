@@ -137,7 +137,7 @@ $(function(){
 <table id="detail" class="list">
 	<tr>
 		<th>id</th>
-		<th>手机号</th>
+		<th>手机号(登录账号)</th>
 		<th>姓名</th>
 		<th>角色</th>
 		<th>店铺</th>
@@ -149,7 +149,7 @@ $(function(){
 			<td><?php echo ($v["phone"]); ?></td>
 			<td><?php echo ($v["realname"]); ?></td>
 			<td>
-				<?php if($v["role_id"] == -1): ?>所属店铺最大权限
+				<?php if($v["role_id"] == -1): ?>总平台管理员
 				<?php elseif($v["role_id"] == 0): ?>暂无权限
 				<?php else: echo ($v["role_name"]); endif; ?>
 			</td>

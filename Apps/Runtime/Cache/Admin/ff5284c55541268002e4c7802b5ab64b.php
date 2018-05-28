@@ -145,9 +145,9 @@ $(function(){
 		</dd>
 	</dl>
 	<dl>
-		<dt>供货商：</dt>
+		<dt>商品名称：</dt>
 		<dd>
-			<input type="text" name="supply" value="<?php echo ($supply); ?>" placeholder="模糊搜索" style="padding:3px">
+			<input type="text" name="name" value="<?php echo ($name); ?>" placeholder="模糊搜索" style="padding:3px">
 			<!--<input type="hidden" name="supply" value="like">-->
 		</dd>
 	</dl><br/>
@@ -169,26 +169,26 @@ $(function(){
 	</tr>
 	<tr>
 		<!-- <th></th> -->
-		<th>产品信息</th>
+		<th>商品信息</th>
 		<th>销售信息</th>
-		<th>规格</th>
+		<!--<th>规格</th>-->
 		<th>编辑信息</th>
-		<th>产品价格</th>
+		<th>商品价格</th>
 		<th>状态信息</th>
 		<th>操作</th>
 	</tr>
 	<?php if(is_array($list)): foreach($list as $key=>$v): ?><tr>
 		<td>
-			（id：<?php echo ($v["id"]); ?>）（编号：<?php echo ($v["symbol"]); ?>）<br/><?php echo ($v["name"]); ?><br/>
+			id：<?php echo ($v["id"]); ?><!--（编号：<?php echo ($v["symbol"]); ?>）--><br/>商品名称：<?php echo ($v["name"]); ?><br/>
 			所属分类：<?php echo ($v["category_str"]); ?>
 		</td>
 		<td>
 			已支付总件数：<?php echo ($v["sell_pronum_else"]); ?> <br/>
 			未支付总件数：<?php echo ($v["sell_pronum_1"]); ?>
 		</td>
-		<td>
+		<!--<td>
 			<?php if(is_array($v["norms"])): foreach($v["norms"] as $key=>$nv): ?><div><?php echo ($nv["norms"]); ?>(库存：<?php echo ($nv["number_norms"]); ?>)</div><?php endforeach; endif; ?>
-		</td>
+		</td>-->
 		<td>
 			发布时间：<?php echo (date('Y-m-d H:i:s',$v["pub_time"])); ?><br/>
 			上次修改时间：<?php if($v["edi_time"] > 0): echo (date('Y-m-d H:i:s',$v["edi_time"])); else: ?>未修改<?php endif; ?><br/>
@@ -196,11 +196,11 @@ $(function(){
 		<td>
 			销售价格：<?php echo ($v["pro_price"]); ?><br/>
 			特惠价格：<?php echo ($v["discount_price"]); ?><br/>
-			成本价格：<?php echo ($v["cost_price"]); ?><br/>
+		<!--	成本价格：<?php echo ($v["cost_price"]); ?><br/>-->
 		</td>
 		<td>
 			库存量：<?php echo ($v["pro_number"]); ?><br/>
-			显示状态：<?php if($v["status_str"] == ''): ?>无<?php else: echo ($v["status_str"]); endif; ?><br/>
+		<!--	显示状态：<?php if($v["status_str"] == ''): ?>无<?php else: echo ($v["status_str"]); endif; ?><br/>-->
 			排序值(0表示下架):<?php echo ($v["ordernum"]); ?><br/>
 			是否特惠:
 			<?php if($v["is_discount"] == 1): ?><a style="color:red" href="/ssyp/index.php/Admin/Product/changeGet/tb/product/id/<?php echo ($v["id"]); ?>/is_discount/2">当前特惠</a>
@@ -210,8 +210,8 @@ $(function(){
 		<td>
 			
 			<a href="/ssyp/index.php/Admin/Product/update/id/<?php echo ($v["id"]); ?>">编辑</a><br>
-			<a onclick="productDel(this) " data-id="<?php echo ($v["id"]); ?>">删除</a><br>
-			<a href="/ssyp/index.php/Admin/Product/norms/id/<?php echo ($v["id"]); ?>">产品规格</a>
+			<a onclick="productDel(this) " data-id="<?php echo ($v["id"]); ?>" style="cursor: pointer">删除</a><br>
+			<!--<a href="/ssyp/index.php/Admin/Product/norms/id/<?php echo ($v["id"]); ?>">商品规格</a>-->
 		</td>
 	</tr><?php endforeach; endif; ?>
 </table>
@@ -354,15 +354,26 @@ function productDel(obj){
         $.ajax({
                 'url':'/ssyp/index.php/Admin/Product/del',
                 'type':'get',
-                'data':{'id':id},
-                'success':function(re){
-                    if(re == '1'){
-                        layer.closeAll();
-                        data_num(product_id,use_start,use_end);
-                    }
+                'data':{'id':8},
+            'dataType':"json",
+                'success':function(ret){
+                  /*  var ret=eval('('+re+')');//把JSON字符串转换成JSON对象*/
+                    if(ret.ec == 200){
+                        layer.msg(ret.msg, {icon: 1});
+                       /* layer.msg(re.msg, {icon: 1});
+                        /!*layer.closeAll();
+                        data_num(product_id,use_start,use_end);*!/*/
+                        window.location.href(ret.action);
+                    }else{
+                        layer.msg(ret.msg, {icon: 1});
+                        /* layer.msg(re.msg, {icon: 1});
+                         /!*layer.closeAll();
+                         data_num(product_id,use_start,use_end);*!/*/
+                        window.location.href(ret.action);
+					}
                 }
             });
-        layer.msg('的确很重要', {icon: 1});
+
     }, function(){
         layer.msg('也可以这样', {
             time: 20000, //20s后自动关闭

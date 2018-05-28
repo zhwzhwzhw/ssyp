@@ -5,20 +5,17 @@ class ProductController extends BaseController{
 	public function index(){
         $param       = I('param.');
         $start       = strtotime($param['pub_time_start']);
-        $where       = array();
-        if($start){
-            $where['pub_time'] = array('egt',$start);
-            $this->assign('start',$start);
-        }
         $end         = strtotime($param['pub_time_end']);
-        if($end){
-            $where['pub_time'] = array('elt',$end);
-            $this->assign('end',$end);
+        $where       = array();
+        if($start&&$end){
+            $where['pub_time']=array('between',array($start,$end));
+            $this->assign('start',$param['pub_time_start']);
+            $this->assign('end',$param['pub_time_end']);
         }
-        $supply      = $param['supply'];
-        if($supply){
-            $where['supply'] = array('like',"%$supply%");
-            $this->assign('supply',$supply);
+        $name     = $param['name'];
+        if($name){
+            $where['name'] = array('like',"%$name%");
+            $this->assign('name',$name);
         }
 		$proObj   = M('product');
 		$id       = $_SESSION['admin']['id'];
@@ -89,10 +86,10 @@ class ProductController extends BaseController{
 		}
 		//总库存
 		$z_numner = $proObj
-			->alias('p')
-			->join(C('DB_PREFIX').'norms as c on p.id = pro_id')
+			/*->alias('p')
+			->join(C('DB_PREFIX').'norms as c on p.id = pro_id')*/
 			->where($where)
-			->sum('number_norms');
+			->sum('pro_number');
 		$this->assign('z_1',$z_1);
 		$this->assign('z_else',$z_else);
 		$this->assign('z_number',$z_numner);

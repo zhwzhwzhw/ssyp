@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+<title>填写预订信息</title>
+<link rel="stylesheet" href="__CSS__/reset.css">
+<link rel="stylesheet" href="__CSS__/shop.css">
+<!-- <script src="__JS__/jquery.min.js"></script> -->
+<style>
+body{background:#ececec}
+</style>
+</head>
+<body>
+<div class="body_wrap wrap_finish bottom_0">
+	<ul class="header clearfix header_2">
+		<li class="left" onclick="history.go(-1)">&nbsp;</li>
+		<li class="center">订单详情</li>
+	</ul>
+	<div class="header_height"></div>
+	<div style="height:45px;"></div>
+	<div class="tra_status">
+		<img src="__IMG__success.png" width="20px">&nbsp;&nbsp;交易成功
+	</div>
+	<table class="tb_finish">
+		<tr style="border-bottom:1px dashed #999">
+			<th ><img src="__PUBLIC__/Home/test/cc.png" width="35px"></th>
+			
+			<td style="padding:20px 0">
+				<div style="margin-left:-2em;">
+					<div>订单名称：{$data.log_name} {$data.name}</div>
+					<div>订单编号：{$data.id}</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+		</tr>
+		<tr >
+			<th >订单金额：</th>
+			<td> {$data.ord_money} 元</td>
+		</tr>
+		<tr>
+			<th>付款方式：</th>
+			<td>微信支付</td>
+		</tr>
+		<tr>
+			<th>支付时间：</th>
+			<td>2009-09-09 12:00</td>
+		</tr>
+		<tr>
+			<th>交易单号：</th>
+			<td>132123123122312231223</td>
+		</tr>
+		<tr>
+			<th>电子码：</th>
+			<td style="background:#fff;padding-left:5%;">
+			<foreach name="code" item="v">
+				<div class="code">{$v.verify}</div>
+			</foreach>	
+				<div class="code">1231312313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+				<div class="code">12313</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+</body>
+</html>

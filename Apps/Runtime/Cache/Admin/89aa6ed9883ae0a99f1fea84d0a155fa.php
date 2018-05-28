@@ -162,7 +162,7 @@ $(function(){
 				<input type="hidden" name="img_id[]" value="<?php echo ($v["id"]); ?>" />
 				<input type="hidden" name="img_name[]" value="<?php echo ($v["img_name"]); ?>" />
 				<img id="images_show" src="/ssyp/Uploads/<?php echo ($v["img_name"]); ?>">
-				<div class="num_wrap">网址：<input type="text" name="pro_id[]" value="<?php echo ($v["pro_id"]); ?>"/></div>
+				<!--<div class="num_wrap">网址：<input type="text" name="pro_id[]" value="<?php echo ($v["pro_id"]); ?>"/></div>-->
 			</div><?php endforeach; endif; ?>
 
 			<input class="images_but" id="images_but" type="button" value="上传图片" />

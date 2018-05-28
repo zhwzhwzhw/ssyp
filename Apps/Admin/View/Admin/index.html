@@ -23,7 +23,7 @@ $(function(){
 <table id="detail" class="list">
 	<tr>
 		<th>id</th>
-		<th>手机号</th>
+		<th>手机号(登录账号)</th>
 		<th>姓名</th>
 		<th>角色</th>
 		<th>店铺</th>
@@ -36,7 +36,7 @@ $(function(){
 			<td>{$v.phone}</td>
 			<td>{$v.realname}</td>
 			<td>
-				<if condition="$v.role_id eq -1">所属店铺最大权限
+				<if condition="$v.role_id eq -1">总平台管理员
 				<elseif condition="$v.role_id eq 0"/>暂无权限
 				<else/>{$v.role_name}
 				</if>

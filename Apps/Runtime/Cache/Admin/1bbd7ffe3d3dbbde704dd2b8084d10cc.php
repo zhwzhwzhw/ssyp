@@ -174,11 +174,11 @@ $(function(){
 		<th>商品货号</th>
 		<td><input type="text" name="symbol" placeholder="填写商品货号" value="<?php echo ($data["symbol"]); ?>"></td>
 	</tr>
-	<tr>
+	<!--<tr>
 		<th>供应商</th>
 		<td><input type="text" name="supply" placeholder="填写供应商" value="<?php echo ($data["supply"]); ?>"></td>
-	</tr>
-	
+	</tr>-->
+
 	<tr>
 		<th>价格</th>
 		<td><input type="text" name="pro_price" placeholder="价格" value="<?php echo ($data["pro_price"]); ?>"></td>
@@ -187,10 +187,10 @@ $(function(){
 		<th>特惠价</th>
 		<td><input type="text" name="discount_price" placeholder="特惠时间段的价格" value="<?php echo ($data["discount_price"]); ?>"></td>
 	</tr>
-	<tr>
+	<!--<tr>
 		<th>成本价</th>
 		<td><input type="text" name="cost_price" placeholder="成本价" value="<?php echo ($data["cost_price"]); ?>"></td>
-	</tr>
+	</tr>-->
 	<tr>
 		<th>库存数量（总数）</th>
 		<td><input type="text" name="pro_number" placeholder="库存数量" value="<?php echo ($data["pro_number"]); ?>"></td>
@@ -199,10 +199,10 @@ $(function(){
 		<th>推荐排序值（1-99 0表示下架 推荐优先由大到小 ）</th>
 		<td><input type="text" name="ordernum" placeholder="推荐排序值 " value="<?php echo ($data["ordernum"]); ?>"> </td>
 	</tr>
-	<tr>
+	<!--<tr>
 		<th>商品备注（仅后台可见）</th>
 		<td><input type="text" name="pro_comment" placeholder="商品备注" value="<?php echo ($data["pro_comment"]); ?>"></td>
-	</tr>
+	</tr>-->
 	<tr>
 		<th>封面图片（165:195）</th>
 		<td>
@@ -249,12 +249,12 @@ $(function(){
 			<script name="pro_detail" id="editor"><?php echo ($data["pro_detail"]); ?></script>
 		</td>
 	</tr>
-	<tr class="pre">
+	<!--<tr class="pre">
 		<th>尺码指南</th>
 		<td>
 			<script name="size_notice" id="editor_size"><?php echo ($data["size_notice"]); ?></script>
 		</td>
-	</tr>
+	</tr>-->
 <!-- 	<tr>
 		<th colspan="2" class="th_br">
 		</th>

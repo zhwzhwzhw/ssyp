@@ -17,7 +17,6 @@ class AdminController extends BaseController {
         $param          = I('param.');
         $useid          = $param['id'];
         $nickName       = $param['nickName'];
-        print_r($param);
         if($nickName&&$useid){
             $this->assign('nickName',$nickName);
             $this->assign('useid',$useid);

@@ -183,7 +183,7 @@ $(function(){
 	<tr>
  		<th><input  type="checkbox" onclick="check_click(this)"></th>
 		<th>订单信息</th>
-		<th>产品信息(产品，规格，数量)</th>
+		<th>商品信息(商品，数量)</th>
 		<th>客户信息</th>
 		<th>物流信息</th>
 		<th>操作</th>
@@ -199,10 +199,9 @@ $(function(){
 			</td>
 			<td>
 				<table>
-					
 					<?php if(is_array($v["product"])): foreach($v["product"] as $key=>$pv): ?><tr>
 							<th><?php echo ($pv["name"]); ?></th>
-							<th><?php echo ($pv["norms"]); ?></th>
+						<!--	<th><?php echo ($pv["norms"]); ?></th>-->
 							<th><?php echo ($pv["ord_number"]); ?></th>
 						</tr><?php endforeach; endif; ?>
 				</table>
@@ -265,7 +264,7 @@ function apply(id){
 
 var pub_start = {
 		  elem: '#pub_time_1',
-		  format: 'YYYY/MM/DD hh:mm:ss',
+		  format: 'YYYY/MM/DD ',
 		  min: '2000-01-01 00:00:00', //设定最小日期为当前日期
 		  max: '2099-06-16 23:59:59', //最大日期
 		  istime: true,
@@ -277,7 +276,7 @@ var pub_start = {
 		};
 		var pub_end = {
 		  elem: '#pub_time_2',
-		  format: 'YYYY/MM/DD hh:mm:ss',
+		  format: 'YYYY/MM/DD ',
 		  min: '2000-01-01 00:00:00',
 		  max: '2099-06-16 23:59:59',
 		  istime: true,
