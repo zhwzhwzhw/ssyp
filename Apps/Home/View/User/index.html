@@ -1,74 +1,193 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
-<title>用户中心</title>
-<link rel="stylesheet" href="__CSS__reset.css">
-<link rel="stylesheet" href="__CSS__shop.css">
-<!-- <script src="__JS__/jquery.min.js"></script> -->
+<!DOCTYPE html>
+<html style="font-size: 40px;">
 
-</head>
-<body>
-<div class="body_wrap">
-	<div class="headimg_wrap" >
-		<div class="msg_wrap">
-			<img class="headimg" src="{$data.headimgurl}">
-			<span class="name">{$data.nickname}</span>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+		<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+		<meta content="telephone=no, address=no" name="format-detection" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<title>禅品</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Home/css/reset.css">
+		<link rel="stylesheet" href="__ROOT__/Public/Home/css/jquery-weui.css">
+		<link rel="stylesheet" href="__ROOT__/Public/Home/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Home/css/my.css">
+		<script src="__ROOT__/Public/Home/js/jquery.min.js"></script>
+		<script src="__ROOT__/Public/Home/js/common.js"></script>
+		<script src="__ROOT__/Public/Home/js/jquery-weui.min.js"></script>
+		<script src="__ROOT__/Public/Home/js/swiper.js"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="top">
+				<div class="bg info_bg">
+					<img src="__ROOT__/Public/Home/images/toright.png" alt="">
+					<span>ceshi</span>
+				</div>
+				<div class="line1"></div>
+				<ul class="oprate2">
+					<li onclick="toOrder(-1)">
+						<span>我的订单</span>
+						<img src="__ROOT__/Public/Home/images/toright.png" alt="" />
+					</li>
+				</ul>
+				<ul class="oprate1">
+					<li onclick="toOrder(0)">
+						<img src="__ROOT__/Public/Home/images/shop1.png" alt="" />
+						<span>待发货</span>
+					</li>
+					<li onclick="toOrder(1)">
+						<img src="__ROOT__/Public/Home/images/shop2.png" alt="" />
+						<span>已发货</span>
+					</li>
+					<li onclick="toOrder(2)">
+						<img src="__ROOT__/Public/Home/images/shop3.png" alt="" />
+						<span>已收货</span>
+					</li>
+					<li>
+						<img src="__ROOT__/Public/Home/images/shop4.png" alt="" />
+						<span>售后</span>
+					</li>
+				</ul>
+				<div class="line1"></div>
+				<ul class="oprate2">
+					<li class="address">
+						<span>收货地址</span>
+						<img src="__ROOT__/Public/Home/images/toright.png" alt="" />
+					</li>
+				</ul>
+				<div class="line1"></div>
+				<ul class="oprate2">
+					<li class="address">
+						<span>我的团队</span>
+						<img src="__ROOT__/Public/Home/images/toright.png" alt="" />
+					</li>
+				</ul>
+				<ul class="oprate2">
+					<li class="address">
+						<span>积分明细</span>
+						<img src="__ROOT__/Public/Home/images/toright.png" alt="" />
+					</li>
+				</ul>
+			</div>
+			<div class="line1"></div>
+			<ul class="bottom bottom2">
+				<li class="active" onclick="location.href='index.html'">
+					<a href="__APP__/home/index/index">
+						<img src="__ROOT__/Public/Home/images/sicon1.png" alt="">
+						<p>首页</p>
+					</a>
+				</li>
+				<li onclick="location.href='sort.html'">
+					<a href="__APP__/home/index/sort">
+						<img src="__ROOT__/Public/Home/images/icon2.png" alt="">
+						<p>我的任务</p>
+					</a>
+				</li>
+				<li onclick="location.href='cart.html'">
+					<a href="__APP__/home/cart/cart">
+						<img src="__ROOT__/Public/Home/images/icon3.png" alt="">
+						<p>购物车</p>
+					</a>
+				</li>
+				<li onclick="location.href='my.html'">
+					<a href="__APP__/home/user/index">
+						<img src="__ROOT__/Public/Home/images/icon4.png" alt="">
+						<p>我的</p>
+					</a>
+				</li>
+			</ul>
 		</div>
-		<div class="bg_img" style="background:url({$data.headimgurl})"></div>
-		<div class="zz_img"></div>
-	</div>
-	<div class="dmt" style="position:relative;z-index:5" ></div>
-<!-- 	<div class="user_c clearfix">
-		<div class="menu left">
-			<a style="border-right:2px solid #f0f0f0">
-				<span class="num">0<span class="unit">元</span></span><br>
-				<span class="exp">余额</span>
-			</a>
-		</div>
-		<div class="menu right">
-			<a>
-				<span class="num">0<span class="unit">分</span></span></span><br>
-				<span class="exp">积分</span>
-			</a>
-		</div>
-	</div>
-	<div class="dmt" style="height:5px;"></div> -->
-	
-	<ul class="main_msg user_index">
-		<li class="tit_w" onclick="location.href='__URL__/ord_1'"><div class="tit">
-			<span class="text" style="background-image:url(__IMG__dd_2x.png)">我的订单</span>
-		</div></li>
-		<li class="tit_w" onclick="location.href='__URL__/user'"><div class="tit">
-			<span class="text" style="background-image:url(__IMG__xgzl_2x.png)">修改资料</span>
-		</div></li>
+	</body>
+	<script src="https://res.wx.qq.com/open/js/jweixin-1.1.0.js"></script>
+	<script>
+		function toOrder(type){
+			window.location.href="ordersList.html?type="+type
+		}
+		$(function() {
+			var id = localStorage.getItem('id');
+//			$.ajax({
+//				url: "https://bgt.we-fs.com/api/api/gain?class=user&user_id=" + id,
+//				success: function(res) {
+//					var info = JSON.parse(res).data[0];
+//					$('.info_bg').append(`
+//						<img src="${info.img}" class="header" alt="" />
+//						<span class="name">${info.user_name}</span>
+//					`)
+//				},
+//				error: function(res) {
+//					console.log(res);
+//				}
+//			})
+//
+//			$.ajax({
+//				url: "https://bgt.we-fs.com/api/api/classify?admin_id=1&parent_id=1090",
+//				success: function(res) {
+//					var banner = eval(res).data;
+//					console.log(banner);
+//					for(var i in banner) {
+//						$(".swiper-wrapper").append(`
+//							<div class='swiper-slide'><img src='https://bgt.we-fs.com/${banner[i].image}'  alt='' ></div>
+//						`)
+//					}
+//					$(".swiper-container").swiper({
+//						loop: true,
+//						autoplay: 3000
+//					});
+//				},
+//				error: function(res) {
+//					console.log(res);
+//				}
+//			})
+			$('body').on('click','.address',function(){
+				var localUrl = window.location.href;
+				$.ajax({
+						url: "https://bgt.we-fs.com/api/api/share",
+						data: {
+							'url': localUrl,
+							'address':''
+						},
+						success: function(res) {
+							console.log(res);
+							var info = JSON.parse(res);
+							console.log(info);
+							appid=info.appId;
+							wx.config({
+								debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+								appId: info.appId, // 必填，公众号的唯一标识
+								timestamp: info.timestamp, // 必填，生成签名的时间戳
+								nonceStr: info.nonceStr, // 必填，生成签名的随机串
+								signature: info.signature, // 必填，签名
+								jsApiList: [
+									'checkJsApi',
+									'openLocation', 
+									'getLocation',
+									'openAddress',
+									'translateVoice',
+								]
+							});
+							wx.ready(function () {
+						    wx.openAddress({
+					        success: function (res) {
+					        	
+					        },
+					        error: function(res){
+					        	
+					        }
+						    });
+						  })
+
+						}
+				})
+			})
+			
+		})
 		
-<!--		<li class="dmt" style="height:4px;"></li>
-		
- 		<li class="tit_w" onclick="ticket('__MODULE__/Public/ticket/host/1/size/6?content=__MODULE__/Index/index/fid/{$data.id}')"><div class="tit">
-			<span class="text" style="background-image:url(__IMG__bbx_1.png)">分享二维码</span>
-		</div></li> -->
-<!-- 		<li class="tit_w"><div class="tit">
-			<span class="text" style="background-image:url(__IMG__hy_2x.png)">分享的会员</span>
-		</div></li>
-		
-		<li class="tit_w"><div class="tit">
-			<span class="text" style="background-image:url(__IMG__jgicon_2x.png)">分享的成果</span>
-		</div></li> -->
-		
-		
-	</ul>
-	
-	<ul class="footer clearfix">
-		<li id="ft_one"><a href="__ROOT__"><img src="__IMG__bb_1.png" alt="">首页</a></li>
-		<li id="ft_two"><a href="__MODULE__/News/index"  ><img src="__IMG__shouye_2.png" alt="">播报</a></li>
-		<li><a href="__MODULE__/Order/pre_list"><img src="__IMG__/yyy_2x.png" alt="">预约</a></li>
-		<li id="ft_four"><a  href="__MODULE__/User/index"><img src="__IMG__shouye_4.png" alt="" style="margin:2px auto 0px">我的</a></li>
-	</ul>
-</div>
-<script src="__JS__jquery.min.js"></script>
-<script src="__STATICS__layer/layer.js"></script>
-<script src="__JS__shop.js"></script>
-</body>
+	</script>
+
 </html>

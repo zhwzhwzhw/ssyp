@@ -1,6 +1,5 @@
 <?php
-namespace Api\Controller;
-use Home\Controller\BaseController;
+namespace Home\Controller;
 class ProductController extends BaseController {
 	private $where = array(
 			'ordernum'=>['gt',0],
@@ -163,8 +162,8 @@ class ProductController extends BaseController {
 		}
 	}
 	//商品列表
-    public function productList(){
-        $param    = I('param.');
+    public function goodsList(){
+        /*$param    = I('param.');
         $name     = $param['name'];
         if($name){
             $where['name']=array('like',"%$name%");
@@ -197,6 +196,7 @@ class ProductController extends BaseController {
         }
 
         $this->assign('list',$data);
+        $this->display();*/
         $this->display();
     }
 	//商品分类

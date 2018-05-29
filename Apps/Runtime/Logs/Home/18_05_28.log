@@ -1,0 +1,57 @@
+[ 2018-05-28T16:07:01+08:00 ] ::1 /ssyp/index.php/Home/base/QrCode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+ERR: 参数错误或者未定义:filename
+
+[ 2018-05-28T16:07:50+08:00 ] ::1 /ssyp/index.php/Home/base/QrCode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000558s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+ERR: 参数错误或者未定义:filename
+
+[ 2018-05-28T16:08:02+08:00 ] ::1 /ssyp/index.php/Home/base/QrCode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+SQL: SHOW COLUMNS FROM `ssyp_config` [ RunTime:0.0106s ]
+SQL: SELECT * FROM `ssyp_config` LIMIT 1   [ RunTime:0.0004s ]
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `ssyp_config` (`id`,`is_share`,`sc_top_user`,`s_one`,`s_two`,`is_discount`,`turn`,`cash_time`,`cash_money`,`access_token`,`expires_in`) VALUES ('1','1','1','0.12','0.08','2','[{\"img\":\"2018-03\\/1520997527-5aa8949756b89.jpg\",\"pro_id\":\"\"},{\"img\":\"2018-03\\/1521003600-5aa8ac50c0b8c.jpg\",\"pro_id\":\"\"}]','5','200.00','','0')
+ERR: 1062:Duplicate entry '1' for key 'PRIMARY'
+ [ SQL语句 ] : INSERT INTO `ssyp_config` (`id`,`is_share`,`sc_top_user`,`s_one`,`s_two`,`is_discount`,`turn`,`cash_time`,`cash_money`,`access_token`,`expires_in`) VALUES ('1','1','1','0.12','0.08','2','[{\"img\":\"2018-03\\/1520997527-5aa8949756b89.jpg\",\"pro_id\":\"\"},{\"img\":\"2018-03\\/1521003600-5aa8ac50c0b8c.jpg\",\"pro_id\":\"\"}]','5','200.00','','0')
+
+[ 2018-05-28T16:08:50+08:00 ] ::1 /ssyp/index.php/Home/base/QrCode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000531s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000562s ]
+NOTIC: [2] curl_setopt(): You must pass either an object or an array with the CURLOPT_HTTPHEADER argument D:\PHPstudy\WWW\ssyp\Apps\Home\Controller\BaseController.class.php 第 119 行.
+ERR: Cannot use object of type stdClass as array
+
+[ 2018-05-28T16:09:58+08:00 ] ::1 /ssyp/index.php/Home/base/QrCode
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000432s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000530s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000560s ]
+NOTIC: [2] imagecreatefromjpeg(https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=sd): failed to open stream: HTTP request failed! HTTP/1.0 404 Not Found
+ D:\PHPstudy\WWW\ssyp\Apps\Home\Controller\BaseController.class.php 第 108 行.
+NOTIC: [2] imagejpeg() expects parameter 1 to be resource, boolean given D:\PHPstudy\WWW\ssyp\Apps\Home\Controller\BaseController.class.php 第 109 行.
+NOTIC: [2] imagedestroy() expects parameter 1 to be resource, boolean given D:\PHPstudy\WWW\ssyp\Apps\Home\Controller\BaseController.class.php 第 110 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001260s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001321s ]
+

@@ -1,135 +1,204 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
-<title>商城首页</title>
-<link rel="stylesheet" href="__CSS__swiper.min.css">
-<link rel="stylesheet" href="__CSS__reset.css">
-<link rel="stylesheet" href="__CSS__shop.css">
-<!-- <script src="__JS__/jquery.min.js"></script> -->
-<style>
-.swiper-slide img{
-	width:100%;
-}
-.index-top{
-	display:block;
-	height:135px;;
-	background-size:cover;
-	background-position:center;
-	background-repeat:no-repeat;
-	width:100%;
-}
-</style>
-</head>
-<body>
-<div class="body_wrap">
-	<div class="swiper-container">
-	    <div class="swiper-wrapper">
-	    	<foreach name="lb" item="v">
-	        	<div class="swiper-slide"><a class="index-top" style="background-image:url(__ROOT__/Uploads/{$v.cover_img})" href="__MODULE__/News/detail/id/{$v.id}"></a></div>
-	        </foreach>
-	    </div>
-	    <!-- 如果需要分页器 -->
-	    <div class="swiper-pagination" style="bottom:10px;"></div>
-	    
-	    
-	</div>  
-	<ul class="index_cate clearfix">
-		<li><a href="__MODULE__/Hotel/index"><img src="__IMG__/jd_2x.png" alt="">酒店预订</a></li>
-		<li><a href="__MODULE__/Hotel/index/category/2"><img src="__IMG__/mp_2x.png" alt="">门票预订</a></li>
-		<li><a href="__MODULE__/Product/index"><img src="__IMG__/ing_2x.png" alt="">抢购ing</a></li>
-		<li><a href="__MODULE__/News/index"><img src="__IMG__/bb_2x.png" alt="">资讯播报</a></li>
-	</ul>
-	<div class="dmt"></div>
-	<div class="more"><a href="">更多&nbsp;</a></div>
-	<div class="index_qg">
-		<div class="title">今日抢购</div>
-		<div class="swiper-wrapper" >
-		<foreach name="rob_turn" item="v">
-            <div class="swiper-slide" >
-            	<a href="__MODULE__/Product/rob/id/{$v.id}">
-	            	<img style="border-radius:10px 10px 0 0 " src="__ROOT__/Uploads/{$v.pro_images}" alt="">
-	            	<div class="clb_m">
-	            		￥<span style="font-size:18px">{$v.pro_price}</span> <span class="right">{$v.pre_start|date="m/d H:i",###}&nbsp;开抢</span>
-	            	</div>
-	            	<div class="clb_b">
-	            		<div class="b_title">{$v.name}</div>
-	            		<div class="b_subhead"><span class="b_bg">抢购时间</span> {$v.pre_start|date="m/d H:i",###} 至 {$v.pre_end|date="m/d H:i",###}</div>
-	            	</div>
-            	</a>
-            </div>
-         </foreach>
-        </div>
-	</div>
-	<div class="dmt"></div>
-	<div class="list_head" >下期预告</div>
-	<ul class="next_pre">
-		<!-- <li class="clearfix">
-			<img class="left" src="__PUBLIC__/Home/test/aa.png" alt="">
-			<div class="right">
-				<div class="title">我是标题我是标题我是标题我是标题我是标题我是标题</div>
-				<div class="subhead">描述</div>
-				<div class="detail">
-					<span><span class="fuhao">￥</span>99</span>
-					<a>查看详情</a>
-				</div>
-			</div>
-		</li> -->
-		<foreach name="rob_next" item="v">
-			<li class="clearfix">
-				<img class="left" src="__ROOT__/Uploads/{$v.pro_images}" alt="">
-				<div class="right">
-					<div class="title">{$v.name}</div>
-					<div class="subhead">{$v.pro_describe}</div>
-					<div class="detail">
-						<span><span class="fuhao">￥</span>99</span>
-						<a href="__MODULE__/Product/rob/id/{$v.id}">查看详情</a>
+<!DOCTYPE html>
+<html style="font-size: 40px;">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type" />
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+		<meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+		<meta content="telephone=no, address=no" name="format-detection" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<title>膳食优品</title>
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Home/css/reset.css">
+		<link rel="stylesheet" href="__ROOT__/Public/Home/css/jquery-weui.css">
+		<link rel="stylesheet" href="__ROOT__/Public/Home/css/global.css" />
+		<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Home/css/index.css">
+
+		<script src="__ROOT__/Public/Home/js/jquery.min.js"></script>
+		<script src="__ROOT__/Public/Home/js/common.js"></script>
+		<script src="__ROOT__/Public/Home/js/jquery-weui.min.js"></script>
+		<script src="__ROOT__/Public/Home/js/swiper.js"></script>
+		<style>
+			.cont {
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="toIndex" onclick="location.href='index.html'">首页</div>
+			<div class="top">
+				<div class="index_plugin">
+					<div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="__ROOT__/Public/Home/images/banner.jpg" alt=""></div>
+							<div class="swiper-slide"><img src="__ROOT__/Public/Home/images/banner.jpg" alt=""></div>
+						</div>
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
-			</li>
-		</foreach>
-	</ul>
-	<ul class="footer clearfix">
-		<li ><a href="" style="color:#feb100"><img src="__IMG__qy_2x.png" alt="" style="margin:2px auto 0px">首页</a></li>
-		<li><a href="__MODULE__/News/index"><img src="__IMG__/shouye_2.png" alt="">播报</a></li>
-		<li><a href="__MODULE__/Order/pre_list"><img src="__IMG__/yyy_2x.png" alt="">预约</a></li>
-		<li><a href="__MODULE__/User/index"><img src="__IMG__/shouye_4.png" alt="" style="margin:2px auto 0px">我的</a></li>
-	</ul>
-</div>
-<script src="__JS__/swiper.min.js"></script>
-<script> 
+				<div class="search">
 
-  var mySwiper = new Swiper ('.swiper-container', {
-   // direction: 'vertical',
-    loop: true,
-    // 如果需要分页器
-    pagination: '.swiper-pagination',
-    autoplay:3000,//隔多久换
-    speed:800
-    // 如果需要前进后退按钮
-/*     nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev', */
-    // 如果需要滚动条
-   // scrollbar: '.swiper-scrollbar',
-  })  
-  var swiper = new Swiper('.index_qg', {
-      pagination: '.swiper-pagination',
-      effect: 'coverflow',
-      autoplay:5000,//隔多久换
-      speed:800,
-      loop: true,   //是否循环
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflow: {
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows : true
-      }
-  });
-  </script>
-</body>
+					<div class="write">
+						<img src="__ROOT__/Public/Home/images/search.png" alt="">
+						<input type="text" name="search" value="">
+					</div>
+					<div class="add">
+						搜索
+					</div>
+				</div>
+				<ul class="nav">
+					<li onclick="toNav(0)">
+						<a href="__APP__/home/product/goodsList">
+							<img src="__ROOT__/Public/Home/images/nav01.png" alt="">
+							<span>全部商品</span>
+						</a>
+					</li>
+					<li onclick="toNav(1114)">
+						<a href="__APP__/home/product/goodsList">
+							<img src="__ROOT__/Public/Home/images/nav02.png" alt="">
+							<span>新品上市</span>
+						</a>
+					</li>
+					<li onclick="toNav(1177)">
+						<img src="__ROOT__/Public/Home/images/nav03.png" alt="">
+						<span>活动专题</span>
+					</li>
+					<li onclick="toNav(1178)">
+						<img src="__ROOT__/Public/Home/images/nav04.png" alt="">
+						<span>特价优惠</span>
+					</li>
+				</ul>
+				<div class="line"></div>
+				<div class="line"></div>
+
+				<div class="recommand">
+					<div class="title">店铺街<span>></span></div>
+					<div class="wrapper" id="wrapper1">
+						<div class="scroller">
+							<ul class="clearfix">
+								<li>
+									<div class="intro">
+										<a href="__APP__/home/shop/index">
+										<img src="__ROOT__/Public/Home/images/store1.jpg" alt="" />
+										<span></span>
+										</a>
+									</div>
+								</li><li>
+									<div class="intro">
+										<a href="__APP__/home/shop/index">
+											<img src="__ROOT__/Public/Home/images/store2.jpg" alt="" />
+											<span></span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="intro">
+										<a href="__APP__/home/shop/index">
+											<img src="__ROOT__/Public/Home/images/store3.jpg" alt="" />
+											<span></span>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="intro">
+										<a href="__APP__/home/shop/index">
+										<img src="__ROOT__/Public/Home/images/store4.jpg" alt="" />
+										<span></span>
+										</a>
+									</div>
+								</li>
+							</ul> 
+						</div>
+					</div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="recommand">
+						<div class="title">专题狂欢节<span></span></div>
+						<ul class="cont">
+							<li>
+								<a href="__APP__/home/product/detail">
+								<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
+								<span class="name">太极拳服</span>
+								<span class="price">￥100.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="__APP__/home/product/detail">
+									<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
+									<span class="name">太极拳服</span>
+									<span class="price">￥100.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="__APP__/home/product/detail">
+									<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
+									<span class="name">太极拳服</span>
+									<span class="price">￥100.00</span>
+								</a>
+							</li>
+							<li>
+								<a href="__APP__/home/product/detail">
+									<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
+									<span class="name">太极拳服</span>
+									<span class="price">￥100.00</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<ul class="bottom bottom2">
+					<li class="active" onclick="location.href='index.html'">
+						<a href="__APP__/home/index/index">
+						<img src="__ROOT__/Public/Home/images/sicon1.png" alt="">
+						<p>首页</p>
+						</a>
+					</li>
+					<li onclick="location.href='sort.html'">
+						<a href="__APP__/home/index/sort">
+						<img src="__ROOT__/Public/Home/images/icon2.png" alt="">
+						<p>我的任务</p>
+						</a>
+					</li>
+					<li onclick="location.href='cart.html'">
+						<a href="__APP__/home/cart/cart">
+						<img src="__ROOT__/Public/Home/images/icon3.png" alt="">
+						<p>购物车</p>
+						</a>
+					</li>
+					<li onclick="location.href='my.html'">
+						<a href="__APP__/home/user/index">
+						<img src="__ROOT__/Public/Home/images/icon4.png" alt="">
+						<p>我的</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+	</body>
+		<script src="__ROOT__/Public/Home/js/iscroll.js"></script>
+	<script src="__ROOT__/Public/Home/js/navbarscroll.js"></script>
+	<script>
+		function toNav(id) {
+			window.location.href = "goodsList.html?cate_id=" + id;
+		}
+		$(".swiper-container").swiper({
+			loop: true,
+			autoplay: 3000
+		});
+		$('.wrapper').navbarscroll();
+		$(function() {
+            var id = getSearchString('id');
+            if (getSearchString('id')) {
+                console.log(getSearchString('id'));
+                localStorage.setItem("id", getSearchString('id'));
+            } else {
+            }
+        })
+	</script>
+
+
 </html>

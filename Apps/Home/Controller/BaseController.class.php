@@ -2,24 +2,24 @@
 namespace Home\Controller;
 use Think\Controller;
 class BaseController extends Controller {
-    public function _initialize(){
+    /*public function _initialize(){
         $user_id = session('user_id');
         if(!$user_id){
             //获取当前网页，授权后跳回
             $path =  $_SERVER['REQUEST_URI'];
             header('Location:/home/auth/index?path='.$path);
         }
-    }
+    }*/
     public function getcode(){
-        $appid        = '';
+        $appid        = 'wx6974873b607f073e';
         $path = $_REQUEST['path'];
         $redirect_uri = urlencode('http://'.$_SERVER['HTTP_HOST'].'/home/base/callback');
         $url="https://open.weixin.qq.com/connect/oauth2/authorize?appid=".$appid."&redirect_uri=".$redirect_uri."&response_type=code&scope=snsapi_userinfo&state=".$path."#wechat_redirect";
         header('Location:'.$url);
     }
     public function callBack(){
-        $appid = '';
-        $secret = '';
+        $appid  = 'wx6974873b607f073e';
+        $secret = '76ecd93b1a5378e0c01f5313b11cfb93';
         //获取到的code
         $code = $_REQUEST['code'];
         //授权结束后的回调网址
@@ -127,6 +127,5 @@ class BaseController extends Controller {
             curl_close( $ch );
             return $tmpInfo;
         }
-
     }
 }

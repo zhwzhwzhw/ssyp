@@ -1,0 +1,115 @@
+.top1{
+	width: 100%;
+	height: auto;
+}
+.top1 img{
+	width: 100%;
+	height: auto
+}
+.goods_info{
+	position: relative;
+}
+.goods_info .share{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2.5rem;
+}
+.goods_info .share img{
+	width: 1rem;
+	height: 1rem;
+	display: block;
+	margin: 0.25rem auto;
+}
+.goods_info .share span{
+	height: 1.2rem;
+	line-break: 1.2rem;
+	text-align: center;
+	width: 100%;
+	display: block;
+	font-size: 0.7rem;
+}
+.name{
+	padding-left: 0.7rem;
+	padding-top: 0.25rem;
+	height: 1rem;oprate
+	line-height: 1rem;
+	color: #000000;
+	font-size: 0.75rem;
+}
+.price{
+	color: #5f3d2b;
+	font-size: 0.65rem;
+	line-height: 1rem;
+	height: 1rem;
+	margin-top: 0.25rem;
+	padding-left: 0.7rem;
+}
+.other{
+	height: 1.2rem;
+	line-height: 1.2rem;
+	font-size: 0.6rem;
+	color: #434343;
+	padding-left: 0.75rem;
+	margin-bottom: 0.75rem;
+}
+
+.title{
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	color: #333333;
+}
+.cont{
+	line-height: 1rem;
+	font-size: 0.7rem;
+	padding-left: 0.7rem;
+	padding-right: 0.7rem;
+	margin-bottom: 3rem;
+}
+
+.oprate{
+	background-color: #ffffff;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	height: 2rem;
+	border-top: solid 1px #d8d8d8;
+}
+.oprate div img{
+	width: 1.0rem;
+	height: 1.0rem;
+	margin: 0.2rem auto 0;
+	display: block;
+	vertical-align: middle;
+	background-color: #ffffff;
+}
+.oprate div{
+	width: 3.2rem;
+	height: 2rem;
+	
+}
+.oprate div span{
+	height: 0.8rem;
+	line-break: 0.8rem;
+	font-size: 0.6rem;
+	text-align: center;
+	display: block;
+}
+.oprate .btn{
+	width: 6.25rem;
+	height: 2rem;
+	background-color: #5f3d2b;
+	color: #ffffff;
+	line-height: 2rem;
+	text-align: center;
+	border: none;
+	outline: none;
+}
+.w100{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+

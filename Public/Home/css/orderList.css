@@ -1,0 +1,42 @@
+.container{
+}
+.goods_list{
+	width: 18.75rem;
+	
+}
+.goods_list li{
+	width: 18.75rem;
+	height: 5.5rem;
+	display: flex;
+	border-bottom: 0.4rem solid #d8d8d8;
+}
+.goods_list li img{
+	width: 4rem;
+	height: 4rem;
+	margin-top: 0.75rem;
+	margin-left: 0.75rem;
+	margin-right: 0.75rem;
+}
+.goods_list li div{
+	width: 13rem;
+	height: 3rem;
+	padding-top: 0.75rem;
+	padding-bottom: 0.5rem;
+}
+
+.goods_list li .name,.goods_list li .price,.goods_list li .num,.goods_list li .time{
+	height: 1rem;
+	line-height: 1rem;
+	color: #434343;
+	font-size: 0.65rem;
+	display: block;
+}
+
+.notice{
+	padding-top: 3rem;
+	text-align: center;
+	color: #434343;
+	font-size: 0.7rem;
+	border-bottom: none !important;
+	display: block !important;
+}

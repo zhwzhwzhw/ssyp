@@ -1,0 +1,135 @@
+.list{
+	display: flex;
+}
+.goods_list{
+	padding-bottom: 2rem;
+}
+.list{
+	height: 6rem;
+	width: 100%;
+	background-color: #ffffff;
+	position: relative;
+	border-bottom: solid 1px #d8d8d8;
+}
+.remove{
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+body{
+	background-color: #eeeeee;
+}
+.check{
+	width: 2.5rem;
+	height: auto;
+}
+.check img{
+	width: 1.0rem;
+	height: 1.0rem;
+	display: block;
+	margin: 2.5rem auto; 
+}
+.photo{
+	width: 5.5rem;
+	padding-top: 0.75rem;
+}
+.photo img{
+	width: 4.5rem;
+	height: 4.5rem;
+}
+.info{
+	position: relative;
+	width: 12rem;
+}
+.name{
+	display: block;
+	color: #434343;
+	font-size: 0.7rem;
+	padding-top: 1.5rem;
+}
+.price{
+	position: absolute;
+	bottom: 0.75rem;
+	color: #5F3D2B;
+}
+.goods_price{
+	padding-left: 0.5rem;
+}
+.oprate{
+	display: flex;
+	border: solid 1px #d8d8d8;
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.75rem;
+}
+.oprate span,.oprate p.icon{
+	display: block;
+	padding-left: 0.6rem;
+	padding-right: 0.6rem;
+	background-color: #ffffff;
+	height: 1.5rem;
+	line-height: 1.5rem;
+}
+.oprate p.icon{
+	background-color: #eeeeee;
+}
+.goods_bottom {
+	padding-top: 1.3rem;
+}
+
+.goods_bottom .price {
+	color: #F02028;
+}
+
+.goods_list .num {
+	float: right;
+}
+
+.goods_list .num span {
+	padding: 0 0.75rem;
+}
+.notice{
+	padding-top: 6rem;
+	text-align: center;
+}
+.pay{
+	position: fixed;
+	bottom: 2.5rem;
+	display: flex;
+	background-color: #ffffff;
+	height: 2rem;
+	line-height: 2rem;
+	width: 100%;
+}
+
+
+.pay .check1{
+	display: flex;
+	width: 4.5rem;
+}
+.pay .check1 span{
+	color: #434343;
+	font-size: 0.7rem;
+}
+.pay .check1 img{
+	width: 1.0rem;
+	height: 1.0rem;
+	display: block;
+	margin: 0.5rem 0.5rem;
+	margin-left: 0.75rem;
+}
+.pay .total{
+	position: absolute;
+	right: 4rem;
+	padding-right: 0.75rem;
+}
+.pay .confirm{
+	width: 4rem;
+	text-align: center;
+	position: absolute;
+	right: 0rem;
+	background-color: #5F3D2B;
+	font-size: 0.65rem;
+	color: #ffffff;
+	height: 2rem;
+}

@@ -178,7 +178,6 @@ $(function(){
 		<th>供应商</th>
 		<td><input type="text" name="supply" placeholder="填写供应商" value="<?php echo ($data["supply"]); ?>"></td>
 	</tr>-->
-
 	<tr>
 		<th>价格</th>
 		<td><input type="text" name="pro_price" placeholder="价格" value="<?php echo ($data["pro_price"]); ?>"></td>

@@ -174,10 +174,11 @@
 	</tr>-->
 
 	<tr>
-		<th>上级会员返积分</th>
+		<th>首次下单反</th>
 		<td>
 			<input type="text" name="sc_top_user"  value="<?php echo ($data["sc_top_user"]); ?>"/>
 		</td>
+		<td>元</td>
 	</tr>
 	<tr>
 		<th>每日提现申请次数</th>

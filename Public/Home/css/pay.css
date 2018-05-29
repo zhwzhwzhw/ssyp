@@ -1,0 +1,187 @@
+.list{
+	display: flex;
+}
+.addGoods{
+	width: 18.75rem;
+	overflow-x: hidden;
+}
+.list{
+	height: 6rem;
+	width: 100%;
+	background-color: #ffffff;
+	position: relative;
+	border-bottom: solid 1px #d8d8d8;
+}
+.remove{
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+}
+body{
+	background-color: #eeeeee;
+}
+.address{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	border-bottom: solid 1px #d8d8d8;
+	background-color: #ffffff;
+}
+.address .add_icon{
+	width: 1rem;
+	height: 1rem;
+	vertical-align: middle;
+	display: inline-block;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	margin-top: 0.5rem;
+}
+.address .right_icon{
+	width: 0.3rem;
+	height: 0.6rem;
+	vertical-align: middle;
+	float: right;
+	margin-right: 0.75rem;
+	margin-top: 0.7rem;
+	position: absolute;
+  right: 0.75rem;
+}
+.address .notice{
+	height: 2rem;
+	line-height: 2rem;
+	font-size: 0.7rem;
+	color: #343434;
+}
+.address .username,.address .usertel,.address .useradd{
+	margin-top: 0.75rem;
+	width: 50%;
+	height: 0.8rem;
+	line-height: 0.8rem;
+	color: #666666;
+	font-size: 0.7rem;
+	display: inline-block;
+}
+.address .username img,.address .usertel img,.address .useradd img{
+	width: 0.8rem;
+	height: 0.8rem;
+	display: inline-block;
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+.address .useradd{
+	width: 100%;
+	margin-bottom: 0.75rem;
+}
+.photo{
+	width: 5.5rem;
+	padding-top: 0.75rem;
+}
+.photo img{
+	display: inline-block;
+	margin-left: 0.4rem;
+	width: 4.5rem;
+	height: 4.5rem;
+}
+.info{
+	position: relative;
+	width: 12rem;
+}
+.info span{
+	display: block;
+	color: #666666;
+	font-size: 0.7rem;
+	line-height: 1rem;
+	height: 1rem;
+}
+.info .name{
+	color: #434343;
+	padding-top: 0.8rem;
+	padding-bottom: 0.3rem;
+}
+.info span.count{
+	display: flex;
+}
+
+.totalNum{
+	padding-left: 0.5rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	color: #666666;
+	font-size: 0.65rem;
+	background-color: #ffffff;
+}
+.pay_type{
+	height: 1.75rem;
+	line-height: 1.75rem;
+	color: #434343;
+	font-size: 0.65rem;
+	background-color: #ffffff;
+	display: block;
+}
+.pay_type span:nth-child(1){
+	float: left;
+	padding-left: 0.5rem;
+}
+.pay_type span:nth-child(2){
+	float: right;
+	padding-right: 0.5rem;
+}
+.other_price{
+	    padding-top: 0.2rem;
+    padding-bottom: 0.5rem;
+	background-color: #FFFFFF;
+}
+.other_price div{
+	height: 1.5rem;
+  line-height: 1.5rem;
+	color: #434343;
+	font-size: 0.65rem;
+	background-color: #ffffff;
+	display: block;
+}
+.other_price div span:nth-child(1){
+
+	padding-left: 0.5rem;
+}
+.other_price div span:nth-child(2),.other_price div p{
+	float: right;
+	padding-right: 0.5rem;
+}
+.remark{
+	width: 100%;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  outline: none;
+  line-height: 1rem;
+  padding: 0.75rem;
+  color: #434343;
+}
+.color1{
+	color: #5F3D2B;
+}
+.pay{
+	position: fixed;
+	bottom: 0rem;
+	display: flex;
+	background-color: #ffffff;
+	height: 2rem;
+	line-height: 2rem;
+	width: 100%;
+	border-top: solid 1px #d8d8d8;
+}
+.pay .total{
+	position: absolute;
+	left: 0.5rem;
+	padding-right: 0.75rem;
+}
+.pay .confirm{
+	width: 6rem;
+	text-align: center;
+	position: absolute;
+	right: 0rem;
+	background-color: #5F3D2B;
+	font-size: 0.65rem;
+	color: #ffffff;
+	height: 2rem;
+}
