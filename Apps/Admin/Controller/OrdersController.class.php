@@ -116,6 +116,10 @@ class OrdersController extends BaseController{
             $where['status'] = $status;
             $this->assign('status',$status);
         }
+        $role       = $_SESSION['admin']['role_id'];
+        if($role!=-1){
+            $where['shop_id']=$_SESSION['admin']['cat_shop'];
+        }
 		$Obj = M('orders');
 		/*$search = searchWhere();
 		$this->assign('assign',$search['assign']);

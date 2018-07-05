@@ -31,39 +31,47 @@
 		<div class="container">
 			<div class="search">
 					<div class="write">
-						<img src="__ROOT__/Public/Home/image/search.png" alt="">
+						<img src="__ROOT__/Public/Home/images/search.png" alt="">
 						<input type="text" name="search" value="">
 					</div>
 					<div class="add">
-						搜索
+						<a href="__APP__/home/product/search">
+							搜索
+						</a>
 					</div>
 				</div>
 				<div class="title">
-					<span class="active">最新</span>
-					<span>销量</span>
-					<span>推荐</span>
+				<!--	<span class="active" onclick="active(this)"><a href="__APP__/home/product/goodsList?type=1">最新</a></span>
+					<span onclick="active()"><a href="__APP__/home/product/goodsList?type=2">销量</a></span>
+					<span onclick="active()"><a href="__APP__/home/product/goodsList?type=2">推荐</a></span>-->
+					<if condition="$type==2">
+						<span ><a href="__APP__/home/product/goodsList?type=1">最新</a></span>
+						<span class="active"><a href="__APP__/home/product/goodsList?type=2">销量</a></span>
+						<span><a href="__APP__/home/product/goodsList?type=3">推荐</a></span>
+					<elseif condition="$type==3"/>
+						<span><a href="__APP__/home/product/goodsList?type=1">最新</a></span>
+						<span><a href="__APP__/home/product/goodsList?type=2">销量</a></span>
+						<span  class="active"><a href="__APP__/home/product/goodsList?type=3">推荐</a></span>
+					<else/>
+					<span class="active"><a href="__APP__/home/product/goodsList?type=1">最新</a></span>
+					<span><a href="__APP__/home/product/goodsList?type=2">销量</a></span>
+					<span ><a href="__APP__/home/product/goodsList?type=3">推荐</a></span>
+					</if>
+
 				</div>
 			<div class="top1">
 				<div class="recommand">
 					<ul class="cont">
-						<li>
-							<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
-							<span class="name">太极拳服</span>
-							<span class="name">百利甜</span>
-							<span class="price ">￥100.00</span>
-						</li>
-						<li>
-							<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
-							<span class="name">太极拳服</span>
-							<span class="name">百利甜</span>
-							<span class="price ">￥100.00</span>
-						</li>
-						<li>
-							<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
-							<span class="name">太极拳服</span>
-							<span class="name">百利甜</span>
-							<span class="price ">￥100.00</span>
-						</li>
+						<foreach name="list" item="v" key="k">
+							<li>
+								<a href="__APP__/home/product/detail?id={$v.id}">
+								<img src="__ROOT__/Public/Home/images/outdoor.jpg" alt="">
+								<span class="name">{$v.name}</span>
+								<!--<span class="name">百利甜</span>-->
+								<span class="price ">￥{$v.discount_price}</span>
+								</a>
+							</li>
+						</foreach>
 					</ul>
 				</div>
 			</div>
@@ -71,57 +79,10 @@
 		</div>
 	</body>
 	<script>
-
-		$(function() {
-			$('.title span').on('click',function(){
-				var i = $('.title span').index(this);
-				$('.title span').eq(i).addClass('active').siblings().removeClass('active');
-			})
-			var cate_id=getSearchString('cate_id');
-			if(cate_id==0){
-				$.ajax({
-					url: "https://bgt.we-fs.com/api/api/goodsInfo?admin_id=1",
-					success: function(res) {
-						var list = eval(res).data;
-						console.log(list);
-						for(var i in list) {
-							$(".cont").append(`
-								<li onclick="location.href='detail.html?admin_id=1&goods_id=${list[i].goods_id}'">
-									<img src="https://bgt.we-fs.com/${list[i].img}" alt="">
-									<span class="name">${list[i].goods_name}</span>
-									<span class="price">${list[i].market_price}</span>
-								</li>
-							`)
-						}
-					},
-					error: function(res) {
-						console.log(res);
-					}
-				})
-			}else{
-				$.ajax({
-				url: "https://bgt.we-fs.com/api/api/goodsInfo?admin_id=1&cat_id="+cate_id,
-				success: function(res) {
-					
-					var list = eval(res).data;
-					console.log(list);
-					for(var i in list) {
-						$(".cont").append(`
-							<li onclick="location.href='detail.html?admin_id=1&goods_id=${list[i].goods_id}'">
-								<img src="https://bgt.we-fs.com/${list[i].img}" alt="">
-								<span class="name">${list[i].goods_name}</span>
-								<span class="price">${list[i].market_price}</span>
-							</li>
-						`)
-					}
-				},
-				error: function(res) {
-					console.log(res);
-				}
-			})
-			}
-			
-		})
+         function active(obj){
+	      $(obj).addClass('active');
+          $(obj).siblings().removeClass('active');
+         }
 	</script>
 
 </html>

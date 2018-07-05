@@ -164,8 +164,8 @@ $(function(){
 		</td>
 	</tr> -->
 
-	
-	<tr>
+
+	<!--<tr>
 		<th colspan="2" class="th_br">
 		</th>
 	</tr>
@@ -173,7 +173,6 @@ $(function(){
 		<th colspan="2" class="det_title" >商品任务设置
 		</th>
 	</tr>
-	
 	<tr>
 		<th>配菜任务</th>
 		<td>
@@ -181,8 +180,8 @@ $(function(){
 			任务时间:<input type="time" {$data["task_peicai"]["s"]|taskIsShow=###} class="task_time" name="task_peicai[start]" value="{$data.task_peicai.start}">-<input type="time" {$data["task_peicai"]["s"]|taskIsShow=###} name="task_peicai[end]" value="{$data.task_peicai.end}">&nbsp;&nbsp;&nbsp;
 			提示信息:<input type="text" {$data["task_peicai"]["s"]|taskIsShow=###} class="task_msg" name="task_peicai[msg]" placeholder="配菜任务提示信息" value="{$data.task_peicai.msg}">
 		</td>
-	</tr> 
-	
+	</tr>
+
 	<tr>
 		<th>锻炼任务</th>
 		<td>
@@ -222,9 +221,9 @@ $(function(){
 			任务时间:<input type="time" {$data["task_mingxiang"]["s"]|taskIsShow=###} class="task_time" name="task_mingxiang[start]" value="{$data.task_mingxiang.start}">-<input type="time" {$data["task_mingxiang"]["s"]|taskIsShow=###} name="task_mingxiang[end]" value="{$data.task_mingxiang.end}">&nbsp;&nbsp;&nbsp;
 			提示信息:<input type="text" {$data["task_mingxiang"]["s"]|taskIsShow=###} class="task_msg" name="task_mingxiang[msg]" placeholder="冥想任务提示信息" value="{$data.task_mingxiang.msg}">
 		</td>
-	</tr>
-	
-	
+	</tr>-->
+
+
 	<tr>
 		<th colspan="2" class="th_br">
 		
@@ -258,10 +257,10 @@ var ue = UE.getEditor('editor',{
 	initialFrameWidth:800,
 	initialFrameHeight:300
 });
-var ue = UE.getEditor('editor_size',{
+/*var ue = UE.getEditor('editor_size',{
 	initialFrameWidth:800,
 	initialFrameHeight:300
-});
+});*/
 
 $(function(){
 	h_upload('wx_image_but','__MODULE__/Upload/Upload','callback_wx_image');

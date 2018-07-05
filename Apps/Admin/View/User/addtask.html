@@ -1,0 +1,124 @@
+<extend name="Common/base"/>
+<block name="header">
+<link href="__STATICS__css/common_18.css" type="text/css" rel="stylesheet"/>
+<link href="__PUBLIC__/form_new_style/style.css" type="text/css" rel="stylesheet"/>
+<style>
+.right_wrap{
+	position:relative;display:inline-block
+}
+.form-group .form-title{
+	width:15%;
+}
+.btn-submit{
+	margin-left:50%;
+}
+</style>
+
+</block>
+
+</block>
+<block name="main">
+<form method="post" action="__URL__/savetask">
+<input type="hidden" name="id" value="{$task.t_id}">
+<input type="hidden" name="userid" value="{$userid}">
+           <div class="container_form" >
+               <div id="container">
+               <div class="breadcrumbs">
+                   <a  style="color: #4C8FBD" href="__URL__/index">团队列表</a>
+                   <span style="color: black">>编辑</span>
+               </div>
+            <!--表单-->
+              <!-- <div class="form-group">
+                   <label class="form-title">地区：</label>
+                   <select name="bus_address" class="form-control">
+                       <foreach name="area" item="v"  key="key">
+                       <if condition="$v.a_name eq $data[bus_address]">
+                           <option value="{$v.a_name}" selected >{$v.a_name}</option>
+                           <else/>
+                           <option value="{$v.a_name}">{$v.a_name}</option>
+                       </if>
+                   </foreach>
+                   </select>
+               </div>-->
+                <div class="form-group">
+                    <label class="form-title">任务时间：</label>
+                    <input id="pub_time_1" type="text" name="time_start" value="{$task.t_date_start}" style="width: 175px;padding:3px"> 至
+                    <input id="pub_time_2" type="text" name="time_end" value="{$task.t_date_end}" style="width: 175px;padding:3px">
+                    <label onclick="task()">增加任务</label>
+                </div>
+                   <foreach name="content" item="v" key="k">
+                       <div class="form-group">
+                           <label class="form-title">任务名称：</label>
+                           <input  type="text" name="task_name[]" value="{$v.name}" placeholder="" style="width:100px;padding:3px"/>
+                           <label>时间点:</label>
+                           <input type="time" {$data["task_heshui"]["s"]|taskIsShow=###} class="task_time" name="start[]" value="{$v.time_start}">——<input type="time" {$data["task_heshui"]["s"]|taskIsShow=###} name="end[]" value="{$v.time_end}">
+                       </div>
+                   </foreach>
+
+           </div>
+        <div class="form-group form-submit">
+              <button value="submit" class="btn-groups btn-submit" style="margin-left: 0;">立即提交</button>
+       </div>
+           </div>
+</form>
+<script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+<script src="__JS__type-select.js"></script>
+<script>
+    var ue = UE.getEditor('editor',{
+        initialFrameWidth:800,
+        initialFrameHeight:300
+    });
+
+$(function(){
+	h_upload('img_but','__MODULE__/Upload/Upload','callback_image');
+})
+var oldImgName = '{$data.images}';
+function callback_image(imgdata){
+	if(oldImgName != ''){
+		$.ajax({
+			'url':'__MODULE__/Upload/delImg',
+			'type':'post',
+			'data':{'imgname':oldImgName}
+		});
+	}
+	oldImgName = imgdata;
+	$('#image_show').show().attr('src','__ROOT__/Uploads/'+imgdata)
+	$('input[name="bus_logo"]').val(imgdata);
+}
+    var pub_start = {
+        elem: '#pub_time_1',
+        format: 'YYYY/MM/DD ',
+        min: '2000-01-01 00:00:00', //设定最小日期为当前日期
+        max: '2099-06-16 23:59:59', //最大日期
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            pub_end.min = datas; //开始日选好后，重置结束日的最小日期
+            pub_end.start = datas //将结束日的初始值设定为开始日
+        }
+    };
+    var pub_end = {
+        elem: '#pub_time_2',
+        format: 'YYYY/MM/DD ',
+        min: '2000-01-01 00:00:00',
+        max: '2099-06-16 23:59:59',
+        istime: true,
+        istoday: false,
+        choose: function(datas){
+            pub_start.max = datas; //结束日选好后，重置开始日的最大日期
+        }
+    };
+    laydate(pub_start);
+    laydate(pub_end);
+    function task(){
+        var text='<div class="form-group"> ' +
+            ' <label class="form-title">任务名称：</label>' +
+            '<input  type="text" name="task_name[]" value="" placeholder="" style="width:100px;padding:3px"/>' +
+            '<label>时间点:</label>' +
+            '<input type="time" {$data["task_heshui"]["s"]|taskIsShow=###} class="task_time" name="start[]" value="">——<input type="time" {$data["task_heshui"]["s"]|taskIsShow=###} name="end[]" value="">' +
+            '</div>';
+        $('#container').append(text);
+    }
+</script>
+</block>

@@ -153,7 +153,7 @@
 			关闭：<input <?php if($data["is_share"] == 2): ?>checked<?php endif; ?> type="radio" value="2" name="is_share">
 		</td>
 	</tr>
-	<!--<tr>
+    <!--<tr>
 		<th>全场特惠</th>
 		<td>
 			开启：<input <?php if($data["is_discount"] == 1): ?>checked<?php endif; ?> type="radio" value="1" name="is_discount">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -174,14 +174,13 @@
 	</tr>-->
 
 	<tr>
-		<th>首次下单反</th>
+		<th>首次下单返现金</th>
 		<td>
 			<input type="text" name="sc_top_user"  value="<?php echo ($data["sc_top_user"]); ?>"/>
 		</td>
-		<td>元</td>
 	</tr>
 	<tr>
-		<th>每日提现申请次数</th>
+		<th>注册返现金</th>
 		<td>
 			<input type="text" name="cash_time"  value="<?php echo ($data["cash_time"]); ?>"/>
 		</td>

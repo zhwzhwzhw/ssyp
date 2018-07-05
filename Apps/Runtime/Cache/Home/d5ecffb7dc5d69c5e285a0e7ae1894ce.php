@@ -16,24 +16,24 @@
 		<div class="addGoods">
 			<div class="top">
 				<div class="goods_list">
-					<div class="list">
-						<div class="check">
-							<img src="/ssyp/Public/Home/images/check.png" />
-						</div>
-						<div class="photo">
-							<img src="/ssyp/Public/Home/images/outdoor.jpg" alt="" />
-						</div>
-						<div class="info">
-							<span class="name">商品1</span>
-							<p class="price">¥</p><span class="goods_price price">10.00</span>
-							<div class="oprate">
-								<p class="icon minus">-</p>
-								<span class="count">1</span>
-								<p class="icon plus">+</p>
+					<?php if(is_array($car)): foreach($car as $key=>$v): ?><div class="list">
+							<div class="check">
+								<img src="/ssyp/Public/Home/images/check.png" />
 							</div>
-						</div>
-						<div class="remove">X</div>
-					</div>
+							<div class="photo">
+								<img src="/ssyp/Uploads/<?php echo ($v["wx_image"]); ?>" alt="" />
+							</div>
+							<div class="info">
+								<span class="name"><?php echo ($v["name"]); ?></span>
+								<p class="price">¥</p><span class="goods_price price"><?php echo ($v["pro_price"]); ?></span>
+								<div class="oprate">
+									<p class="icon minus">-</p>
+									<span class="count"><?php echo ($v["number"]); ?></span>
+									<p class="icon plus">+</p>
+								</div>
+							</div>
+							<div class="remove">X</div>
+						</div><?php endforeach; endif; ?>
 				</div>
 				<div class="pay">
 					<div class="check1 checkAll">
@@ -47,31 +47,31 @@
 			</div>
 		</div>
 		<ul class="bottom bottom2">
-			<li class="active" onclick="location.href='index.html'">
-				<a href="/ssyp/index.php/home/index/index">
-					<img src="/ssyp/Public/Home/images/sicon1.png" alt="">
-					<p>首页</p>
-				</a>
-			</li>
-			<li onclick="location.href='sort.html'">
-				<a href="/ssyp/index.php/home/index/sort">
-					<img src="/ssyp/Public/Home/images/icon2.png" alt="">
-					<p>我的任务</p>
-				</a>
-			</li>
-			<li onclick="location.href='cart.html'">
-				<a href="/ssyp/index.php/home/cart/cart">
-					<img src="/ssyp/Public/Home/images/icon3.png" alt="">
-					<p>购物车</p>
-				</a>
-			</li>
-			<li onclick="location.href='my.html'">
-				<a href="/ssyp/index.php/home/user/index">
-					<img src="/ssyp/Public/Home/images/icon4.png" alt="">
-					<p>我的</p>
-				</a>
-			</li>
-		</ul>
+	<li class="active" onclick="location.href='index.html'">
+		<a href="/ssyp/index.php/home/index/index">
+			<img src="/ssyp/Public/Home/images/sicon1.png" alt="">
+			<p>首页</p>
+		</a>
+	</li>
+	<li onclick="location.href='sort.html'">
+		<a href="/ssyp/index.php/home/task/task">
+			<img src="/ssyp/Public/Home/images/icon2.png" alt="">
+			<p>我的任务</p>
+		</a>
+	</li>
+	<li onclick="location.href='cart.html'">
+		<a href="/ssyp/index.php/home/cart/cart">
+			<img src="/ssyp/Public/Home/images/icon3.png" alt="">
+			<p>购物车</p>
+		</a>
+	</li>
+	<li onclick="location.href='my.html'">
+		<a href="/ssyp/index.php/home/user/index">
+			<img src="/ssyp/Public/Home/images/icon4.png" alt="">
+			<p>我的</p>
+		</a>
+	</li>
+</ul>
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -173,7 +173,7 @@
 						var shopPrice = $(this).siblings('.info').children('.goods_price').text();
 						$(".totalPrice").text((parseFloat($(".totalPrice").text()) + parseFloat(shopPrice * num)).toFixed(2));
 					} else {
-						$(this).find('img').attr('src', '../img/check.png');
+						$(this).find('img').attr('src', '/ssyp/Public/Home/images/check.png');
 						$(this).removeClass('checked');
 						var num = $(this).siblings('.info').find(".count").text();
 						var shopPrice = $(this).siblings('.info').children('.goods_price').text();

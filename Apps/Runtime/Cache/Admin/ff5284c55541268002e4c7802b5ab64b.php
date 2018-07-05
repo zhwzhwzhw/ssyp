@@ -171,7 +171,7 @@ $(function(){
 		<!-- <th></th> -->
 		<th>商品信息</th>
 		<th>销售信息</th>
-		<!--<th>规格</th>-->
+		<th>规格</th>
 		<th>编辑信息</th>
 		<th>商品价格</th>
 		<th>状态信息</th>
@@ -186,9 +186,9 @@ $(function(){
 			已支付总件数：<?php echo ($v["sell_pronum_else"]); ?> <br/>
 			未支付总件数：<?php echo ($v["sell_pronum_1"]); ?>
 		</td>
-		<!--<td>
+		<td>
 			<?php if(is_array($v["norms"])): foreach($v["norms"] as $key=>$nv): ?><div><?php echo ($nv["norms"]); ?>(库存：<?php echo ($nv["number_norms"]); ?>)</div><?php endforeach; endif; ?>
-		</td>-->
+		</td>
 		<td>
 			发布时间：<?php echo (date('Y-m-d H:i:s',$v["pub_time"])); ?><br/>
 			上次修改时间：<?php if($v["edi_time"] > 0): echo (date('Y-m-d H:i:s',$v["edi_time"])); else: ?>未修改<?php endif; ?><br/>
@@ -211,7 +211,7 @@ $(function(){
 			
 			<a href="/ssyp/index.php/Admin/Product/update/id/<?php echo ($v["id"]); ?>">编辑</a><br>
 			<a onclick="productDel(this) " data-id="<?php echo ($v["id"]); ?>" style="cursor: pointer">删除</a><br>
-			<!--<a href="/ssyp/index.php/Admin/Product/norms/id/<?php echo ($v["id"]); ?>">商品规格</a>-->
+			<a href="/ssyp/index.php/Admin/Product/norms/id/<?php echo ($v["id"]); ?>">商品规格</a>
 		</td>
 	</tr><?php endforeach; endif; ?>
 </table>
@@ -354,22 +354,19 @@ function productDel(obj){
         $.ajax({
                 'url':'/ssyp/index.php/Admin/Product/del',
                 'type':'get',
-                'data':{'id':8},
+                'data':{'id':id},
             'dataType':"json",
                 'success':function(ret){
                   /*  var ret=eval('('+re+')');//把JSON字符串转换成JSON对象*/
                     if(ret.ec == 200){
                         layer.msg(ret.msg, {icon: 1});
-                       /* layer.msg(re.msg, {icon: 1});
-                        /!*layer.closeAll();
-                        data_num(product_id,use_start,use_end);*!/*/
-                        window.location.href(ret.action);
+                        window.location.reload();
                     }else{
                         layer.msg(ret.msg, {icon: 1});
                         /* layer.msg(re.msg, {icon: 1});
                          /!*layer.closeAll();
                          data_num(product_id,use_start,use_end);*!/*/
-                        window.location.href(ret.action);
+                        window.location.reload();
 					}
                 }
             });

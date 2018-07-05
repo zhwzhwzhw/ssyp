@@ -30,8 +30,7 @@ $(function(){
 			<input type="text" name="bh"  value="{$bh}" style="width: 100px;padding:3px" placeholder="搜索订单编号">
 		</dd>
 	</dl>
-    
-	<br/><dl>
+	<dl>
 		<dt>下单日期：</dt>
 		<dd>
 			<input id="pub_time_1" type="text" name="pub_time_start" value="{$start}" style="width: 175px;padding:3px"> 至
@@ -52,8 +51,11 @@ $(function(){
 		</dd>
 	</dl>
     <dl>
-        <input class="where_submit" type="submit" value="搜索">
+		<input class="where_submit" type="reset" onclick="resetAll()"value="重置" >
     </dl>
+	<dl>
+		<input class="where_submit" type="submit" value="搜索">
+	</dl>
 </div>
 </form>
 <form method="post" action="__URL__/excle">
@@ -61,7 +63,6 @@ $(function(){
 	<tr>
 		<th colspan="6">
 		共 {$totalRows} 单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		
 		订单总金额 {$score_money + $ord_money + $mail_money} 元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（包含邮费{$mail_money}，订单{$ord_money}，积分抵扣{$score_money}）
 		<input style="border-radius:5px;color:#fff" type="submit" value="选中订单导出excle">
 	</th>
@@ -154,7 +155,7 @@ function apply(id){
 	})
 }
 
-var pub_start = {
+		var pub_start = {
 		  elem: '#pub_time_1',
 		  format: 'YYYY/MM/DD ',
 		  min: '2000-01-01 00:00:00', //设定最小日期为当前日期

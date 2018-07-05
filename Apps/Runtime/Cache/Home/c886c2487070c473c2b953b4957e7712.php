@@ -24,24 +24,37 @@
 	<body>
 		<div class="container">
 			<div class="inner">
-				<div class="top1">
-					<img src="/ssyp/Public/Home/images/outdoor.jpg" alt="" />
+				<div class="index_plugin">
+					<div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="45000">
+						<div class="swiper-wrapper">
+							<?php if(is_array($images)): foreach($images as $key=>$v): ?><div class="swiper-slide"><img style="width: 100%" src="/ssyp/Uploads/<?php echo ($v["img_name"]); ?>" alt=""></div><?php endforeach; endif; ?>
+
+							<!--<div class="swiper-slide"><img src="/ssyp/Public/Home/images/banner.jpg" alt=""></div>-->
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
 				</div>
+				<!--<div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+					<div class="top1" class="swiper-wrapper">
+						<?php if(is_array($images)): foreach($images as $key=>$v): ?><div class="swiper-slide">
+								<img  src="/ssyp/Uploads/<?php echo ($v["img_name"]); ?>" alt="" />
+							</div><?php endforeach; endif; ?>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>-->
 				<div class="goods_info">
-					<p class="name">商品名称</p>
-					<p class="price">￥100</p>
-					<p class="other"><text>运费：包邮</text> <text>库存：322</text></p>
+					<p class="name"><?php echo ($detail["name"]); ?></p>
+					<p class="price">￥<?php echo ($detail["pro_price"]); ?></p>
+					<p class="other"><text>运费：包邮</text> <text>库存：<?php echo ($detail["pro_number"]); ?></text></p>
 					<div class="share" id="share">
-						
 						<img src="/ssyp/Public/Home/images/share.png" />
 						<span>分享</span>
 					</div>
 				</div>
-				
-				<img src="/ssyp/Public/Home/images/title.jpg" class='w100' />
+				<!--<img src="/ssyp/Public/Home/images/title.jpg" class='w100' />-->
 				<div class="title">产品详情</div>
 				<div class="cont">
-					简要描述
+					<?php echo ($detail["pro_detail"]); ?>
 				</div>
 			</div>
 			<div class="oprate">
@@ -50,15 +63,19 @@
 					<span>客服</span>
 				</div>
 				<div class="collect" id="collect">
-					<img src="/ssyp/Public/Home/images/collect.png" alt="" />
+					<img src="/ssyp/Public/Home/images/collect1.png" alt="" />
 					<span>收藏</span>
 				</div>
-				<button class="btn cart" id="cart" style="background-color: #f5a623;">加入购物车</button>
+				<button class="btn cart" id="cart" onclick="aa()" style="background-color: #f5a623;">加入购物车</button>
 				<button class="btn" id="btn" style="background-color: #ff7101;">立即购买</button>
 			</div>
 		</div>
 	</body>
 	<script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="/ssyp/Public/Home/js/iscroll.js"></script>
+	<script src="/ssyp/Public/Home/js/navbarscroll.js"></script>
+	<script src="/ssyp/Public/Statics/laydate/laydate.js"></script>
+	<script src="/ssyp/Public/Statics/layer/layer.js"></script>
 	<script>
 		$(function() {
 			var localUrl = window.location.href;
@@ -209,24 +226,25 @@
 			//wx.hideOptionMenu();/***隐藏分享菜单****/
 
 			// 购物车
-			$('#cart').on('click', function() {
-//							$.ajax({
-//								url: "https://bgt.we-fs.com/api/api/cart?admin_id=1&openid=" + openid + '&goods_id=' + goods_id + '&goods_price=' + goods_price + '&goods_name=' + goods_name + '&goods_img=' + goods_img + '&goods_num=' + goods_num,
-//								success: function(res) {
-//									var list = JSON.parse(res);
-//									console.log(list);
-//									alert('已加入购物车');
-//								},
-//								error: function(res) {
-//									console.log(res);
-//								}
-//							})
-//						})
+			/*$('#cart').on('click', function() {
+                alert('已购物车');
+							$.ajax({
+								url: "/ssyp/index.php/home/product/car?user_id=1"+ '&pro_id=' + "{detail.id}" + '&pro_price=' + "<?php echo ($detail["pro_price"]); ?>" + '&pro_name=' + "<?php echo ($detail["name"]); ?>",
+								success: function(res) {
+									/!*var list = JSON.parse(res);
+									console.log(list);*!/
+									alert('已加入购物车');
+								},
+								error: function(res) {
+									console.log(res);
+								}
+							})
+						})
 
 				// 购买
-			})
+			})*/
 			$("#collect").on('click', function() {
-				$('#collect img').attr('src','../img/collected.png');
+				$('#collect img').attr('src','/ssyp/Public/Home/images/collect2.png');
 				alert('收藏成功');
 			})
 			$('#btn').on('click', function() {
@@ -243,7 +261,38 @@
 				//			localStorage.setItem('pays',JSON.stringify(pays));
 				//			window.location.href="pay.html?price="+price
 			})
-		})
-	</script>
-
+		});
+		$(".swiper-container").swiper({
+			loop: true,
+			autoplay: 3000
+		});
+        $('.wrapper').navbarscroll();
+        function aa() {
+            var data={
+                'user_id':1,
+				'pro_id':"<?php echo ($detail["id"]); ?>",
+				'pro_price':"<?php echo ($detail["pro_price"]); ?>",
+				'pro_name':"<?php echo ($detail["name"]); ?>"
+			};
+            $.ajax({
+                'url':'/ssyp/index.php/home/product/car',
+                'type':'post',
+                'data':data,
+				'dataType':'json',
+                'success':function(res){
+                    if(res.status == 404){
+                        layer.msg(res.info);
+                    }else if(res.status == 200){
+                        layer.msg(res.info);
+                        setTimeout(function(){
+                            location.href="/ssyp/index.php/home/cart/cart?user_id=1"
+                        },1000);
+                    }else{
+                        layer.msg(1);
+                        layer.msg(res);
+					}
+                }
+         	});
+		}
+</script>
 </html>

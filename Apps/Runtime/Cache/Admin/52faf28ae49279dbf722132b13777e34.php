@@ -144,8 +144,7 @@ $(function(){
 			<input type="text" name="bh"  value="<?php echo ($bh); ?>" style="width: 100px;padding:3px" placeholder="搜索订单编号">
 		</dd>
 	</dl>
-    
-	<br/><dl>
+	<dl>
 		<dt>下单日期：</dt>
 		<dd>
 			<input id="pub_time_1" type="text" name="pub_time_start" value="<?php echo ($start); ?>" style="width: 175px;padding:3px"> 至
@@ -166,8 +165,11 @@ $(function(){
 		</dd>
 	</dl>
     <dl>
-        <input class="where_submit" type="submit" value="搜索">
+		<input class="where_submit" type="reset" onclick="resetAll()"value="重置" >
     </dl>
+	<dl>
+		<input class="where_submit" type="submit" value="搜索">
+	</dl>
 </div>
 </form>
 <form method="post" action="/ssyp/index.php/Admin/Orders/excle">
@@ -175,7 +177,6 @@ $(function(){
 	<tr>
 		<th colspan="6">
 		共 <?php echo ($totalRows); ?> 单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		
 		订单总金额 <?php echo ($score_money + $ord_money + $mail_money); ?> 元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;（包含邮费<?php echo ($mail_money); ?>，订单<?php echo ($ord_money); ?>，积分抵扣<?php echo ($score_money); ?>）
 		<input style="border-radius:5px;color:#fff" type="submit" value="选中订单导出excle">
 	</th>
@@ -262,7 +263,7 @@ function apply(id){
 	})
 }
 
-var pub_start = {
+		var pub_start = {
 		  elem: '#pub_time_1',
 		  format: 'YYYY/MM/DD ',
 		  min: '2000-01-01 00:00:00', //设定最小日期为当前日期

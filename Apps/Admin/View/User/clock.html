@@ -1,0 +1,59 @@
+<extend name="Common/base"/>
+<block name="header">
+	<link href="__STATICS__css/common_18.css" type="text/css" rel="stylesheet"/>
+</block>
+
+</block>
+<block name="main">
+	<div class="container">
+		<div style="border-bottom: 1px solid #3c8dbc;font-size: 16px;padding-bottom: 10px;" >
+			<span style="width: 200px;margin-left: 10px">
+				<a style="color: #367FA9" href="__APP__/admin/user/task?user_id={$user_id}">任务列表</a>
+			</span>——>
+			<span>任务完成情况</span>
+		</div>
+		<!--<div class="detail">
+			<a href="__URL__/addtask" class="btn btn-large btn-update">任务完成情况</a>
+		</div>-->
+		<div class="table-main">
+			<table class="table">
+				<thead>
+				<tr class="th">
+					<th>ID</th>
+					<th>完成时间</th>
+					<th>任务</th>
+					<th>任务时间</th>
+				</tr>
+				</thead>
+				<tbody>
+				<foreach name="clock" item="v">
+					<tr>
+						<td>{$v.id}</td>
+						<td>{$v.date|date='Y/m/d H:i',###}</td>
+						<td>{$v.name}</td>
+						<td>{$v.time_start}-{$v.time_end}</td>
+
+					</tr>
+				</foreach>
+				</tbody>
+			</table>
+		</div>
+		<div class="paging" >
+			<div class="page">
+				{$page}
+			</div>
+		</div>
+		<!--  <div class="paging" >
+              <div class="page">
+                  <a class="prev" href="#">上一页</a>
+                  <span class="current">1</span>
+                  <a class="num" href="#">2</a>
+                  <a class="num" href="#">3</a>
+                  <a class="num" href="#">4</a>
+                  <a class="num" href="#">5</a>
+                  <a class="next" href="#">下一页</a>
+              </div>
+          </div>  -->
+
+	</div>
+</block>

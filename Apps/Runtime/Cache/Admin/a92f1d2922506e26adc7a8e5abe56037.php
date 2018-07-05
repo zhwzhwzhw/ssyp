@@ -131,13 +131,15 @@
                 <section class="content">
 				
 				
-	<form style="margin-bottom: 10px">
+	<!--<div class="detail">
+		<a href="/ssyp/index.php/Admin/User/edbus" class="btn btn-large btn-update">添加团队</a>
+	</div>-->
+	<form style="margin-bottom: 10px"id="myform">
 		<div id="where" class="clearfix" style="display: inline-block;width:30%">
 			<dl>
 				<dt style="margin-right: 14px;" >昵称：</dt>
 				<dd>
 					<input type="text" name="nickname"  value="<?php echo ($nickname); ?>" style="width: 100px;margin-right: 14px;padding:3px"  placeholder="">
-					<!--<input type="hidden" name="id" value="eq">-->
 				</dd>
 			</dl>
 			<dl>
@@ -148,7 +150,8 @@
 			</dl>
 			<br/>
 		</div>
-		<input class="where_submit" type="submit" value="搜索" style="display: inline-block;">
+		<button class="btn-groups btn-submit" style="cursor: pointer;display: inline;padding:3px;float: none;width: 60px" onclick="resetAll()" >重置</button>
+		<input class="where_submit" type="submit" value="搜索" style="display: inline-block;width: 60px;margin-left: 20px">
 	</form>
 <table id="detail" class="list"><tr>
 	<th colspan="7">
@@ -157,7 +160,7 @@
 		待审核的提现积分： <?php echo ($cash); ?> 
 	</th>
 	<tr>
-		<th>用户id</th>
+		<th>id</th>
 		<th>微信头像</th>
 		<th>昵称</th>
 		<!--<th>姓名</th>-->
@@ -176,7 +179,11 @@
 			<td><?php echo ($vo["phone"]); ?></td>
 			<!--<td><?php echo ($vo["birthday"]); ?></td>-->
 			<td><?php echo ($vo["score"]); ?></td>
-			<td><a href="/ssyp/index.php/admin/admin/add?id=<?php echo ($vo["id"]); ?>&&nickName=<?php echo ($vo["nickname"]); ?>">设置为管理员</a></td>
+			<td>
+				<a style="background-color: #3C8DBC; color: white;font-size: 16px;padding: 5px;" href="/ssyp/index.php/admin/admin/add?id=<?php echo ($vo["id"]); ?>&&nickName=<?php echo ($vo["nickname"]); ?>">设置为管理员</a>
+				<a style="background-color: #3C8DBC; color: white;font-size: 16px;padding: 5px;" href="/ssyp/index.php/admin/user/task?user_id=<?php echo ($vo["id"]); ?>">打卡任务</a>
+				<a style="background-color: #3C8DBC; color: white;font-size: 16px;padding: 5px;cursor: pointer" data-id="<?php echo ($vo["id"]); ?>" onclick="shenhe(this)">选择组别</a>
+			</td>
 		</tr><?php endforeach; endif; ?>
 </table>
 <div id="page"><?php echo ($page); ?></div>
@@ -214,6 +221,32 @@ function show_ticket(name,id){
 	  skin: 'layer-ext-moon',
 	  btn: 0	  
 	})
+}
+function resetAll() {
+    $("#myform").find('input[type=text],select,input[type=hidden]').each(function() {
+        $(this).val('');
+    });
+    $("#work").val(0);
+    $("#business").val(0);
+    $("#sonbus").val(0);
+    $("#status").val(0);
+    /*$("input").val("");*/
+}
+function shenhe(obj){
+    var id=$(obj).data('id');
+    var html='<form method="post" action="/ssyp/index.php/Admin/User/usergroup"><div style="margin: 30px 30px 30px 85px"><label>组名:</label>' +
+        '<select style="margin-left: 20px" name="group"><?php if(is_array($group)): foreach($group as $key=>$v): ?><option <?php if(($v["id"]) == $first): ?>selected<?php endif; ?> value="<?php echo ($v["id"]); ?>"><?php echo ($v["name"]); ?></option><?php endforeach; endif; ?></select></div>'+
+        '<div style="text-align: center;margin-top: 17px;">' +
+		'<input type="hidden" name="id" value="'+id+'"/>' +
+        '<input type="submit" value="提&nbsp;&nbsp;&nbsp;交" style="margin-right: 40px;padding: 0px 4px;">' +
+        '<input type="reset" value="取&nbsp;&nbsp;&nbsp;消" style="padding: 0px 4px;"></div>' +
+        '</from>';
+    layer.open({
+        type: 1,
+        skin: '', //加上边框
+        area: ['320px', '180px'], //宽高
+        content: html
+    });
 }
 </script>
 

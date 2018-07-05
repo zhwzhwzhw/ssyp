@@ -15,9 +15,9 @@ class BaseController extends Controller {
             $this->assign('role',$roleArr);
     		$rolePowArr = explode('|', $roleArr['power']);
     		$power = $this->power($user_base['role_id'],$rolePowArr);
-    		if(!$power){
+    		/*if(!$power){
     			echo '<script>alert("没有权限");history.go(-1)</script>';exit;
-    		}
+    		}*/
             
             if(($user_base['role_id'] == '0'  ||  empty($roleArr['power'])) && $user_base['role_id'] != '-1' ){
                 $menu = [];

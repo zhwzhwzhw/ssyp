@@ -1,0 +1,94 @@
+<extend name="Common/base"/>
+<block name="header">
+	<link href="__STATICS__css/common_18.css" type="text/css" rel="stylesheet"/>
+</block>
+
+</block>
+<block name="main">
+	<div class="container">
+		<!--<div class="title"><span >{$title}</span></div>-->
+		<div style="border-bottom: 1px solid #3c8dbc;font-size: 16px;padding-bottom: 10px;" >
+			<span style="width: 200px;margin-left: 10px">
+				<a style="color: #367FA9" href="__APP__/admin//user/index">会员分组</a>
+			</span>——>
+			<span>任务完成情况</span>
+		</div>
+		<div style="margin-top: 0" class="detail">
+			<span onclick="shenhe()" class="btn btn-large btn-update">添加分组</span>
+		</div>
+		<div class="table-main">
+			<table class="table">
+				<thead>
+				<tr class="th">
+					<th>ID</th>
+					<th>姓名</th>
+					<th>手机号</th>
+					<th>操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<foreach name="user" item="v">
+					<tr>
+						<td>{$v.id}</td>
+						<td>{$v.realname}</td>
+						<td>{$v.phone}</td>
+						<td>
+							<a href="__URL__/delgroupuser?id={$v.id}&group_id={$v.group_id}" class="btn btn-large btn-delete">删除</a>
+						</td>
+					</tr>
+				</foreach>
+				</tbody>
+			</table>
+		</div>
+		<div class="paging" >
+			<div class="page">
+				{$page}
+			</div>
+		</div>
+		<!--  <div class="paging" >
+              <div class="page">
+                  <a class="prev" href="#">上一页</a>
+                  <span class="current">1</span>
+                  <a class="num" href="#">2</a>
+                  <a class="num" href="#">3</a>
+                  <a class="num" href="#">4</a>
+                  <a class="num" href="#">5</a>
+                  <a class="next" href="#">下一页</a>
+              </div>
+          </div>  -->
+
+	</div>
+	<script>
+        function shenhe(obj){
+            var html='<form method="post" action="__URL__/addgroup"><div style="margin: 30px"><label>组名:</label>' +
+                '<input type="text" name="group"style="margin-left: 10px" value=""/></div>'+
+                '<div style="text-align: center;margin-top: 17px;">' +
+				'<input type="submit" value="提&nbsp;&nbsp;&nbsp;交" style="margin-right: 40px;padding: 0px 4px;">' +
+				'<input type="reset" value="取&nbsp;&nbsp;&nbsp;消" style="padding: 0px 4px;"></div>' +
+				'</from>';
+            layer.open({
+                type: 1,
+                skin: '', //加上边框
+                area: ['320px', '180px'], //宽高
+                content: html
+            });
+        }
+        function editor(obj){
+            var id=$(obj).data('id');
+            var name=$(obj).data('name');
+            var html='<form method="post" action="__URL__/addgroup?id='+id+'"><div style="margin: 30px"><label>组名:</label>' +
+                '<input type="hidden" name="id" value="'+id+'"/>' +
+				'<input type="text" name="group"style="margin-left: 10px" value="'+name+'"/></div>'+
+                '<div style="text-align: center;margin-top: 17px;">' +
+                '<input type="submit" value="提&nbsp;&nbsp;&nbsp;交" style="margin-right: 40px;padding: 0px 4px;">' +
+                '<input type="reset" value="取&nbsp;&nbsp;&nbsp;消" style="padding: 0px 4px;"></div>' +
+                '</from>';
+            layer.open({
+                type: 1,
+                skin: '', //加上边框
+                area: ['320px', '180px'], //宽高
+                content: html
+            });
+        }
+	</script>
+</block>

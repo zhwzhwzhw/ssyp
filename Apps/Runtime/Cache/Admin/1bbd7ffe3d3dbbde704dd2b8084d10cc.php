@@ -270,8 +270,8 @@ $(function(){
 		</td>
 	</tr> -->
 
-	
-	<tr>
+
+	<!--<tr>
 		<th colspan="2" class="th_br">
 		</th>
 	</tr>
@@ -279,7 +279,6 @@ $(function(){
 		<th colspan="2" class="det_title" >商品任务设置
 		</th>
 	</tr>
-	
 	<tr>
 		<th>配菜任务</th>
 		<td>
@@ -287,8 +286,8 @@ $(function(){
 			任务时间:<input type="time" <?php echo (taskIsShow($data["task_peicai"]["s"])); ?> class="task_time" name="task_peicai[start]" value="<?php echo ($data["task_peicai"]["start"]); ?>">-<input type="time" <?php echo (taskIsShow($data["task_peicai"]["s"])); ?> name="task_peicai[end]" value="<?php echo ($data["task_peicai"]["end"]); ?>">&nbsp;&nbsp;&nbsp;
 			提示信息:<input type="text" <?php echo (taskIsShow($data["task_peicai"]["s"])); ?> class="task_msg" name="task_peicai[msg]" placeholder="配菜任务提示信息" value="<?php echo ($data["task_peicai"]["msg"]); ?>">
 		</td>
-	</tr> 
-	
+	</tr>
+
 	<tr>
 		<th>锻炼任务</th>
 		<td>
@@ -328,9 +327,9 @@ $(function(){
 			任务时间:<input type="time" <?php echo (taskIsShow($data["task_mingxiang"]["s"])); ?> class="task_time" name="task_mingxiang[start]" value="<?php echo ($data["task_mingxiang"]["start"]); ?>">-<input type="time" <?php echo (taskIsShow($data["task_mingxiang"]["s"])); ?> name="task_mingxiang[end]" value="<?php echo ($data["task_mingxiang"]["end"]); ?>">&nbsp;&nbsp;&nbsp;
 			提示信息:<input type="text" <?php echo (taskIsShow($data["task_mingxiang"]["s"])); ?> class="task_msg" name="task_mingxiang[msg]" placeholder="冥想任务提示信息" value="<?php echo ($data["task_mingxiang"]["msg"]); ?>">
 		</td>
-	</tr>
-	
-	
+	</tr>-->
+
+
 	<tr>
 		<th colspan="2" class="th_br">
 		
@@ -389,10 +388,10 @@ var ue = UE.getEditor('editor',{
 	initialFrameWidth:800,
 	initialFrameHeight:300
 });
-var ue = UE.getEditor('editor_size',{
+/*var ue = UE.getEditor('editor_size',{
 	initialFrameWidth:800,
 	initialFrameHeight:300
-});
+});*/
 
 $(function(){
 	h_upload('wx_image_but','/ssyp/index.php/Admin/Upload/Upload','callback_wx_image');

@@ -1,0 +1,874 @@
+[ 2018-07-02T09:51:44+08:00 ] ::1 /ssyp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000902s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0126s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0109s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000164s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012608s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012642s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000923s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000953s ]
+
+[ 2018-07-02T09:57:08+08:00 ] 127.0.0.1 /ssyp/index.php/admin/product/detail?id=2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000893s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+
+[ 2018-07-02T09:57:08+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000363s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000504s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006446s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006488s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000540s ]
+
+[ 2018-07-02T09:57:19+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000670s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0150s ]
+SQL: SELECT `id`,`cat_shop`,`role_id` FROM `ssyp_admin` WHERE `phone` = '13213062345' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `ssyp_admin` WHERE ( phone="13213062345" ) LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2018-07-02T09:58:06+08:00 ] 127.0.0.1 /ssyp/index.php/Admin/Common/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0141s ]
+SQL: SELECT `id`,`cat_shop`,`role_id` FROM `ssyp_admin` WHERE `phone` = '13213062375' AND `password` = 'e10adc3949ba59abbe56e057f20f883e' LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `ssyp_admin` SET `login_ip`='127.0.0.1',`login_time`='1530496686' WHERE ( id="16" ) [ RunTime:0.0038s ]
+SQL: UPDATE `ssyp_admin` SET `login_number`=login_number+1 WHERE ( id="16" ) [ RunTime:0.0033s ]
+
+[ 2018-07-02T09:58:07+08:00 ] ::1 /ssyp/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0109s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0135s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0135s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012160s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012221s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001089s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001125s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001044s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001081s ]
+
+[ 2018-07-02T09:58:15+08:00 ] ::1 /ssyp/index.php/Admin/Product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001044s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0127s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0118s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0087s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 8 行.
+NOTIC: [8] Undefined index: name D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0116s ]
+SQL: SELECT COUNT(p.id) AS tp_count FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  LIMIT 1   [ RunTime:0.0028s ]
+SQL: SELECT p.*,cs.c_name as status_str FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  ORDER BY p.id desc LIMIT 0,20   [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0116s ]
+SQL: SELECT * FROM `ssyp_category` WHERE ( id in (1) )  [ RunTime:0.0003s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999' AND p.id = '2'  [ RunTime:0.0017s ]
+SQL: SELECT * FROM `ssyp_norms` WHERE ( pro_id="2" )  [ RunTime:0.0002s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999'  [ RunTime:0.0002s ]
+SQL: SELECT SUM(pro_number) AS tp_sum FROM `ssyp_product` LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 77 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 141 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 142 行.
+NOTIC: [8] Undefined variable: name D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 150 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 157 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 158 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013914s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013948s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000989s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001020s ]
+
+[ 2018-07-02T09:58:26+08:00 ] ::1 /ssyp/index.php/Admin/User/group
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0115s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0115s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0088s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_group` [ RunTime:0.0117s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `ssyp_group` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_group` LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\55372c0a94d1fe1b3de8239f3b35648e.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026857s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026906s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000851s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2018-07-02T09:58:34+08:00 ] ::1 /ssyp/index.php/Admin/User/info?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0135s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0119s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_info` [ RunTime:0.0098s ]
+SQL: SELECT * FROM `ssyp_info` WHERE `group_id` = 1  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\4437527a0000e93f86f0a60db3a7c78c.php 第 70 行.
+NOTIC: [8] Undefined variable: page D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\4437527a0000e93f86f0a60db3a7c78c.php 第 171 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013563s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000752s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000969s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001002s ]
+
+[ 2018-07-02T09:58:40+08:00 ] ::1 /ssyp/index.php/Admin/User/groupuser?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0133s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0138s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_user` [ RunTime:0.0130s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `ssyp_user` WHERE ( group_id=1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `realname`,`id`,`phone`,`group_id` FROM `ssyp_user` WHERE ( group_id=1 ) LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000292s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\bcd3f305af6c4b89eb3f6ab88f089096.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013646s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013684s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000783s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001058s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001099s ]
+
+[ 2018-07-02T09:58:45+08:00 ] ::1 /ssyp/index.php/Admin/User/groupuser?id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000041s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001358s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001079s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0118s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0111s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0139s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_user` [ RunTime:0.0141s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `ssyp_user` WHERE ( group_id=1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `realname`,`id`,`phone`,`group_id` FROM `ssyp_user` WHERE ( group_id=1 ) LIMIT 0,20   [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000150s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000189s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\bcd3f305af6c4b89eb3f6ab88f089096.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012268s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012307s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000735s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000897s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2018-07-02T09:59:07+08:00 ] ::1 /ssyp/index.php/Admin/User/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0117s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0085s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SELECT * FROM `ssyp_admin` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: nickname D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\UserController.class.php 第 14 行.
+NOTIC: [8] Undefined index: phone D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\UserController.class.php 第 18 行.
+SQL: SHOW COLUMNS FROM `ssyp_user` [ RunTime:0.0099s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `ssyp_user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`role_id`,`cat_shop`,`user_id` FROM `ssyp_admin` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_user` ORDER BY id desc LIMIT 0,20   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_group` [ RunTime:0.0084s ]
+SQL: SELECT `id`,`name` FROM `ssyp_group`  [ RunTime:0.0003s ]
+SQL: SELECT SUM(score) AS tp_sum FROM `ssyp_user` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ssyp_money` [ RunTime:0.0109s ]
+SQL: SELECT SUM(money_reduce) AS tp_sum FROM `ssyp_money` WHERE ( status="1" ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\a92f1d2922506e26adc7a8e5abe56037.php 第 71 行.
+NOTIC: [8] Undefined variable: nickname D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\a92f1d2922506e26adc7a8e5abe56037.php 第 142 行.
+NOTIC: [8] Undefined variable: phone D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\a92f1d2922506e26adc7a8e5abe56037.php 第 148 行.
+NOTIC: [8] Undefined variable: first D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\a92f1d2922506e26adc7a8e5abe56037.php 第 238 行.
+NOTIC: [8] Undefined variable: first D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\a92f1d2922506e26adc7a8e5abe56037.php 第 238 行.
+NOTIC: [8] Undefined variable: first D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\a92f1d2922506e26adc7a8e5abe56037.php 第 238 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011808s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000726s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000751s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000980s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001008s ]
+
+[ 2018-07-02T09:59:12+08:00 ] 127.0.0.1 /ssyp/index.php/admin/user/task?user_id=1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001308s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0119s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="16" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0102s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_task` [ RunTime:0.0103s ]
+SQL: SELECT COUNT(t_id) AS tp_count FROM `ssyp_task` WHERE `t_user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_task` WHERE `t_user_id` = 1 LIMIT 0,20   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000153s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\54840e919b0e7741c4e1f951f505950a.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011081s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011115s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000907s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000937s ]
+
+[ 2018-07-02T16:59:38+08:00 ] ::1 /ssyp/index.php/admin/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001240s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0163s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0141s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0123s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\859e94050170c96367cb52465a51a945.php 第 70 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009474s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009512s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000459s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000608s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000638s ]
+
+[ 2018-07-02T17:02:18+08:00 ] ::1 /ssyp/index.php/Admin/Product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000668s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0135s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0181s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0132s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 8 行.
+NOTIC: [8] Undefined index: name D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0103s ]
+SQL: SELECT COUNT(p.id) AS tp_count FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT p.*,cs.c_name as status_str FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  ORDER BY p.id desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `ssyp_category` WHERE ( id in (1) )  [ RunTime:0.0003s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999' AND p.id = '2'  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ssyp_norms` WHERE ( pro_id="2" )  [ RunTime:0.0002s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999'  [ RunTime:0.0002s ]
+SQL: SELECT SUM(pro_number) AS tp_sum FROM `ssyp_product` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000188s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 77 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 141 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 142 行.
+NOTIC: [8] Undefined variable: name D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 150 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 157 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 158 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010997s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011042s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000457s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000485s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000656s ]
+
+[ 2018-07-02T17:02:33+08:00 ] ::1 /ssyp/index.php/Admin/Product/update/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000737s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0100s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0111s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0119s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0103s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="2" ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0104s ]
+SQL: SELECT `cat_list` FROM `ssyp_seller` WHERE ( id="0" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0114s ]
+SQL: SELECT `id`,`c_name` FROM `ssyp_category` WHERE `fid` = 0 AND `c_status` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ssyp_category` WHERE `c_status` = 2  [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0111s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="2" )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000261s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000307s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 86 行.
+NOTIC: [8] Undefined index: pro_images D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 400 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013111s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013151s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001137s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001188s ]
+
+[ 2018-07-02T17:08:40+08:00 ] ::1 /ssyp/index.php/Admin/Product/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000602s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0116s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0123s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0109s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: task_peicai D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 160 行.
+NOTIC: [8] Undefined index: task_duanlian D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 162 行.
+NOTIC: [8] Undefined index: task_yinyue D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 164 行.
+NOTIC: [8] Undefined index: task_pingcha D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 166 行.
+NOTIC: [8] Undefined index: task_heshui D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 168 行.
+NOTIC: [8] Undefined index: task_mingxiang D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 170 行.
+NOTIC: [8] Undefined index: size_notice D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 127 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: validate D:\PHPstudy\WWW\ssyp\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\PHPstudy\WWW\ssyp\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0104s ]
+SQL: UPDATE `ssyp_images` SET `img_ordernum`='50' WHERE ( id="11" ) [ RunTime:0.0038s ]
+SQL: UPDATE `ssyp_images` SET `img_ordernum`='50' WHERE ( id="12" ) [ RunTime:0.0036s ]
+SQL: UPDATE `ssyp_product` SET `name`='卡布拉多',`symbol`='',`pro_price`='300.00',`discount_price`='250.00',`pro_number`='50',`ordernum`='40',`wx_image`='2018-06/1528099864-5b14f4180706c.jpg',`pro_detail`='<p><img src=\"/ueditor/image/20180604/1528099874.jpg\" title=\"1528099874.jpg\" alt=\"scroll.jpg\"/></p>',`task_peicai`='null',`task_duanlian`='null',`task_yinyue`='null',`task_pingcha`='null',`task_heshui`='null',`task_mingxiang`='null',`size_notice`=NULL,`p_cat_shop`='0',`category`='>1>',`edi_time`='1530522520',`edi_user`='1' WHERE ( id="2" ) [ RunTime:0.0035s ]
+
+[ 2018-07-02T17:08:41+08:00 ] ::1 /ssyp/index.php/Admin/Product/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000490s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0120s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0106s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0138s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 8 行.
+NOTIC: [8] Undefined index: name D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0122s ]
+SQL: SELECT COUNT(p.id) AS tp_count FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT p.*,cs.c_name as status_str FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  ORDER BY p.id desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0112s ]
+SQL: SELECT * FROM `ssyp_category` WHERE ( id in (1) )  [ RunTime:0.0004s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999' AND p.id = '2'  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ssyp_norms` WHERE ( pro_id="2" )  [ RunTime:0.0003s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999'  [ RunTime:0.0004s ]
+SQL: SELECT SUM(pro_number) AS tp_sum FROM `ssyp_product` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000226s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000268s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 77 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 141 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 142 行.
+NOTIC: [8] Undefined variable: name D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 150 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 157 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 158 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012528s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012564s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000466s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000646s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2018-07-02T17:08:43+08:00 ] ::1 /ssyp/index.php/Admin/Product/update/id/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000609s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000784s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0132s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0126s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `ssyp_product` WHERE ( id="2" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_seller` [ RunTime:0.0109s ]
+SQL: SELECT `cat_list` FROM `ssyp_seller` WHERE ( id="0" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0123s ]
+SQL: SELECT `id`,`c_name` FROM `ssyp_category` WHERE `fid` = 0 AND `c_status` = 1  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ssyp_category` WHERE `c_status` = 2  [ RunTime:0.0002s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 192 行.
+SQL: SHOW COLUMNS FROM `ssyp_images` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `ssyp_images` WHERE ( pro_id="2" )  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000274s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000332s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 86 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 285 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 286 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 286 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 286 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 286 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 287 行.
+NOTIC: [8] Undefined index: msg D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 287 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 294 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 295 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 295 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 295 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 295 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 296 行.
+NOTIC: [8] Undefined index: msg D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 296 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 302 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 303 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 303 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 303 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 303 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 304 行.
+NOTIC: [8] Undefined index: msg D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 304 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 310 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 311 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 311 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 311 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 311 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 312 行.
+NOTIC: [8] Undefined index: msg D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 312 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 318 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 319 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 319 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 319 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 319 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 320 行.
+NOTIC: [8] Undefined index: msg D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 320 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 326 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 327 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 327 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 327 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 327 行.
+NOTIC: [8] Undefined index: s D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 328 行.
+NOTIC: [8] Undefined index: msg D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 328 行.
+NOTIC: [8] Undefined index: pro_images D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\1bbd7ffe3d3dbbde704dd2b8084d10cc.php 第 400 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012566s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000414s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000556s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000583s ]
+
+[ 2018-07-02T17:19:09+08:00 ] ::1 /ssyp/index.php/Admin/Product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000636s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0110s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0136s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0284s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 8 行.
+NOTIC: [8] Undefined index: name D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0102s ]
+SQL: SELECT COUNT(p.id) AS tp_count FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT p.*,cs.c_name as status_str FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  ORDER BY p.id desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0102s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0133s ]
+SQL: SELECT * FROM `ssyp_category` WHERE ( id in (1) )  [ RunTime:0.0003s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999' AND p.id = '2'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_norms` WHERE ( pro_id="2" )  [ RunTime:0.0002s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999'  [ RunTime:0.0002s ]
+SQL: SELECT SUM(pro_number) AS tp_sum FROM `ssyp_product` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000187s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000224s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 77 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 141 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 142 行.
+NOTIC: [8] Undefined variable: name D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 150 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 157 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 158 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010609s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000550s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000789s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000831s ]
+
+[ 2018-07-02T17:19:12+08:00 ] ::1 /ssyp/index.php/Admin/Product/changeGet/tb/product/id/2/is_discount/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0126s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0128s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0114s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0101s ]
+SQL: UPDATE `ssyp_product` SET `is_discount`='1' WHERE ( id="2" ) [ RunTime:0.0043s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000813s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000849s ]
+
+[ 2018-07-02T17:19:13+08:00 ] ::1 /ssyp/index.php/Admin/Product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000590s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0113s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0099s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0107s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 8 行.
+NOTIC: [8] Undefined index: name D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0111s ]
+SQL: SELECT COUNT(p.id) AS tp_count FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT p.*,cs.c_name as status_str FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  ORDER BY p.id desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0101s ]
+SQL: SELECT * FROM `ssyp_category` WHERE ( id in (1) )  [ RunTime:0.0003s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999' AND p.id = '2'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_norms` WHERE ( pro_id="2" )  [ RunTime:0.0004s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999'  [ RunTime:0.0003s ]
+SQL: SELECT SUM(pro_number) AS tp_sum FROM `ssyp_product` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 77 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 141 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 142 行.
+NOTIC: [8] Undefined variable: name D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 150 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 157 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 158 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009681s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009714s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000399s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000426s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000719s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2018-07-02T17:19:14+08:00 ] ::1 /ssyp/index.php/Admin/Product/changeGet/tb/product/id/2/is_discount/2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000604s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0122s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0122s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0101s ]
+SQL: UPDATE `ssyp_product` SET `is_discount`='2' WHERE ( id="2" ) [ RunTime:0.0042s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001131s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001180s ]
+
+[ 2018-07-02T17:19:14+08:00 ] ::1 /ssyp/index.php/Admin/Product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0093s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0138s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 8 行.
+NOTIC: [8] Undefined index: name D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0145s ]
+SQL: SELECT COUNT(p.id) AS tp_count FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT p.*,cs.c_name as status_str FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  ORDER BY p.id desc LIMIT 0,20   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0128s ]
+SQL: SELECT * FROM `ssyp_category` WHERE ( id in (1) )  [ RunTime:0.0003s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999' AND p.id = '2'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_norms` WHERE ( pro_id="2" )  [ RunTime:0.0002s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999'  [ RunTime:0.0003s ]
+SQL: SELECT SUM(pro_number) AS tp_sum FROM `ssyp_product` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000192s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 77 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 141 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 142 行.
+NOTIC: [8] Undefined variable: name D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 150 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 157 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 158 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011173s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000408s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000613s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000651s ]
+
+[ 2018-07-02T17:19:30+08:00 ] ::1 /ssyp/index.php/Admin/Product/changeGet/tb/product/id/2/is_discount/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000470s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000791s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0109s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0097s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0104s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0113s ]
+SQL: UPDATE `ssyp_product` SET `is_discount`='1' WHERE ( id="2" ) [ RunTime:0.0040s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000777s ]
+
+[ 2018-07-02T17:19:30+08:00 ] ::1 /ssyp/index.php/Admin/Product/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000376s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `ssyp_admin` [ RunTime:0.0132s ]
+SQL: SELECT `role_id`,`realname`,`login_number` FROM `ssyp_admin` WHERE ( id="1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_role` [ RunTime:0.0112s ]
+SQL: SELECT `power`,`role_name` FROM `ssyp_role` WHERE ( id="-1" ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_power` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `ssyp_power` WHERE `fid` > 0  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: status D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\BaseController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pub_time_start D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pub_time_end D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 8 行.
+NOTIC: [8] Undefined index: name D:\PHPstudy\WWW\ssyp\Apps\Admin\Controller\ProductController.class.php 第 15 行.
+SQL: SHOW COLUMNS FROM `ssyp_product` [ RunTime:0.0126s ]
+SQL: SELECT COUNT(p.id) AS tp_count FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT p.*,cs.c_name as status_str FROM ssyp_product p left JOIN ssyp_category as cs on cs.id = status  ORDER BY p.id desc LIMIT 0,20   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ssyp_norms` [ RunTime:0.0104s ]
+SQL: SHOW COLUMNS FROM `ssyp_category` [ RunTime:0.0091s ]
+SQL: SELECT * FROM `ssyp_category` WHERE ( id in (1) )  [ RunTime:0.0003s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999' AND p.id = '2'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ssyp_norms` WHERE ( pro_id="2" )  [ RunTime:0.0002s ]
+SQL: SELECT op.ord_number,o.status FROM ssyp_product p INNER JOIN ssyp_norms as n on n.pro_id = p.id INNER JOIN ssyp_ordpro as op on n.id=op.norms_id INNER JOIN ssyp_orders as o on op.ord_id=o.id  WHERE o.pub_time BETWEEN '0 ' AND ' 9999999999'  [ RunTime:0.0002s ]
+SQL: SELECT SUM(pro_number) AS tp_sum FROM `ssyp_product` LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000225s ]
+NOTIC: [8] Undefined index: headimgurl D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 77 行.
+NOTIC: [8] Undefined variable: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 141 行.
+NOTIC: [8] Undefined variable: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 142 行.
+NOTIC: [8] Undefined variable: name D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 150 行.
+NOTIC: [8] Undefined index: start D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 157 行.
+NOTIC: [8] Undefined index: end D:\PHPstudy\WWW\ssyp\Apps\Runtime\Cache\Admin\ff5284c55541268002e4c7802b5ab64b.php 第 158 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009657s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000465s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000493s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000591s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000627s ]
+

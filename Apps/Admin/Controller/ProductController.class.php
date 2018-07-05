@@ -18,10 +18,9 @@ class ProductController extends BaseController{
             $this->assign('name',$name);
         }
 		$proObj   = M('product');
-		$id       = $_SESSION['admin']['id'];
-        $role     = M('admin')->field('role_id,cat_shop')->where("id=$id")->find();
-        if($role['role_id']!=-1){
-            $where['p_cat_shop']=$role['cat_shop'];
+        $role       = $_SESSION['admin']['role_id'];
+        if($role!=-1){
+            $where['p_cat_shop']=$_SESSION['admin']['cat_shop'];
         }
         /*$search   = searchWhere();*/
         /*	$where = $search['where'];*/
@@ -108,8 +107,6 @@ class ProductController extends BaseController{
 				'discount_price'=>0.00,
 				'cost_price'=>0.00,
 		);
-		print_r($_SESSION['a']);
-        echo $_SESSION['b'];
 		$this->assign('data',$data);
 		$ids = M('seller')->where('id="%s"',$_SESSION['admin']['cat_shop'])->getField('cat_list');
 		$this->assign('category_0',getChildType(0,1,$ids));
@@ -133,7 +130,7 @@ class ProductController extends BaseController{
 		unset($_data['fid']);
 		$id = ( isset($_data['id']) && (int)$_data['id']>0 ) ? (int)$_data['id'] : 0 ;
 		unset($_data['id']);
-		$obj = D('Product');
+		$obj = M('product');
 		if($id){
 			$_data['edi_time'] = NOW_TIME;
 			$_data['edi_user'] = $_SESSION['admin']['id'];
@@ -151,7 +148,7 @@ class ProductController extends BaseController{
 				$this->save_images($_data['img_name'],$_data['img_ordernum'],$re);
 			}else{
 				$this->error($obj->getError());
-			} 
+			}
 		}
 		if($re){
 			$this->success('发布成功',U('index'));
@@ -363,7 +360,7 @@ class ProductController extends BaseController{
 	}
 	
 	public function del(){
-		$id = (int)I('get.id');
+		$id = I('param.');
 		$obj = M('product');
 		$re = $obj->where('id="%s"',$id)->delete();
 		/*if($re){

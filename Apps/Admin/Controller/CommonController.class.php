@@ -19,7 +19,7 @@ class CommonController extends Controller{
 			'phone'=>$phone,
 			'password'=>md5($password),
 		];
-		$user = $obj->field('id,cat_shop') -> where($where) ->find();
+		$user = $obj->field('id,cat_shop,role_id') -> where($where) ->find();
 		if($user){
 			$obj->where('id="%s"',$user['id'])
 				->data(array('login_ip'=>$_SERVER['REMOTE_ADDR'],'login_time'=>NOW_TIME))

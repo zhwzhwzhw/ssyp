@@ -109,6 +109,7 @@ class ProductController extends BaseController {
 				'images'=>$images,
 				'relation'=>$relation
 		);
+        $data['pro_detail']=plum_parse_img_path($data['pro_detail']);
         $this->assign('images',$images);
         $this->assign('detail',$data);
         $this->display();
@@ -163,40 +164,38 @@ class ProductController extends BaseController {
 	}
 	//商品列表
     public function goodsList(){
-        /*$param    = I('param.');
-        $name     = $param['name'];
-        if($name){
-            $where['name']=array('like',"%$name%");
-        }
-        $type     = $param['type'];
-        $category = $param['category'];
-        if($type=='new'){
-           $order=array('pub_time'=>'desc');
-        }elseif ($type=='sale'){
-            $order=array('sell_num'=>'desc');
-        }elseif ($category){
-            $where['name']      = array('like',"%$name%");
-        }
-	    $obj  = M('product');
-	    $list = $obj->where($where)->order($order)->select();
-	    $data = array();
-	    foreach($list as $k=>$v){
-	       $data[$k]=array(
-	           'id'         =>  $v['id'],
-               'name'       =>  $v['name'],
-	           'price'      =>  $v['pro_price'],
-               'discount'   =>  $v['discount_price'],
-               'image'      =>  $v['wx_image'],
-           );
-            $sellerId=$v['p_cat_shop'];
-            if($sellerId){
-                $result=M('seller')->field('seller_name')->where("id=$sellerId")->find();
-                $data[$k]['seller']=$result['seller_name'];
-            }
-        }
+	    $param=I('param.');
 
+        $obj    = M('product');
+        if($param['type']==1){
+            $where=array();
+            $where['is_tj']=1;
+            $data   = $obj->where($where)->order('ordernum desc')->select();
+        }elseif ($param['type']==2){
+            $where=array();
+            $where['is_tj']=1;
+            $data   = $obj->where($where)->order('sell_num desc')->select();
+        }elseif ($param['type']==3){
+            $where=array();
+            $where['is_tj']=2;
+            $data   = $obj->where($where)->order('ordernum desc')->select();
+        }else{
+            $where=array();
+            $where['is_tj']=1;
+            $data   = $obj->where($where)->order('ordernum desc')->select();
+        }
+        $this->assign('type',$param['type']);
+       $this->assign('list',$data);
+        $this->display();
+    }
+    //搜索商品
+    public function search(){
+        $param  = I('param.');
+        $obj    = M('product');
+        $where=array();
+        $where['name']=array('like','%'.$param['name'].'%');
+        $data   = $obj->where($where)->order('ordernum desc')->select();
         $this->assign('list',$data);
-        $this->display();*/
         $this->display();
     }
 	//商品分类
@@ -205,8 +204,40 @@ class ProductController extends BaseController {
         $list  = M('category')->field('id,c_name')->where($where)->select();
         echo json_encode($list);
     }
-	
-	
+	/**
+     * 购物车
+     */
+	public function car(){
+	    $param=I('param.');
+	    $data=array(
+	        'pro_id'=>$param['pro_id'],
+            'user_id'=>$param['user_id'],
+            'pro_name'=>$param['user_id'],
+        );
+	    $where=array();
+	    $where['user_id']=$param['user_id'];
+        $where['pro_id']=$param['pro_id'];
+	    $shopcar=M('shopcar')->where($where)->find();
+	    if($shopcar){
+	        $re=M('shopcar')->where('id='.$shopcar['id'])->setInc('number');
+            if($re){
+                $arr = ['info'=>'成功','status'=>200];
+                echo json_encode($arr);
+            }else{
+                $arr = ['info'=>'失败','status'=>404];
+                echo json_encode($arr);
+            }
+        }else{
+            $re=M('shopcar')->add($data);
+            if($re){
+                $arr = ['info'=>'成功','status'=>200];
+                echo json_encode($arr);
+            }else{
+                $arr = ['info'=>'失败','status'=>404];
+                echo json_encode($arr);
+            }
+        }
+    }
 }
 
 

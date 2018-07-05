@@ -142,7 +142,7 @@ $(function(){
 <ul id="head_menu" class="clearfix"  >
 	<li <?php if($_GET['status']== 1): ?>class="active"<?php endif; ?> ><a href="/ssyp/index.php/Admin/Category/index/status/1">商品分类</a></li>
 <!-- 	<li <?php if($_GET['status']== 2): ?>class="active"<?php endif; ?>><a href="/ssyp/index.php/Admin/Category/index/status/2">展示状态</a></li> -->
-	<!--<li <?php if($_GET['status']== 3): ?>class="active"<?php endif; ?>><a href="/ssyp/index.php/Admin/Category/index/status/3">商品规格</a></li>-->
+	<li <?php if($_GET['status']== 3): ?>class="active"<?php endif; ?>><a href="/ssyp/index.php/Admin/Category/index/status/3">商品规格</a></li>
 </ul>
 <br/>
 <table id="detail" class="list">

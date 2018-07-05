@@ -57,7 +57,7 @@ $(function(){
 		<!-- <th></th> -->
 		<th>商品信息</th>
 		<th>销售信息</th>
-		<!--<th>规格</th>-->
+		<th>规格</th>
 		<th>编辑信息</th>
 		<th>商品价格</th>
 		<th>状态信息</th>
@@ -73,11 +73,11 @@ $(function(){
 			已支付总件数：{$v.sell_pronum_else} <br/>
 			未支付总件数：{$v.sell_pronum_1}
 		</td>
-		<!--<td>
+		<td>
 			<foreach name="v.norms" item="nv">
 				<div>{$nv.norms}(库存：{$nv.number_norms})</div>
 			</foreach>
-		</td>-->
+		</td>
 		<td>
 			发布时间：{$v.pub_time|date='Y-m-d H:i:s',###}<br/>
 			上次修改时间：<if condition="$v.edi_time gt 0">{$v.edi_time|date='Y-m-d H:i:s',###}<else/>未修改</if><br/>
@@ -102,7 +102,7 @@ $(function(){
 			
 			<a href="__URL__/update/id/{$v.id}">编辑</a><br>
 			<a onclick="productDel(this) " data-id="{$v.id}" style="cursor: pointer">删除</a><br>
-			<!--<a href="__URL__/norms/id/{$v.id}">商品规格</a>-->
+			<a href="__URL__/norms/id/{$v.id}">商品规格</a>
 		</td>
 	</tr>
 	</foreach>
@@ -221,22 +221,19 @@ function productDel(obj){
         $.ajax({
                 'url':'__URL__/del',
                 'type':'get',
-                'data':{'id':8},
+                'data':{'id':id},
             'dataType':"json",
                 'success':function(ret){
                   /*  var ret=eval('('+re+')');//把JSON字符串转换成JSON对象*/
                     if(ret.ec == 200){
                         layer.msg(ret.msg, {icon: 1});
-                       /* layer.msg(re.msg, {icon: 1});
-                        /!*layer.closeAll();
-                        data_num(product_id,use_start,use_end);*!/*/
-                        window.location.href(ret.action);
+                        window.location.reload();
                     }else{
                         layer.msg(ret.msg, {icon: 1});
                         /* layer.msg(re.msg, {icon: 1});
                          /!*layer.closeAll();
                          data_num(product_id,use_start,use_end);*!/*/
-                        window.location.href(ret.action);
+                        window.location.reload();
 					}
                 }
             });

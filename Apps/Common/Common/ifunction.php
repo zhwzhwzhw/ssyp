@@ -13,7 +13,17 @@ function return_cat_list($ids){
 	}
 	return $str;
 }
-
+function plum_parse_img_path($content) {
+    $host = $_SERVER['HTTP_HOST'];
+    /*$host = PLUM_IMG_HOST_PATH;*/
+    if (!$content) {
+        return '';
+    }
+    //$pattern = '/<img src=\"(.+?)\"(.*?)\/>/i';
+    $pattern = '/<img .*?src=\"(?!http)(.+?)\"(.*?)\/>/i';
+    $replace = '<img src="http://'.$host.'$1"$2/>';
+    return preg_replace($pattern, $replace, $content);
+}
 
 
 

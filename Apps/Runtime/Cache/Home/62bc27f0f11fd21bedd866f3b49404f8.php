@@ -46,31 +46,31 @@
 				</li>
 			</ul>
 			<ul class="bottom bottom2">
-				<li class="active" onclick="location.href='index.html'">
-					<a href="/ssyp/index.php/home/index/index">
-						<img src="/ssyp/Public/Home/images/sicon1.png" alt="">
-						<p>首页</p>
-					</a>
-				</li>
-				<li onclick="location.href='sort.html'">
-					<a href="/ssyp/index.php/home/index/sort">
-						<img src="/ssyp/Public/Home/images/icon2.png" alt="">
-						<p>我的任务</p>
-					</a>
-				</li>
-				<li onclick="location.href='cart.html'">
-					<a href="/ssyp/index.php/home/cart/cart">
-						<img src="/ssyp/Public/Home/images/icon3.png" alt="">
-						<p>购物车</p>
-					</a>
-				</li>
-				<li onclick="location.href='my.html'">
-					<a href="/ssyp/index.php/home/user/index">
-						<img src="/ssyp/Public/Home/images/icon4.png" alt="">
-						<p>我的</p>
-					</a>
-				</li>
-			</ul>
+	<li class="active" onclick="location.href='index.html'">
+		<a href="/ssyp/index.php/home/index/index">
+			<img src="/ssyp/Public/Home/images/sicon1.png" alt="">
+			<p>首页</p>
+		</a>
+	</li>
+	<li onclick="location.href='sort.html'">
+		<a href="/ssyp/index.php/home/task/task">
+			<img src="/ssyp/Public/Home/images/icon2.png" alt="">
+			<p>我的任务</p>
+		</a>
+	</li>
+	<li onclick="location.href='cart.html'">
+		<a href="/ssyp/index.php/home/cart/cart">
+			<img src="/ssyp/Public/Home/images/icon3.png" alt="">
+			<p>购物车</p>
+		</a>
+	</li>
+	<li onclick="location.href='my.html'">
+		<a href="/ssyp/index.php/home/user/index">
+			<img src="/ssyp/Public/Home/images/icon4.png" alt="">
+			<p>我的</p>
+		</a>
+	</li>
+</ul>
 		</div>
 	</body>
 	<script>
